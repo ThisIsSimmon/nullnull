@@ -1,0 +1,18 @@
+@import 'abstracts/variables';
+
+p {
+    color: $color;
+}
+
+div {
+    display: flex;
+    padding-left: 2em;
+}
+
+div {
+    color: red;
+}
+
+body {
+    background-color: red !important;
+}
