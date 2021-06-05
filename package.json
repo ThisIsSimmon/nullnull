@@ -1,16 +1,22 @@
 {
   "scripts": {
     "wp-env": "wp-env",
-    "all": "run-p scss2css server imagemin",
-    "scss2css": "sass assets/sass/style.scss:style.css --style=expanded --watch",
-    "server": "browser-sync start --config bs-config.js",
-    "autoprefix": "postcss style.css -u autoprefixer --replace",
-    "imagemin": "onchange 'assets/img/src/**/*.{jpg,png,gif,svg}' -- node imagemin.js {{changed}}"
+    "dev": "run-p scss2css server imagemin",
+    "format": "run-s autoprefix cssnano",
+    "scss2css": "sass ./assets/sass/style.scss:./style.css --style=expanded --watch",
+    "server": "browser-sync start --config ./bs-config.js",
+    "cssnano": "postcss -c ./postcss.config.js ./style.css -o ./style.min.css",
+    "autoprefix": "postcss ./style.css -u autoprefixer --replace",
+    "imagemin": "onchange './assets/img/src/**/*.{jpg,png,gif,svg}' -- node ./imagemin.js {{changed}}"
   },
+  "browserslist": [
+    "since 2015"
+  ],
   "devDependencies": {
     "@wordpress/env": "^4.0.4",
     "autoprefixer": "^10.2.6",
     "browser-sync": "^2.26.14",
+    "cssnano": "^5.0.5",
     "imagemin": "^8.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-keep-folder": "^5.3.2",
