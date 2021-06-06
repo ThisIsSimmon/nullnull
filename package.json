@@ -1,7 +1,9 @@
 {
   "scripts": {
     "wp-env": "wp-env",
-    "dev": "run-p scss2css server imagemin",
+    "wp-env-start": "wp-env start",
+    "devstop": "wp-env stop",
+    "devstart": "run-p wp-env-start scss2css server imagemin",
     "format": "run-s autoprefix cssnano",
     "scss2css": "sass ./assets/sass/style.scss:./style.css --style=expanded --watch",
     "server": "browser-sync start --config ./bs-config.js",
