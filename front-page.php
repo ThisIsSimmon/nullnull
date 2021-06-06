@@ -1,3 +1,9 @@
-<?php
+<?php get_header(); ?>
 
-echo 9;
+
+
+
+
+
+
+<?php get_footer(); ?>
