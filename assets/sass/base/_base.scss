@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@use '../abstracts/variables' as *;
+
+html {
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	background-color: map-get($colors, "bg-base");
+}
