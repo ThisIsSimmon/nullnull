@@ -12,8 +12,8 @@
  |
  |
  */
-module.exports = {
-    "files": ["style.css", "*.php", "**/*.php"],
+ module.exports = {
+    "files": ["./style.css", "./**/*.js", "./*.php", "./**/*.php"],
     "proxy": "localhost:8888",
-    "open": false
+    "port": 3000,
 };

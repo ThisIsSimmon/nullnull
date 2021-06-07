@@ -1,1 +1,9 @@
-$color: blue;
+@charset "UTF-8";
+
+$colors: (
+	text-main: hsl(227, 20%, 20%),
+	text-sub: hsl(227, 10%, 60%),
+	text-link: hsl(281, 32%, 50%),
+	bg-base: hsl(227, 24%, 93%),
+	bg-menu: hsl(227, 10%, 60%),
+);

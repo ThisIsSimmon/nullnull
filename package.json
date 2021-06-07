@@ -6,7 +6,7 @@
     "devstart": "run-p wp-env-start scss2css server imagemin",
     "format": "run-s autoprefix cssnano",
     "scss2css": "sass ./assets/sass/style.scss:./style.css --style=expanded --watch",
-    "server": "browser-sync start --config ./bs-config.js",
+    "server": "browser-sync start --config bs-config.js",
     "cssnano": "postcss -c ./postcss.config.js ./style.css -o ./style.min.css",
     "autoprefix": "postcss ./style.css -u autoprefixer --replace",
     "imagemin": "onchange './assets/img/src/**/*.{jpg,png,gif,svg}' -- node ./imagemin.js {{changed}}"
