@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.logo {
+	@include center;
+	background-color: #ccc;
+	border-radius: 50%;
+	height: 7em;
+	width: 7em;
+	&__inner {
+		@include center;
+		background-color: #fff;
+		border-radius: 50%;
+		height: 5.6em;
+		width: 5.6em;
+	}
+
+	&__text {
+		color: #000;
+		font-size: 3rem;
+	}
+}
