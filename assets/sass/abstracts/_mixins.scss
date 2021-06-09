@@ -9,3 +9,18 @@
 @mixin bg-gradient {
 	background: linear-gradient(to bottom right, map-get($colors, "bg-action"));
 }
+
+@mixin shadow($name) {
+	// base-button
+	// action-button
+	// card
+	// input
+	@if "base-button" == $name {
+	} @else if "action-button" == $name {
+		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.12),
+			inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+			inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+	} @else if "card" == $name {
+	} @else if "input" == $name {
+	}
+}
