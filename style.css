@@ -622,7 +622,6 @@ template {
 }
 
 html {
-  font-size: 62.5%;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -630,7 +629,9 @@ body {
   background-color: #e9ebf1;
 }
 
-body {
+html {
+  color: #292d3d;
+  font-size: 62.5%;
   font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "M PLUS Rounded 1c", "Hiragino Sans", "Noto Sans CJK JP", "Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
 }
 
@@ -640,37 +641,56 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: 700;
   letter-spacing: 0.05em;
   line-height: 1.5;
 }
 
 p {
   font-size: 1.6rem;
+  font-weight: 400;
   line-height: 1.75;
   letter-spacing: 0.01em;
+}
+
+a {
+  color: #8e57a8;
+}
+
+a:hover {
+  color: #8e57a8;
+  text-decoration: underline;
 }
 
 .logo {
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: #ccc;
+  background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
   border-radius: 50%;
   height: 7em;
+  margin-right: auto;
   width: 7em;
 }
 .logo__inner {
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: #fff;
+  background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
   border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -1px -1px 3px rgba(255, 255, 255, 0.3), inset 2px 2px 3px rgba(0, 0, 0, 0.12);
   height: 5.6em;
+  transition: box-shadow 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   width: 5.6em;
 }
+.logo:hover .logo__inner {
+  box-shadow: none;
+}
 .logo__text {
-  color: #000;
-  font-size: 3rem;
+  font-size: 1.1em;
+  height: 2.2em;
+  margin: 0.3em 0 0 0.3em;
+  width: 2.6em;
 }
 
 .header {

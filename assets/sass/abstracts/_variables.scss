@@ -4,6 +4,67 @@ $colors: (
 	text-link: hsl(281, 32%, 50%),
 	bg-base: hsl(227, 24%, 93%),
 	bg-menu: hsl(227, 10%, 60%),
+	bg-action: (
+		hsl(255.71, 45.65%, 81.96%) 0%,
+		hsl(256.67, 45.49%, 81.9%) 8.1%,
+		hsl(259.39, 45%, 81.73%) 15.5%,
+		hsl(263.62, 44.17%, 81.46%) 22.5%,
+		hsl(269.18, 42.96%, 81.08%) 29%,
+		hsl(275.89, 41.35%, 80.6%) 35.3%,
+		hsl(283.64, 39.38%, 80.04%) 41.2%,
+		hsl(292.31, 37.11%, 79.4%) 47.1%,
+		hsl(301.77, 36.06%, 78.94%) 52.9%,
+		hsl(310.05, 41.16%, 79.43%) 58.8%,
+		hsl(316.54, 45.95%, 79.87%) 64.7%,
+		hsl(321.61, 50.21%, 80.25%) 71%,
+		hsl(325.47, 53.77%, 80.56%) 77.5%,
+		hsl(328.24, 56.46%, 80.79%) 84.5%,
+		hsl(329.94, 58.16%, 80.93%) 91.9%,
+		hsl(330.53, 58.76%, 80.98%) 100%,
+	),
+	bg-action2: (
+		hsl(255.71, 45.65%, 81.96%) 0%,
+		hsl(257.14, 45.65%, 81.96%) 8.1%,
+		hsl(258.57, 45.65%, 81.96%) 15.5%,
+		hsl(263.72, 46.24%, 81.76%) 22.5%,
+		hsl(269.33, 48.39%, 81.76%) 29%,
+		hsl(275.22, 48.94%, 81.57%) 35.3%,
+		hsl(282.13, 50.54%, 81.76%) 41.2%,
+		hsl(290, 51.06%, 81.57%) 47.1%,
+		hsl(296.4, 53.19%, 81.57%) 52.9%,
+		hsl(303.53, 53.68%, 81.37%) 58.8%,
+		hsl(311.32, 55.79%, 81.37%) 64.7%,
+		hsl(317.78, 56.25%, 81.18%) 71%,
+		hsl(322.91, 56.7%, 80.98%) 77.5%,
+		hsl(326.79, 58.33%, 81.18%) 84.5%,
+		hsl(329.47, 58.76%, 80.98%) 91.9%,
+		hsl(330.53, 58.76%, 80.98%) 100%,
+	),
 );
 
 $margin-base-horizontal: 2rem;
+
+$easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$easeInQuint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$easeInSine: cubic-bezier(0.47, 0, 0.745, 0.715);
+$easeInExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$easeInCirc: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$easeInBack: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+$easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+$easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
+$easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$easeInOutQuart: cubic-bezier(0.77, 0, 0.275, 1);
+$easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+$easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$easeInOutExpo: cubic-bezier(1, 0, 0, 1);
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
