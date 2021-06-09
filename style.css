@@ -656,7 +656,7 @@ p {
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: #ccc;
+  background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
   border-radius: 50%;
   height: 7em;
   width: 7em;
@@ -665,6 +665,7 @@ p {
   align-items: center;
   display: flex;
   justify-content: center;
+  background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
   background-color: #fff;
   border-radius: 50%;
   height: 5.6em;

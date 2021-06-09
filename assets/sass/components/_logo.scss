@@ -3,12 +3,13 @@
 
 .logo {
 	@include center;
-	background-color: #ccc;
+	@include bg-gradient;
 	border-radius: 50%;
 	height: 7em;
 	width: 7em;
 	&__inner {
 		@include center;
+		@include bg-gradient;
 		background-color: #fff;
 		border-radius: 50%;
 		height: 5.6em;

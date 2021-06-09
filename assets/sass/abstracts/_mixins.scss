@@ -1,5 +1,11 @@
+@use '../abstracts/variables' as *;
+
 @mixin center {
 	align-items: center;
 	display: flex;
 	justify-content: center;
+}
+
+@mixin bg-gradient {
+	background: linear-gradient(to bottom right, map-get($colors, "bg-action"));
 }
