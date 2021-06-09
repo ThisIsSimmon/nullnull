@@ -11,12 +11,8 @@
 }
 
 @mixin shadow($name) {
-	// base-button
-	// action-button
-	// card
-	// input
-	@if "base-button" == $name {
-	} @else if "action-button" == $name {
+	@if "button-base" == $name {
+	} @else if "button-action" == $name {
 		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.12),
 			inset 2px 2px 4px rgba(255, 255, 255, 0.6),
 			inset -2px -2px 4px rgba(0, 0, 0, 0.1);
