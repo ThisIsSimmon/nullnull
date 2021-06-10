@@ -629,10 +629,36 @@ body {
   background-color: #e9ebf1;
 }
 
+ol,
+ul,
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+input[type=text],
+textarea {
+  background-color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+}
+
+button {
+  border: none;
+  padding: 0;
+}
+
+:focus,
+a:focus,
+button:focus {
+  outline: solid 2px #8e57a8;
+}
+
 html {
   color: #292d3d;
   font-size: 62.5%;
   font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "M PLUS Rounded 1c", "Hiragino Sans", "Noto Sans CJK JP", "Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+  font-weight: 400;
 }
 
 h1,
@@ -648,7 +674,6 @@ h6 {
 
 p {
   font-size: 1.6rem;
-  font-weight: 400;
   line-height: 1.75;
   letter-spacing: 0.01em;
 }
@@ -658,21 +683,22 @@ a {
 }
 
 a:hover {
-  color: #8e57a8;
-  text-decoration: underline;
+  color: currentColor;
+  text-decoration: none;
 }
 
-.logo {
+.header-logo {
   align-items: center;
   display: flex;
   justify-content: center;
   background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.12), inset 2px 2px 4px rgba(255, 255, 255, 0.6), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   height: 7em;
   margin-right: auto;
   width: 7em;
 }
-.logo__inner {
+.header-logo__inner {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -683,22 +709,85 @@ a:hover {
   transition: box-shadow 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   width: 5.6em;
 }
-.logo:hover .logo__inner {
+.header-logo:hover .header-logo__inner {
   box-shadow: none;
 }
-.logo__text {
+.header-logo__text {
   font-size: 1.1em;
   height: 2.2em;
   margin: 0.3em 0 0 0.3em;
   width: 2.6em;
 }
 
+.header-nav {
+  align-items: flex-end;
+  display: flex;
+  margin-bottom: 0.3em;
+}
+.header-nav__list {
+  display: flex;
+  column-gap: 3.8rem;
+  margin-right: 4.6rem;
+}
+.header-nav__link {
+  color: #292d3d;
+  display: inline-block;
+  font-size: 2.2rem;
+  font-weight: 500;
+  height: 1.8em;
+  letter-spacing: 0.2em;
+  line-height: 0.775;
+  position: relative;
+}
+.header-nav__link::after {
+  background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
+  bottom: 0;
+  border-radius: 2px;
+  content: "";
+  height: 4px;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  transform-origin: bottom right;
+  transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1), bottom 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: scaleX(0);
+  width: 100%;
+}
+.header-nav__link:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.header-search {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.header-search__field {
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.69), inset 2px 2px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 1.9rem;
+  font-size: 1.4rem;
+  height: 3.8rem;
+  width: 22rem;
+}
+.header-search__field::placeholder {
+  color: #8f93a3;
+  letter-spacing: 0.1em;
+}
+.header-search__submit-button {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .header {
   align-content: center;
   display: flex;
   justify-content: flex-end;
-  margin: 0 2rem;
-  max-width: 144rem;
+  margin: 2.7rem auto 0;
+  max-width: 148rem;
+  padding: 0 2rem;
   width: 100%;
 }
 

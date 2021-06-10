@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header-nav {
+	align-items: flex-end;
+	display: flex;
+	margin-bottom: 0.3em;
+	&__list {
+		display: flex;
+		column-gap: 3.8rem;
+		margin-right: 4.6rem;
+	}
+
+	&__link {
+		color: map-get($colors, "text-main");
+		display: inline-block;
+		font-size: 2.2rem;
+		font-weight: 500;
+		height: 1.8em;
+		letter-spacing: 0.2em;
+		line-height: 0.775;
+		position: relative;
+
+		&::after {
+			@include bg-gradient;
+			bottom: 0;
+			border-radius: 2px;
+			content: "";
+			height: 4px;
+			left: 0;
+			opacity: 1;
+			position: absolute;
+			transform-origin: bottom right;
+			transition: transform 0.6s $easeOutCirc, bottom 0.6s $easeOutCirc;
+			transform: scaleX(0);
+			width: 100%;
+		}
+
+		&:hover::after {
+			transform-origin: bottom left;
+			transform: scaleX(1);
+		}
+	}
+}

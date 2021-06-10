@@ -7,3 +7,28 @@ html {
 body {
 	background-color: map-get($colors, "bg-base");
 }
+
+ol,
+ul,
+dl {
+	margin: 0;
+	padding: 0;
+}
+
+input[type="text"],
+textarea {
+	background-color: #fff;
+	border: none;
+	padding: 1rem 2rem;
+}
+
+button {
+	border: none;
+	padding: 0;
+}
+
+:focus,
+a:focus,
+button:focus {
+	outline: solid 2px map-get($colors, "text-link");
+}

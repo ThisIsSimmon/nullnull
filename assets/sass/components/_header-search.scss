@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use "sass:math";
+
+.header-search {
+	align-items: center;
+	display: flex;
+	position: relative;
+
+	&__field {
+		@include shadow("input");
+		$height: 3.8rem;
+		border-radius: math.div($height, 2);
+		font-size: 1.4rem;
+		height: $height;
+		width: 22rem;
+
+		&::placeholder {
+			color: map-get($colors, "text-sub");
+			letter-spacing: 0.1em;
+		}
+	}
+
+	&__submit-button {
+		position: absolute;
+		right: 1.5rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}

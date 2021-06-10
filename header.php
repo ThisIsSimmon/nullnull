@@ -5,7 +5,7 @@
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/style.css?ver=<?php echo time(); ?>">
     <?php wp_head(); ?>
 </head>
@@ -15,24 +15,24 @@
     <header id="header" class="header">
         <!-- <div class="header__inner"> -->
 
-        <a href="/" class="logo">
-            <div class="logo__inner">
-                <svg viewbox="0 0 22 26" width="22" height="26" class="logo__text">
+        <a href="/" class="header-logo">
+            <div class="header-logo__inner">
+                <svg viewbox="0 0 22 26" width="22" height="26" class="header-logo__text">
                     <use xlink:href="#logo"></use>
                 </svg>
             </div>
         </a>
 
-        <nav class="global-nav">
-            <ul class="global-nav__list">
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/contact/">Contact</a></li>
+        <nav class="header-nav">
+            <ul class="header-nav__list">
+                <li><a href="/blog/" class="header-nav__link">Blog</a></li>
+                <li><a href="/contact/" class="header-nav__link">Contact</a></li>
             </ul>
         </nav>
 
-        <form action="/" method="get">
-            <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="Search" />
-            <button type="submit">
+        <form action="/" method="get" class="header-search">
+            <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="Search" class="header-search__field" />
+            <button type="submit" class="header-search__submit-button">
                 <svg viewbox="0 0 14 15" width="14" height="15">
                     <use xlink:href="#submit"></use>
                 </svg>
