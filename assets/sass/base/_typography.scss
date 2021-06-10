@@ -7,6 +7,7 @@ html {
 		Roboto, "M PLUS Rounded 1c", "Hiragino Sans", "Noto Sans CJK JP",
 		"Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji",
 		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+	font-weight: 400;
 }
 
 h1,
@@ -22,7 +23,6 @@ h6 {
 
 p {
 	font-size: 1.6rem;
-	font-weight: 400;
 	line-height: 1.75;
 	letter-spacing: 0.01em;
 }
@@ -32,6 +32,6 @@ a {
 }
 
 a:hover {
-	color: map-get($colors, "text-link");
-	text-decoration: underline;
+	color: currentColor;
+	text-decoration: none;
 }

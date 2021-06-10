@@ -1,11 +1,11 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.logo {
+.header-logo {
 	$this: &;
 	@include center;
 	@include bg-gradient;
-	@include shadow("action-button");
+	@include shadow("button-action");
 	border-radius: 50%;
 	height: 7em;
 	margin-right: auto;

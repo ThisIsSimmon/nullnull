@@ -42,7 +42,9 @@ $colors: (
 	),
 );
 
-$margin-base-horizontal: 2rem;
+$spacers: (
+	base-horizontal: 2rem,
+);
 
 $easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
