@@ -654,6 +654,12 @@ button:focus {
   outline: solid 2px #8e57a8;
 }
 
+/* Disable outline when mouse down */
+:focus[data-focus-method=mouse],
+:focus[data-focus-method=touch] {
+  outline: none;
+}
+
 html {
   color: #292d3d;
   font-size: 62.5%;
@@ -720,9 +726,12 @@ a:hover {
 }
 
 .header-nav {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
-  margin-bottom: 0.3em;
+}
+.header-nav__item {
+  display: flex;
+  align-items: center;
 }
 .header-nav__list {
   display: flex;
@@ -734,14 +743,22 @@ a:hover {
   display: inline-block;
   font-size: 2.2rem;
   font-weight: 500;
-  height: 1.8em;
+  height: 0.775em;
   letter-spacing: 0.2em;
   line-height: 0.775;
   position: relative;
 }
+.header-nav__link::before {
+  content: "";
+  height: 3em;
+  left: 0;
+  position: absolute;
+  top: -1em;
+  width: 100%;
+}
 .header-nav__link::after {
   background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
-  bottom: 0;
+  bottom: -1em;
   border-radius: 2px;
   content: "";
   height: 4px;
@@ -751,7 +768,7 @@ a:hover {
   transform-origin: bottom right;
   transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1), bottom 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: scaleX(0);
-  width: 100%;
+  width: calc(100% - 0.2em);
 }
 .header-nav__link:hover::after {
   transform-origin: bottom left;
@@ -779,6 +796,9 @@ a:hover {
   right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
+}
+.header-search__submit-button > svg {
+  pointer-events: none;
 }
 
 .header {

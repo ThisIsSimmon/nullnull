@@ -32,3 +32,9 @@ a:focus,
 button:focus {
 	outline: solid 2px map-get($colors, "text-link");
 }
+
+/* Disable outline when mouse down */
+:focus[data-focus-method="mouse"],
+:focus[data-focus-method="touch"] {
+	outline: none;
+}

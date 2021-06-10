@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/style.css?ver=<?php echo time(); ?>">
+
     <?php wp_head(); ?>
 </head>
 
@@ -25,8 +26,8 @@
 
         <nav class="header-nav">
             <ul class="header-nav__list">
-                <li><a href="/blog/" class="header-nav__link">Blog</a></li>
-                <li><a href="/contact/" class="header-nav__link">Contact</a></li>
+                <li class="header-nav__item"><a href="/blog/" class="header-nav__link">Blog</a></li>
+                <li class="header-nav__item"><a href="/contact/" class="header-nav__link">Contact</a></li>
             </ul>
         </nav>
 

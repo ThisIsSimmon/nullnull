@@ -2,9 +2,14 @@
 @use '../abstracts/mixins' as *;
 
 .header-nav {
-	align-items: flex-end;
+	align-items: center;
 	display: flex;
-	margin-bottom: 0.3em;
+
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+
 	&__list {
 		display: flex;
 		column-gap: 3.8rem;
@@ -12,18 +17,26 @@
 	}
 
 	&__link {
+		$letter-spacing: 0.2em;
 		color: map-get($colors, "text-main");
 		display: inline-block;
 		font-size: 2.2rem;
 		font-weight: 500;
-		height: 1.8em;
-		letter-spacing: 0.2em;
+		height: 0.775em;
+		letter-spacing: $letter-spacing;
 		line-height: 0.775;
 		position: relative;
-
+		&::before {
+			content: "";
+			height: 3em;
+			left: 0;
+			position: absolute;
+			top: -1em;
+			width: 100%;
+		}
 		&::after {
 			@include bg-gradient;
-			bottom: 0;
+			bottom: -1em;
 			border-radius: 2px;
 			content: "";
 			height: 4px;
@@ -33,7 +46,7 @@
 			transform-origin: bottom right;
 			transition: transform 0.6s $easeOutCirc, bottom 0.6s $easeOutCirc;
 			transform: scaleX(0);
-			width: 100%;
+			width: calc(100% - #{$letter-spacing});
 		}
 
 		&:hover::after {
