@@ -27,14 +27,20 @@ button {
 	padding: 0;
 }
 
-:focus,
-a:focus,
-button:focus {
-	outline: solid 2px map-get($colors, "text-link");
-}
+// :focus,
+// a:focus,
+// button:focus {
+// 	outline: solid 2px map-get($colors, "text-link");
+// }
 
 /* Disable outline when mouse down */
-:focus[data-focus-method="mouse"],
-:focus[data-focus-method="touch"] {
+.js-focus-visible:focus:not(.focus-visible),
+[data-js-focus-visible]:focus:not([data-focus-visible-added]),
+:focus:not(:focus-visible) {
 	outline: none;
+}
+
+:focus,
+:focus-visible {
+	outline: solid 2px map-get($colors, "text-link");
 }

@@ -648,16 +648,16 @@ button {
   padding: 0;
 }
 
-:focus,
-a:focus,
-button:focus {
-  outline: solid 2px #8e57a8;
+/* Disable outline when mouse down */
+.js-focus-visible:focus:not(.focus-visible),
+[data-js-focus-visible]:focus:not([data-focus-visible-added]),
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
-/* Disable outline when mouse down */
-:focus[data-focus-method=mouse],
-:focus[data-focus-method=touch] {
-  outline: none;
+:focus,
+:focus-visible {
+  outline: solid 2px #8e57a8;
 }
 
 html {
