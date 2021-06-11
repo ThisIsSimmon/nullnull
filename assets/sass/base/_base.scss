@@ -16,9 +16,12 @@ dl {
 }
 
 input[type="text"],
+input[type="search"],
 textarea {
 	background-color: #fff;
 	border: none;
+	box-sizing: border-box;
+	caret-color: map-get($colors, "text-link");
 	padding: 1rem 2rem;
 }
 
@@ -27,12 +30,6 @@ button {
 	padding: 0;
 }
 
-// :focus,
-// a:focus,
-// button:focus {
-// 	outline: solid 2px map-get($colors, "text-link");
-// }
-
 /* Disable outline when mouse down */
 .js-focus-visible:focus:not(.focus-visible),
 [data-js-focus-visible]:focus:not([data-focus-visible-added]),
@@ -40,7 +37,14 @@ button {
 	outline: none;
 }
 
-:focus,
+:focus {
+	outline: map-get($colors, "text-link") solid 2px;
+}
+
 :focus-visible {
-	outline: solid 2px map-get($colors, "text-link");
+	outline: map-get($colors, "text-link") solid 2px;
+}
+
+a:focus {
+	outline: map-get($colors, "text-link") solid 2px;
 }
