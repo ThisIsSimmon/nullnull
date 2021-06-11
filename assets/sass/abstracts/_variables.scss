@@ -42,10 +42,6 @@ $colors: (
 	),
 );
 
-$spacers: (
-	base-horizontal: 2rem,
-);
-
 $easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 $easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -70,3 +66,10 @@ $easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 $easeInOutExpo: cubic-bezier(1, 0, 0, 1);
 $easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+$spacers: (
+	base-horizontal: 2rem,
+);
+
+$heading-line-height: 1.5;
+$text-line-height: 1.75;

@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as *;
+
+.tag-list {
+	display: flex;
+	list-style-type: none;
+	&__item {
+	}
+
+	&__link {
+		@include shadow("button-base");
+		border-radius: 0.6rem;
+		display: block;
+		font-size: 1.2rem;
+		font-weight: 400;
+		letter-spacing: 0.1em;
+		margin-right: 1rem;
+		padding: 0.448em 1.243em;
+	}
+}

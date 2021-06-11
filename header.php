@@ -70,5 +70,3 @@
             </symbol>
 
         </svg>
-
-        <p>あああああContact今何時ですか？感じでどうでしょう。Googleが提供する</p>
