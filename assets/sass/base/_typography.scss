@@ -1,5 +1,5 @@
 @use '../abstracts/variables' as *;
-
+@use '../abstracts/mixins' as *;
 html {
 	color: map-get($colors, "text-main");
 	font-size: 62.5%;
@@ -16,14 +16,15 @@ h3,
 h4,
 h5,
 h6 {
+	@include line-height-crop($heading-line-height, 1, top);
 	font-weight: 700;
 	letter-spacing: 0.05em;
-	line-height: 1.5;
+	line-height: $heading-line-height;
 }
 
 p {
 	font-size: 1.6rem;
-	line-height: 1.75;
+	line-height: $text-line-height;
 	letter-spacing: 0.01em;
 }
 

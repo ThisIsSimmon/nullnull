@@ -1,0 +1,36 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../components/tag-list';
+
+.blog-card {
+	@include shadow("card");
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 2rem 4rem 2rem 2rem;
+
+	&__header {
+		margin-bottom: auto;
+	}
+
+	&__title {
+		font-size: 1.6rem;
+
+		& > a {
+			color: map-get($colors, "text-main");
+			display: inline-block;
+			&:hover {
+				// text-decoration: underline;
+			}
+		}
+	}
+
+	&__date {
+		color: map-get($colors, "text-sub");
+		font-size: 1.4rem;
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: 0.1em;
+	}
+}
