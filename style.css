@@ -929,4 +929,25 @@ a:hover {
   margin-top: 12.5rem;
 }
 
+.pagination {
+  column-gap: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 4em);
+  grid-template-rows: 4em;
+  justify-content: center;
+  margin-top: 6rem;
+}
+.pagination > .page-numbers {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  color: #292d3d;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.pagination > .page-numbers:not(.current) {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+}
+
 /*# sourceMappingURL=style.css.map */
