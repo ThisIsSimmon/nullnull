@@ -45,6 +45,7 @@ button {
 	outline: map-get($colors, "text-link") solid 2px;
 }
 
-a:focus {
+a:focus,
+button:focus {
 	outline: map-get($colors, "text-link") solid 2px;
 }

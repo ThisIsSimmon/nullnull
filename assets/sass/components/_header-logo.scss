@@ -1,5 +1,6 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
+@use 'sass:math';
 
 .header-logo {
 	$this: &;
@@ -19,18 +20,27 @@
 			inset -0.1em -0.1em 0.3em rgba(255, 255, 255, 0.3),
 			inset 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.12);
 		height: 5.6em;
+		position: relative;
 		transition: box-shadow 0.3s $easeInQuad;
 		width: 5.6em;
 
 		#{$this}:hover & {
 			box-shadow: none;
 		}
-	}
 
-	&__text {
-		font-size: 1em;
-		height: 2.3em;
-		margin: 0.3em 0 0 0.4em;
-		width: 2.5em;
+		&::before {
+			$mag: 10;
+			background-image: url("#{$image-path}/header/logo-text.svg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			content: "";
+			font-size: #{$mag}em;
+			height: 2.5em;
+			margin: 0.025em 0 0 0.025em;
+			position: absolute;
+			transform: scale(math.div(1, $mag));
+			width: 2.3em;
+		}
 	}
 }
