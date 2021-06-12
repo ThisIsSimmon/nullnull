@@ -830,9 +830,6 @@ a:hover {
   top: 50%;
   transform: translateY(-50%);
 }
-.header-search__submit-button > svg {
-  pointer-events: none;
-}
 
 .header {
   align-content: center;
