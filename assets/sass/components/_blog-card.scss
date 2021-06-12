@@ -1,6 +1,7 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 @use '../components/tag-list';
+@use 'sass:math';
 
 .blog-card {
 	@include shadow("card");
@@ -13,15 +14,19 @@
 	position: relative;
 
 	&::before {
+		// Safariでsvgがぼやける対策
+		$mag: 10;
 		background-image: url("#{$image-path}post/archive-blob.svg");
 		background-repeat: no-repeat;
-		bottom: -5.9em;
+		background-size: 9.309em 8.68em;
+		bottom: -4.44em;
 		content: "";
-		height: 12.4em;
+		font-size: #{$mag}rem;
+		height: 8.68em;
 		position: absolute;
-		right: -6.5em;
-		transform: scale(0.7);
-		width: 13.3em;
+		right: -4.6em;
+		transform: scale(math.div(1, $mag));
+		width: 9.309em;
 	}
 
 	// @for $i from 2 through 9 {
@@ -40,7 +45,7 @@
 		& > a {
 			@include line-clamp(3);
 			color: map-get($colors, "text-main");
-			max-height: ($heading-line-height * 3 - 0.3em);
+			max-height: ($heading-line-height * 3 - 0.2em);
 			&:hover {
 				// text-decoration: underline;
 			}

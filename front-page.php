@@ -21,9 +21,5 @@
     <?php endforeach; ?>
 </section>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 133 124" width="133" height="124">
-    <use href="#bbb"></use>
-
-</svg>
 
 <?php get_footer(); ?>
