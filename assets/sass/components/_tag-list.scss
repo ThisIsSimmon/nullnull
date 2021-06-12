@@ -3,6 +3,10 @@
 .tag-list {
 	display: flex;
 	list-style-type: none;
+	&--blog-card {
+		margin-top: 1rem;
+	}
+
 	&__item {
 	}
 

@@ -8,7 +8,27 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	overflow: hidden;
 	padding: 2rem 4rem 2rem 2rem;
+	position: relative;
+
+	&::before {
+		background-image: url("#{$image-path}post/archive-blob.svg");
+		background-repeat: no-repeat;
+		bottom: -5.9em;
+		content: "";
+		height: 12.4em;
+		position: absolute;
+		right: -6.5em;
+		transform: scale(0.7);
+		width: 13.3em;
+	}
+
+	// @for $i from 2 through 9 {
+	// 	&:nth-of-type(#{$i})::before {
+	// 		transform: rotate($i * 45deg);
+	// 	}
+	// }
 
 	&__header {
 		margin-bottom: auto;
@@ -18,8 +38,9 @@
 		font-size: 1.6rem;
 
 		& > a {
+			@include line-clamp(3);
 			color: map-get($colors, "text-main");
-			display: inline-block;
+			max-height: ($heading-line-height * 3 - 0.3em);
 			&:hover {
 				// text-decoration: underline;
 			}

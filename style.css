@@ -666,7 +666,8 @@ button {
   outline: #8e57a8 solid 2px;
 }
 
-a:focus {
+a:focus,
+button:focus {
   outline: #8e57a8 solid 2px;
 }
 
@@ -845,6 +846,9 @@ a:hover {
   display: flex;
   list-style-type: none;
 }
+.tag-list--blog-card {
+  margin-top: 1rem;
+}
 .tag-list__link {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 0.6rem;
@@ -862,7 +866,20 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: hidden;
   padding: 2rem 4rem 2rem 2rem;
+  position: relative;
+}
+.blog-card::before {
+  background-image: url("assets/img/dist/post/archive-blob.svg");
+  background-repeat: no-repeat;
+  bottom: -5.9em;
+  content: "";
+  height: 12.4em;
+  position: absolute;
+  right: -6.5em;
+  transform: scale(0.7);
+  width: 13.3em;
 }
 .blog-card__header {
   margin-bottom: auto;
@@ -871,8 +888,12 @@ a:hover {
   font-size: 1.6rem;
 }
 .blog-card__title > a {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   color: #292d3d;
-  display: inline-block;
+  max-height: 4.2em;
 }
 .blog-card__date {
   color: #8f93a3;

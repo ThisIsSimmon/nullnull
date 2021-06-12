@@ -5,18 +5,25 @@
     <?php foreach (range(1, 8) as $i) : ?>
         <article class="blog-card">
             <header class="blog-card__header">
-                <h2 class="blog-card__title"><a href="">2020年に最適なfont-familyの書き方</a></h2>
+                <h2 class="blog-card__title"><a href="">2020年に最適なfont-familyの書き方2020年に最適なfont-familyの書き方2020年に最適なfont-familyの書き方</a></h2>
             </header>
 
             <time datetime="" class="blog-card__date">2021/04/11</time>
-            <ul class="tag-list">
+            <ul class="tag-list tag-list--blog-card">
                 <li class="tag-list__item"><a href="" class="tag-list__link">HTML</a></li>
                 <li class="tag-list__item"><a href="" class="tag-list__link">CSS</a></li>
                 <li class="tag-list__item"><a href="" class="tag-list__link">ビジネス</a></li>
             </ul>
         </article>
 
+
+
     <?php endforeach; ?>
 </section>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 133 124" width="133" height="124">
+    <use href="#bbb"></use>
+
+</svg>
 
 <?php get_footer(); ?>
