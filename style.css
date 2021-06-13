@@ -753,7 +753,7 @@ a:hover {
   position: relative;
 }
 .blog-card::before {
-  background-image: url("assets/img/dist/post/archive-blob.svg");
+  background-image: url("assets/img/dist/archive/blog_card_blob.svg");
   background-repeat: no-repeat;
   background-size: 9.309em 8.68em;
   bottom: -4.44em;
@@ -795,7 +795,8 @@ a:hover {
   margin-top: 1rem;
 }
 .tag-list__link {
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   border-radius: 0.6rem;
   display: block;
   font-size: 1.2rem;
@@ -804,6 +805,9 @@ a:hover {
   line-height: 1;
   margin-right: 1rem;
   padding: 0.6em 1.243em 0.4em;
+}
+.tag-list__link:hover {
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 }
 
 .pagination {
@@ -824,8 +828,28 @@ a:hover {
   font-weight: 700;
 }
 .pagination > .page-numbers:not(.current) {
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+.pagination > .page-numbers:not(.current):hover {
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+}
+.pagination > .page-numbers.current {
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+}
+.pagination > .page-numbers.prev, .pagination > .page-numbers.next {
+  background-repeat: no-repeat;
+  background-size: 0.3636363636em, 0.5454545455em;
+}
+.pagination > .page-numbers.prev {
+  background-image: url("assets/img/dist/archive/pagination_prev.svg");
+  background-position: left 0.7em center;
+}
+.pagination > .page-numbers.next {
+  background-image: url("assets/img/dist/archive/pagination_next.svg");
+  background-position: right 0.7em center;
+}
+
 .header {
   align-content: center;
   display: flex;
@@ -863,7 +887,7 @@ a:hover {
   box-shadow: none;
 }
 .header-logo__inner::before {
-  background-image: url("assets/img/dist//header/logo-text.svg");
+  background-image: url("assets/img/dist/header/logo_text.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

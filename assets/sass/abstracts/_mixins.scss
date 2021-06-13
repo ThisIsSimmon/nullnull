@@ -11,10 +11,21 @@
 }
 
 @mixin shadow($name) {
+	$press-button-base: 1px 1px 2px rgba(255, 255, 255, 0.9),
+		-1px -1px 2px rgba(0, 0, 0, 0.1),
+		inset -2px -2px 4px rgba(255, 255, 255, 0.9),
+		inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+
 	@if "button-base" == $name {
-		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1),
+		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px transparent,
 			inset 2px 2px 4px rgba(255, 255, 255, 0.9),
 			inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+		transition: box-shadow 0.6s $easeOutCirc;
+		&:hover {
+			box-shadow: $press-button-base;
+		}
+	} @else if "press-button-base" == $name {
+		box-shadow: $press-button-base;
 	} @else if "button-action" == $name {
 		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.12),
 			inset 2px 2px 4px rgba(255, 255, 255, 0.6),

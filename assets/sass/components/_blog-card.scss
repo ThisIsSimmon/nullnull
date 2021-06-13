@@ -14,7 +14,7 @@
 	&::before {
 		// Safariでsvgがぼやける対策
 		$mag: 10;
-		background-image: url("#{$image-path}post/archive-blob.svg");
+		background-image: url("#{$image-dir}/archive/blog_card_blob.svg");
 		background-repeat: no-repeat;
 		background-size: 9.309em 8.68em;
 		bottom: -4.44em;
@@ -26,12 +26,6 @@
 		transform: scale(math.div(1, $mag));
 		width: 9.309em;
 	}
-
-	// @for $i from 2 through 9 {
-	// 	&:nth-of-type(#{$i})::before {
-	// 		transform: rotate($i * 45deg);
-	// 	}
-	// }
 
 	&__header {
 		margin-bottom: auto;
