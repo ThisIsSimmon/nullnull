@@ -1,5 +1,4 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts/' as *;
 @use 'sass:math';
 
 .header-logo {
@@ -30,7 +29,7 @@
 
 		&::before {
 			$mag: 10;
-			background-image: url("#{$image-path}/header/logo-text.svg");
+			background-image: url("#{$image-dir}/header/logo_text.svg");
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;

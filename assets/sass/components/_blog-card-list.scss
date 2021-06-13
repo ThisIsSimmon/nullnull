@@ -1,7 +1,6 @@
-@use '../abstracts/variables' as *;
-@use '../components/blog-card';
+@use '../abstracts/' as *;
 
-.grid-blog {
+.blog-card-list {
 	display: grid;
 	gap: 2rem;
 	grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));

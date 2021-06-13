@@ -1,7 +1,4 @@
-@use '../abstracts/variables' as *;
-@use '../components/header-logo';
-@use '../components/header-nav';
-@use '../components/header-search';
+@use '../abstracts/' as *;
 
 .header {
 	align-content: center;

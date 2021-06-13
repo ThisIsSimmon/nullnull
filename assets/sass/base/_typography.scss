@@ -1,5 +1,5 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts/' as *;
+
 html {
 	color: map-get($colors, "text-main");
 	font-size: 62.5%;
