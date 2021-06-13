@@ -1,8 +1,3 @@
-@use './base/stylesheet-header';
-@use './base/reseter';
-@use './base/base';
-@use './base/typography';
-@use './abstracts/utilities';
-@use './layout/header';
-@use './layout/grid';
-@use './components/pagination';
+@use './base';
+@use './components';
+@use './layout';

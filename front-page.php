@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <h1 class="visually-hidden">NullNull</h1>
 
-<section class="grid-blog grid-blog--home">
+<section class="blog-card-list blog-card-list--home">
     <?php foreach (range(1, 8) as $i) : ?>
         <article class="blog-card">
             <header class="blog-card__header">
