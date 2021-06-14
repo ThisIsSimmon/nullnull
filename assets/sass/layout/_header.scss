@@ -1,11 +1,14 @@
 @use '../abstracts/' as *;
 
 .header {
-	align-content: center;
+	align-items: center;
 	display: flex;
 	justify-content: flex-end;
 	margin: 2.7rem auto 0;
 	max-width: 144rem + (map-get($spacers, "base-horizontal") * 2);
 	padding: 0 map-get($spacers, "base-horizontal");
 	width: 100%;
+	@include mq(mobile) {
+		margin: 2rem auto 0;
+	}
 }

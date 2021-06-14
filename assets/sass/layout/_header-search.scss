@@ -6,6 +6,10 @@
 	display: flex;
 	position: relative;
 
+	@include mq(mobile) {
+		display: none;
+	}
+
 	&__field {
 		@include shadow("input");
 		$height: 3.8rem;

@@ -13,7 +13,6 @@
 <body <?php body_class(); ?> data-barba="wrapper">
 
     <header id="header" class="header">
-        <!-- <div class="header__inner"> -->
 
         <a href="/" class="header-logo">
             <div class="header-logo__inner"></div>
@@ -35,7 +34,12 @@
             </button>
         </form>
 
-        <!-- </div> -->
+        <button type="button" class="menu-open">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </header>
 
 
