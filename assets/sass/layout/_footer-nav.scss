@@ -1,0 +1,21 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.footer-nav {
+	$font-size: 20;
+	$letter-spacing: 0.2;
+	&__list {
+		display: grid;
+		column-gap: 6rem - ($font-size * $letter-spacing * 1.5) * 0.1rem;
+		grid-template-columns: repeat(auto-fit, minmax(1rem, max-content));
+		justify-content: center;
+	}
+
+	&__link {
+		@include quicksand-one-line;
+		color: map-get($colors, "text-main");
+		font-size: math.div($font-size, 10) + 0rem;
+		font-weight: 500;
+		letter-spacing: $letter-spacing + 0em;
+	}
+}

@@ -16,14 +16,12 @@
 	}
 
 	&__link {
+		@include quicksand-one-line;
 		$letter-spacing: 0.2em;
 		color: map-get($colors, "text-main");
-		display: inline-block;
 		font-size: 2.2rem;
 		font-weight: 500;
-		height: 0.775em;
 		letter-spacing: $letter-spacing;
-		line-height: 0.775;
 		position: relative;
 		&::before {
 			content: "";
