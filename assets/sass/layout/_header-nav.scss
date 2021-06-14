@@ -4,6 +4,10 @@
 	align-items: center;
 	display: flex;
 
+	@include mq(mobile) {
+		display: none;
+	}
+
 	&__item {
 		display: flex;
 		align-items: center;

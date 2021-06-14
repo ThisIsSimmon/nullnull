@@ -677,6 +677,11 @@ html {
   font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "M PLUS Rounded 1c", "Hiragino Sans", "Noto Sans CJK JP", "Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
   font-weight: 400;
 }
+@media (max-width: 48em) {
+  html {
+    font-size: calc(100vw / 40);
+  }
+}
 
 h1,
 h2,
@@ -851,13 +856,18 @@ a:hover {
 }
 
 .header {
-  align-content: center;
+  align-items: center;
   display: flex;
   justify-content: flex-end;
   margin: 2.7rem auto 0;
   max-width: 148rem;
   padding: 0 2rem;
   width: 100%;
+}
+@media (max-width: 48em) {
+  .header {
+    margin: 2rem auto 0;
+  }
 }
 
 .header-logo {
@@ -871,13 +881,18 @@ a:hover {
   margin-right: auto;
   width: 7em;
 }
+@media (max-width: 48em) {
+  .header-logo {
+    font-size: 0.7392857143rem;
+  }
+}
 .header-logo__inner {
   align-items: center;
   display: flex;
   justify-content: center;
   background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
   border-radius: 50%;
-  box-shadow: 0.2em 0.2em 0.4em rgba(255, 255, 255, 0.3), -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.1), inset -0.1em -0.1em 0.3em rgba(255, 255, 255, 0.3), inset 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -1px -1px 3px rgba(255, 255, 255, 0.3), inset 2px 2px 3px rgba(0, 0, 0, 0.12);
   height: 5.6em;
   position: relative;
   transition: box-shadow 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
@@ -899,10 +914,20 @@ a:hover {
   transform: scale(0.1);
   width: 2.3em;
 }
+@media (max-width: 48em) {
+  .header-logo__inner::before {
+    margin: 0.01em 0 0 0.01em;
+  }
+}
 
 .header-nav {
   align-items: center;
   display: flex;
+}
+@media (max-width: 48em) {
+  .header-nav {
+    display: none;
+  }
 }
 .header-nav__item {
   display: flex;
@@ -953,6 +978,11 @@ a:hover {
   align-items: center;
   display: flex;
   position: relative;
+}
+@media (max-width: 48em) {
+  .header-search {
+    display: none;
+  }
 }
 .header-search__field {
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.69), inset 2px 2px 3px rgba(0, 0, 0, 0.12);
@@ -1039,6 +1069,44 @@ a:hover {
 }
 .sns__button--email {
   background-image: url("assets/img/dist/profile/sns/email.svg");
+}
+
+.menu-open {
+  align-items: flex-end;
+  display: none;
+  flex-direction: column;
+  height: 2.3188405797rem;
+  justify-content: space-between;
+  width: 3.2850241546rem;
+}
+@media (max-width: 48em) {
+  .menu-open {
+    display: flex;
+  }
+}
+.menu-open > span {
+  background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
+  border-radius: 1.5px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.14), inset 1px 1px 1px rgba(255, 255, 255, 0.3), inset -1px -1px 1px rgba(0, 0, 0, 0.05);
+  height: 3px;
+  transition-duration: 0.6s;
+  transition-property: width;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 100%;
+}
+.menu-open > span:nth-of-type(1) {
+  transition-delay: 0.1s;
+}
+.menu-open > span:nth-of-type(2) {
+  transition-delay: 0.05s;
+  width: 70%;
+}
+.menu-open > span:nth-of-type(3) {
+  transition-delay: 0s;
+  width: 40%;
+}
+.menu-open.active > span {
+  width: 0%;
 }
 
 /*# sourceMappingURL=style.css.map */

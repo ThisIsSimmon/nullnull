@@ -90,3 +90,15 @@
 		overflow: hidden;
 	}
 }
+
+@mixin mq($breakpoint: "mobile") {
+	@if "mobile" == $breakpoint {
+		@media (max-width: 48em) {
+			@content;
+		}
+	} @else {
+		@media (max-width: ($breakpoint/16*1em)) {
+			@content;
+		}
+	}
+}
