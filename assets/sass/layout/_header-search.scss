@@ -11,7 +11,7 @@
 	}
 
 	&__field {
-		@include shadow("input");
+		@include shadow(input);
 		$height: 3.8rem;
 		border-radius: math.div($height, 2);
 		font-size: 1.4rem;
@@ -19,7 +19,7 @@
 		width: 22rem;
 
 		&::placeholder {
-			color: map-get($colors, "text-sub");
+			color: map-get($colors, text-sub);
 			letter-spacing: 0.1em;
 		}
 	}

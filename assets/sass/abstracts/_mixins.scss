@@ -7,7 +7,7 @@
 }
 
 @mixin bg-gradient {
-	background: linear-gradient(to bottom right, map-get($colors, "bg-action"));
+	background: linear-gradient(to bottom right, map-get($colors, bg-action));
 }
 
 @mixin shadow($name) {
@@ -16,7 +16,7 @@
 		inset -2px -2px 4px rgba(255, 255, 255, 0.9),
 		inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 
-	@if "button-base" == $name {
+	@if button-base == $name {
 		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px transparent,
 			inset 2px 2px 4px rgba(255, 255, 255, 0.9),
 			inset -2px -2px 4px rgba(0, 0, 0, 0.05);
@@ -24,22 +24,22 @@
 		&:hover {
 			box-shadow: $press-button-base;
 		}
-	} @else if "press-button-base" == $name {
+	} @else if press-button-base == $name {
 		box-shadow: $press-button-base;
-	} @else if "button-action" == $name {
+	} @else if button-action == $name {
 		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.12),
 			inset 2px 2px 4px rgba(255, 255, 255, 0.6),
 			inset -2px -2px 4px rgba(0, 0, 0, 0.1);
-	} @else if "card" == $name {
+	} @else if card == $name {
 		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1),
 			inset 4px 4px 8px rgba(255, 255, 255, 0.6),
 			inset -4px -4px 8px rgba(0, 0, 0, 0.05);
-	} @else if "input" == $name {
+	} @else if input == $name {
 		box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69),
 			-1px -1px 2px rgba(0, 0, 0, 0.1),
 			inset -2px -2px 3px rgba(255, 255, 255, 0.69),
 			inset 2px 2px 3px rgba(0, 0, 0, 0.12);
-	} @else if "hr" == $name {
+	} @else if hr == $name {
 		box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69),
 			-1px -1px 2px rgba(0, 0, 0, 0.1),
 			inset -1px -1px 2px rgba(255, 255, 255, 0.69),
@@ -52,7 +52,7 @@
 	line-height: 0.775;
 }
 
-@mixin line-height-crop($line-height, $capital-letter: 1, $position: "both") {
+@mixin line-height-crop($line-height, $capital-letter: 1, $position: both) {
 	@if both == $position or top == $position {
 		&::before {
 			content: "";
@@ -91,8 +91,8 @@
 	}
 }
 
-@mixin mq($breakpoint: "mobile") {
-	@if "mobile" == $breakpoint {
+@mixin mq($breakpoint: mobile) {
+	@if mobile == $breakpoint {
 		@media (max-width: 48em) {
 			@content;
 		}

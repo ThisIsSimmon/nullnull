@@ -5,7 +5,7 @@ html {
 }
 
 body {
-	background-color: map-get($colors, "bg-base");
+	background-color: map-get($colors, bg-base);
 }
 
 ol,
@@ -21,7 +21,7 @@ textarea {
 	background-color: #fff;
 	border: none;
 	box-sizing: border-box;
-	caret-color: map-get($colors, "text-link");
+	caret-color: map-get($colors, text-link);
 	padding: 1rem 2rem;
 }
 
@@ -38,14 +38,14 @@ button {
 }
 
 :focus {
-	outline: map-get($colors, "text-link") solid 2px;
+	outline: map-get($colors, text-link) solid 2px;
 }
 
 :focus-visible {
-	outline: map-get($colors, "text-link") solid 2px;
+	outline: map-get($colors, text-link) solid 2px;
 }
 
 a:focus,
 button:focus {
-	outline: map-get($colors, "text-link") solid 2px;
+	outline: map-get($colors, text-link) solid 2px;
 }

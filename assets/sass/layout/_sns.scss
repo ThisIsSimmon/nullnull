@@ -9,7 +9,7 @@
 	margin-top: 6rem;
 
 	&__button {
-		@include shadow("button-base");
+		@include shadow(button-base);
 		background-position: center;
 		background-repeat: no-repeat;
 		border-radius: 50%;

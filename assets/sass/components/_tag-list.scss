@@ -11,7 +11,7 @@
 	}
 
 	&__link {
-		@include shadow("button-base");
+		@include shadow(button-base);
 		border-radius: 0.6rem;
 		display: block;
 		font-size: 1.2rem;

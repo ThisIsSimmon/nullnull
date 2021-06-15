@@ -1,0 +1,21 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.menu {
+	background-color: map-get($colors, text-sub);
+	display: none;
+	height: 100vh;
+	left: 0;
+	// opacity: 0.9;
+	padding: math.div(12, 1.035) + 0rem math.div(4, 1.035) + 0rem 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: map-get($layer, menu);
+
+	&.active {
+		@include mq(mobile) {
+			display: block;
+		}
+	}
+}

@@ -26,7 +26,7 @@
         </nav>
 
         <form action="/" method="get" class="header-search">
-            <input type="search" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="Search" class="header-search__field" />
+            <input type="search" name="s" value="<?php the_search_query(); ?>" placeholder="Search" class="header-search__field" />
             <button type="submit" class="header-search__submit-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 14 15" width="14" height="15">
                     <use href="#submit" />
@@ -34,11 +34,39 @@
             </button>
         </form>
 
-        <button type="button" class="menu-open">
+        <button type="button" id="js-menu-open" class="menu-open">
             <span></span>
             <span></span>
             <span></span>
         </button>
+
+        <div id="js-menu" class="menu">
+            <button type="button" id="js-menu-close" class="menu-close">
+                <span></span>
+                <span></span>
+            </button>
+
+            <form action="/" method="get" class="menu-search">
+                <input type="search" name="s" value="<?php the_search_query(); ?>" placeholder="Search" class="menu-search__field" />
+                <button type="submit" class="menu-search__submit-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 14 15" width="14" height="15">
+                        <use href="#submit" />
+                    </svg>
+                </button>
+            </form>
+
+            <nav class="menu-nav">
+                <ul class="menu-nav__list">
+                    <li class="menu-nav__item"><a href="/blog/" class="menu-nav__link">Blog</a></li>
+                    <li class="menu-nav__item"><a href="/contact/" class="menu-nav__link">Contact</a></li>
+                    <li class="menu-nav__item"><a href="/privacy/" class="menu-nav__link">Privacy</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-sns">
+                <a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="menu-sns__button menu-sns__button--twitter"></a>
+            </div>
+        </div>
 
     </header>
 

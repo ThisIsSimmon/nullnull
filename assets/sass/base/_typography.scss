@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 html {
-	color: map-get($colors, "text-main");
+	color: map-get($colors, text-main);
 	font-size: 62.5%;
 	font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, "M PLUS Rounded 1c", "Hiragino Sans", "Noto Sans CJK JP",
@@ -32,7 +32,7 @@ p {
 }
 
 a {
-	color: map-get($colors, "text-link");
+	color: map-get($colors, text-link);
 }
 
 a:hover {
