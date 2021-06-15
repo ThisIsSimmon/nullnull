@@ -1,0 +1,33 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.menu-close {
+	display: none;
+
+	@include mq(mobile) {
+		@include center;
+		height: math.div(3, 1.035) + 0rem;
+		position: absolute;
+		right: math.div(2, 1.035) + 0rem;
+		top: math.div(3.35, 1.035) + 0rem;
+		width: math.div(3, 1.035) + 0rem;
+	}
+
+	& > span {
+		background-color: #fff;
+		border-radius: 1.5px;
+		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15),
+			inset 1px 1px 1px rgba(255, 255, 255, 0.1),
+			inset -1px -1px 1px rgba(0, 0, 0, 0.2);
+		height: 3px;
+		position: absolute;
+		width: 100%;
+
+		&:nth-of-type(1) {
+			transform: rotate(-45deg);
+		}
+		&:nth-of-type(2) {
+			transform: rotate(45deg);
+		}
+	}
+}
