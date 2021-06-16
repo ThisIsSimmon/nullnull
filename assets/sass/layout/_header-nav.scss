@@ -45,7 +45,8 @@
 			opacity: 1;
 			position: absolute;
 			transform-origin: bottom right;
-			transition: transform 0.6s $easeOutCirc, bottom 0.6s $easeOutCirc;
+			transition: transform 0.6s map-get($easing-functions, easeOutCirc),
+				bottom 0.6s map-get($easing-functions, easeOutCirc);
 			transform: scaleX(0);
 			width: calc(100% - #{$letter-spacing});
 		}

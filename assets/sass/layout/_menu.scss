@@ -2,20 +2,70 @@
 @use 'sass:math';
 
 .menu {
+	// animation: menu-close 1.3s map-get($easing-functions, easeOutCirc) 0.2s
+	// 	backwards;
 	background-color: map-get($colors, text-sub);
+	border-radius: 0;
 	display: none;
 	height: 100vh;
-	left: 0;
-	// opacity: 0.9;
-	padding: math.div(12, 1.035) + 0rem math.div(4, 1.035) + 0rem 0;
 	position: fixed;
+	right: 0;
 	top: 0;
-	width: 100%;
+	width: 100vw;
 	z-index: map-get($layer, menu);
-
+	&__inner {
+		padding: 0 math.div(4, 1.035) + 0rem;
+		position: fixed;
+		left: 50%;
+		top: math.div(12, 1.035) + 0rem;
+		transform: translateX(-50%);
+		width: 100%;
+		z-index: map-get($layer, menu) + 1;
+	}
 	&.active {
+		display: block;
+		// @each $easing-name, $easing-value in $easing-functions {
+		// 	animation: scale 1s $easing-value 0.3s backwards;
+		// }
+		animation: menu-open 1.3s map-get($easing-functions, easeOutCirc) 0.2s
+			backwards;
 		@include mq(mobile) {
-			display: block;
 		}
+	}
+}
+
+@keyframes menu-open {
+	0% {
+		border-radius: 50%;
+		height: 1px;
+		top: -50%;
+		right: -150%;
+		width: 1px;
+	}
+
+	100% {
+		border-radius: 50%;
+		height: 160vh;
+		top: -50%;
+		right: -150%;
+		width: 160vh;
+	}
+}
+
+@keyframes menu-close {
+	0% {
+		border-radius: 50%;
+		height: 160vh;
+		top: -50%;
+		right: -150%;
+		width: 160vh;
+	}
+
+	100% {
+		border-radius: 50%;
+		height: 1px;
+		top: -50%;
+		right: -150%;
+		width: 1px;
 	}
 }

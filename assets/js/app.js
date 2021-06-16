@@ -1,3 +1,3 @@
-import { menu } from './class-menu.js';
+import { menu } from "./class-menu.js";
 
 new menu();
