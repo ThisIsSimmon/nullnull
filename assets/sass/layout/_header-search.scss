@@ -25,9 +25,15 @@
 	}
 
 	&__submit-button {
+		background-image: url("#{$image-dir}/header/search_icon.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		height: 1.5em;
+		margin-top: 0.1em;
 		position: absolute;
 		right: 1.5rem;
 		top: 50%;
 		transform: translateY(-50%);
+		width: 1.4em;
 	}
 }

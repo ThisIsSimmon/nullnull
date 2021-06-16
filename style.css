@@ -996,10 +996,16 @@ a:hover {
   letter-spacing: 0.1em;
 }
 .header-search__submit-button {
+  background-image: url("assets/img/dist/header/search_icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 1.5em;
+  margin-top: 0.1em;
   position: absolute;
   right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
+  width: 1.4em;
 }
 
 .footer {
@@ -1177,6 +1183,9 @@ a:hover {
   outline: none;
 }
 .menu-search__submit-button {
+  background-image: url("assets/img/dist/header/search_icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
   font-size: clamp(12px, 1rem, 1rem);
   height: 1.5em;
   position: absolute;
