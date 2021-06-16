@@ -25,7 +25,7 @@
 			inset 2px 2px 3px rgba(0, 0, 0, 0.12);
 		height: 5.6em;
 		position: relative;
-		transition: box-shadow 0.3s $easeInQuad;
+		transition: box-shadow 0.3s map-get($easing-functions, easeInQuad);
 		width: 5.6em;
 
 		#{$this}:hover & {

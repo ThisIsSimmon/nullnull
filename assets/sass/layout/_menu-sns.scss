@@ -16,7 +16,7 @@
 			inset -2px -2px 4px rgba(0, 0, 0, 0.1),
 			inset 2px 2px 4px rgba(255, 255, 255, 0.2);
 		height: math.div(4, 1.035) + 0rem;
-		transition: box-shadow 0.6s $easeOutCirc;
+		transition: box-shadow 0.6s map-get($easing-functions, easeOutCirc);
 		width: math.div(4, 1.035) + 0rem;
 
 		&:hover {

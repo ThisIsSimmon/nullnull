@@ -2,16 +2,13 @@
 @use 'sass:math';
 
 .menu-close {
-	display: none;
-
-	@include mq(mobile) {
-		@include center;
-		height: math.div(3, 1.035) + 0rem;
-		position: absolute;
-		right: math.div(2, 1.035) + 0rem;
-		top: math.div(3.35, 1.035) + 0rem;
-		width: math.div(3, 1.035) + 0rem;
-	}
+	@include center;
+	height: math.div(3, 1.035) + 0rem;
+	position: fixed;
+	right: math.div(2, 1.035) + 0rem;
+	top: math.div(3.35, 1.035) + 0rem;
+	width: math.div(3, 1.035) + 0rem;
+	z-index: map-get($layer, menu) + 1;
 
 	& > span {
 		background-color: #fff;
@@ -21,13 +18,43 @@
 			inset -1px -1px 1px rgba(0, 0, 0, 0.2);
 		height: 3px;
 		position: absolute;
-		width: 100%;
+		// transition-delay: 0s;
+		// transition-duration: 6s;
+		// transition-property: width;
+		// transition-timing-function: $easeOutCirc;
+
+		width: 0%;
+
+		.menu.active > & {
+			// -webkit-animation: scroll 0.6s $easeOutCirc 0s;
+			// animation: scroll 0.6s $easeOutCirc 0s;
+			// width: 100%;
+		}
 
 		&:nth-of-type(1) {
 			transform: rotate(-45deg);
+
+			.menu.active > & {
+				animation: menu-close 0.6s
+					map-get($easing-functions, easeOutCirc) 0.5s forwards;
+			}
 		}
 		&:nth-of-type(2) {
 			transform: rotate(45deg);
+
+			.menu.active > & {
+				animation: menu-close 0.6s
+					map-get($easing-functions, easeOutCirc) 0.7s forwards;
+			}
 		}
+	}
+}
+
+@keyframes menu-close {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
 	}
 }
