@@ -34,18 +34,18 @@
             </button>
         </form>
 
-        <button type="button" id="js-menu-open" class="menu-open">
+        <button type="button" id="js-menu-open" class="menu-open" data-micromodal-trigger="js-menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <div id="js-menu" class="menu">
-            <button type="button" id="js-menu-close" class="menu-close">
+        <div id="js-menu" class="menu" aria-hidden="true">
+            <button type="button" id="js-menu-close" class="menu-close" aria-label="メニューを閉じる" data-micromodal-close>
                 <span></span>
                 <span></span>
             </button>
-            <div class="menu__inner">
+            <div class="menu__inner" role="dialog" aria-modal="true">
 
                 <form action="/" method="get" class="menu-search">
                     <input type="search" name="s" value="<?php the_search_query(); ?>" placeholder="Search" class="menu-search__field" />
