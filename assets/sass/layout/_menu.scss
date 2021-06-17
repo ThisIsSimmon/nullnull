@@ -2,8 +2,7 @@
 @use 'sass:math';
 
 .menu {
-	// animation: menu-close 1.3s map-get($easing-functions, easeOutCirc) 0.2s
-	// 	backwards;
+	$this: &;
 	background-color: map-get($colors, text-sub);
 	border-radius: 0;
 	display: none;
@@ -14,27 +13,36 @@
 	width: 100vw;
 	z-index: map-get($layer, menu);
 	&__inner {
+		left: 50%;
 		padding: 0 math.div(4, 1.035) + 0rem;
 		position: fixed;
-		left: 50%;
 		top: math.div(12, 1.035) + 0rem;
+		transition: opacity 0.6s map-get($easing-functions, easeOutCirc);
 		transform: translateX(-50%);
 		width: 100%;
 		z-index: map-get($layer, menu) + 1;
-	}
-	&.active {
-		display: block;
-		// @each $easing-name, $easing-value in $easing-functions {
-		// 	animation: scale 1s $easing-value 0.3s backwards;
-		// }
-		animation: menu-open 1.3s map-get($easing-functions, easeOutCirc) 0.2s
-			backwards;
-		@include mq(mobile) {
+
+		#{$this}[aria-hidden="true"] & {
+			opacity: 0;
 		}
+	}
+	&.is-open {
+		display: block;
+	}
+
+	&[aria-hidden="false"] {
+		animation: menu-show 1.3s map-get($easing-functions, easeOutCirc) 0.2s backwards;
+	}
+
+	&[aria-hidden="true"] {
+		@each $easing-name, $easing-value in $easing-functions {
+			animation: menu-hide 4s $easing-value 0s backwards;
+		}
+		animation: menu-hide 0.6s cubic-bezier(0.73, 0.1, 1, 0.13) 0s backwards;
 	}
 }
 
-@keyframes menu-open {
+@keyframes menu-show {
 	0% {
 		border-radius: 50%;
 		height: 1px;
@@ -52,7 +60,7 @@
 	}
 }
 
-@keyframes menu-close {
+@keyframes menu-hide {
 	0% {
 		border-radius: 50%;
 		height: 160vh;

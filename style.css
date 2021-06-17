@@ -1127,19 +1127,53 @@ a:hover {
   z-index: 100;
 }
 .menu__inner {
+  left: 50%;
   padding: 0 3.8647342995rem;
   position: fixed;
-  left: 50%;
   top: 11.5942028986rem;
+  transition: opacity 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: translateX(-50%);
   width: 100%;
   z-index: 101;
 }
-.menu.active {
-  display: block;
-  animation: menu-open 1.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s backwards;
+.menu[aria-hidden=true] .menu__inner {
+  opacity: 0;
 }
-@keyframes menu-open {
+.menu.is-open {
+  display: block;
+}
+.menu[aria-hidden=false] {
+  animation: menu-show 1.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s backwards;
+}
+.menu[aria-hidden=true] {
+  animation: menu-hide 4s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.6, 0.04, 0.98, 0.335) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.23, 1, 0.32, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.39, 0.575, 0.565, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.19, 1, 0.22, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.77, 0, 0.275, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.86, 0, 0.07, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(1, 0, 0, 1) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s backwards;
+  animation: menu-hide 4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s backwards;
+  animation: menu-hide 0.6s cubic-bezier(0.73, 0.1, 1, 0.13) 0s backwards;
+}
+
+@keyframes menu-show {
   0% {
     border-radius: 50%;
     height: 1px;
@@ -1155,7 +1189,7 @@ a:hover {
     width: 160vh;
   }
 }
-@keyframes menu-close {
+@keyframes menu-hide {
   0% {
     border-radius: 50%;
     height: 160vh;
@@ -1187,23 +1221,35 @@ a:hover {
   border-radius: 1.5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15), inset 1px 1px 1px rgba(255, 255, 255, 0.1), inset -1px -1px 1px rgba(0, 0, 0, 0.2);
   height: 3px;
+  left: 50%;
   position: absolute;
-  width: 0%;
+  top: 50%;
+  width: 100%;
 }
 .menu-close > span:nth-of-type(1) {
-  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  transform: rotate(-45deg) translate(-1.2em, -0.1em);
+  transition: width 0.6s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
 }
-.menu.active > .menu-close > span:nth-of-type(1) {
-  animation: menu-close 0.6s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s forwards;
+.menu[aria-hidden=false] > .menu-close > span:nth-of-type(1) {
+  animation: menu-close-show 0.6s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s backwards;
+}
+.menu[aria-hidden=true] > .menu-close > span:nth-of-type(1) {
+  width: 0%;
 }
 .menu-close > span:nth-of-type(2) {
-  transform: rotate(45deg);
+  transform-origin: top left;
+  transform: rotate(225deg) translate(-1.4em, -0.1em);
+  transition: width 0.6s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 }
-.menu.active > .menu-close > span:nth-of-type(2) {
-  animation: menu-close 0.6s cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s forwards;
+.menu[aria-hidden=false] > .menu-close > span:nth-of-type(2) {
+  animation: menu-close-show 0.6s cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s backwards;
+}
+.menu[aria-hidden=true] > .menu-close > span:nth-of-type(2) {
+  width: 0%;
 }
 
-@keyframes menu-close {
+@keyframes menu-close-show {
   0% {
     width: 0%;
   }
@@ -1214,14 +1260,18 @@ a:hover {
 .menu-search {
   align-items: center;
   display: flex;
+  opacity: 1;
   position: relative;
 }
+.menu[aria-hidden=false] .menu-search {
+  animation: menu-search-show 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s backwards;
+}
 .menu-search__field {
-  border-radius: clamp( 			19px, 			1.8357487923rem, 			1.8357487923rem 		);
+  border-radius: clamp(19px, 1.8357487923rem, 1.8357487923rem);
   box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.3), -1px -1px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 3px rgba(255, 255, 255, 0.2), inset 2px 2px 3px rgba(0, 0, 0, 0.2);
   font-size: 1.4rem;
   font-size: clamp(16px, 1.4rem, 1.4rem);
-  height: clamp( 			38px, 			3.6714975845rem, 			3.6714975845rem 		);
+  height: clamp(38px, 3.6714975845rem, 3.6714975845rem);
   width: 100%;
 }
 .menu-search__field::placeholder {
@@ -1248,11 +1298,27 @@ a:hover {
   width: 100%;
 }
 
+@keyframes menu-search-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes menu-search-hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .menu-nav {
   margin-top: 5.7971014493rem;
 }
 .menu-nav__item:not(:last-of-type) {
-  margin-bottom: clamp( 				24px, 				2.3188405797rem, 				2.3188405797rem 			);
+  margin-bottom: clamp(24px, 2.3188405797rem, 2.3188405797rem);
 }
 .menu-nav__item::before {
   content: normal;
@@ -1264,20 +1330,67 @@ a:hover {
   content: "";
   display: block;
   height: 2px;
-  margin-top: clamp( 				10px, 				0.9661835749rem, 				0.9661835749rem 			);
+  margin-top: clamp(10px, 0.9661835749rem, 0.9661835749rem);
   width: 100%;
 }
 .menu-nav__link {
   height: 0.775em;
   line-height: 0.775;
-  font-size: clamp( 			16px, 			1.7391304348rem, 			1.7391304348rem 		);
+  font-size: clamp(16px, 1.7391304348rem, 1.7391304348rem);
   font-weight: 500;
   color: #fff;
   display: block;
   letter-spacing: 0.2em;
-  text-indent: clamp( 			10px, 			0.9661835749rem, 			0.9661835749rem 		);
+  text-indent: clamp(10px, 0.9661835749rem, 0.9661835749rem);
 }
 
+.menu[aria-hidden=false] .menu-nav__item::after {
+  animation: menu-nav-line-show 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0.9s backwards;
+}
+.menu[aria-hidden=false] .menu-nav__item:nth-of-type(1) > a {
+  animation: menu-nav-text-show 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) 1.3s backwards;
+}
+.menu[aria-hidden=false] .menu-nav__item:nth-of-type(2) > a {
+  animation: menu-nav-text-show 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) 1.4s backwards;
+}
+.menu[aria-hidden=false] .menu-nav__item:nth-of-type(3) > a {
+  animation: menu-nav-text-show 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s backwards;
+}
+
+@keyframes menu-nav-line-show {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes menu-nav-text-show {
+  0% {
+    opacity: 0;
+    transform: translateX(4em);
+    width: 50%;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    width: 100%;
+  }
+}
+@keyframes menu-nav-hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .menu-sns {
   display: grid;
   column-gap: 1rem;
@@ -1294,12 +1407,24 @@ a:hover {
   transition: box-shadow 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   width: 3.8647342995rem;
 }
+.menu[aria-hidden=false] .menu-sns__button {
+  animation: menu-sns-show 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) 1.9s backwards;
+}
 .menu-sns__button:hover {
   box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.3), -1px -1px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.2), inset 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 .menu-sns__button--twitter {
   background-image: url("assets/img/dist/profile/sns/twitter_menu.svg");
   background-size: 1.5458937198rem 1.3526570048rem;
+}
+
+@keyframes menu-sns-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

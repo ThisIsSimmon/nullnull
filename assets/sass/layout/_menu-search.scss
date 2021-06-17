@@ -4,26 +4,24 @@
 .menu-search {
 	align-items: center;
 	display: flex;
+	opacity: 1;
 	position: relative;
 
+	.menu[aria-hidden="false"] & {
+		animation: menu-search-show 1.5s map-get($easing-functions, easeInOutBack) 0.1s backwards;
+	}
+
+	// .menu[aria-hidden="true"] & {
+	// 	animation: menu-search-hide 0.3s map-get($easing-functions, easeInOutBack) 0s forwards;
+	// }
+
 	&__field {
-		border-radius: clamp(
-			19px,
-			#{math.div(math.div(3.8, 1.035), 2) + 0rem},
-			#{math.div(math.div(3.8, 1.035), 2) + 0rem}
-		);
-		box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.3),
-			-1px -1px 4px rgba(0, 0, 0, 0.3),
-			inset -2px -2px 3px rgba(255, 255, 255, 0.2),
-			inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+		border-radius: clamp(19px, #{math.div(math.div(3.8, 1.035), 2) + 0rem}, #{math.div(math.div(3.8, 1.035), 2) + 0rem});
+		box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.3), -1px -1px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 3px rgba(255, 255, 255, 0.2), inset 2px 2px 3px rgba(0, 0, 0, 0.2);
 		font-size: 1.4rem;
 		font-size: clamp(16px, 1.4rem, 1.4rem);
 		// height: math.div(3.8, 1.035) + 0rem;
-		height: clamp(
-			38px,
-			#{math.div(3.8, 1.035) + 0rem},
-			#{math.div(3.8, 1.035) + 0rem}
-		);
+		height: clamp(38px, #{math.div(3.8, 1.035) + 0rem}, #{math.div(3.8, 1.035) + 0rem});
 		width: 100%;
 
 		&::placeholder {
@@ -52,5 +50,25 @@
 			height: 100%;
 			width: 100%;
 		}
+	}
+}
+
+@keyframes menu-search-show {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes menu-search-hide {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
 	}
 }

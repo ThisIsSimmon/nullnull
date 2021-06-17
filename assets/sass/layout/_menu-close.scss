@@ -3,6 +3,7 @@
 
 .menu-close {
 	@include center;
+	// align-items: flex-end;
 	height: math.div(3, 1.035) + 0rem;
 	position: fixed;
 	right: math.div(2, 1.035) + 0rem;
@@ -13,44 +14,39 @@
 	& > span {
 		background-color: #fff;
 		border-radius: 1.5px;
-		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15),
-			inset 1px 1px 1px rgba(255, 255, 255, 0.1),
-			inset -1px -1px 1px rgba(0, 0, 0, 0.2);
+		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15), inset 1px 1px 1px rgba(255, 255, 255, 0.1), inset -1px -1px 1px rgba(0, 0, 0, 0.2);
 		height: 3px;
+		left: 50%;
 		position: absolute;
-		// transition-delay: 0s;
-		// transition-duration: 6s;
-		// transition-property: width;
-		// transition-timing-function: $easeOutCirc;
-
-		width: 0%;
-
-		.menu.active > & {
-			// -webkit-animation: scroll 0.6s $easeOutCirc 0s;
-			// animation: scroll 0.6s $easeOutCirc 0s;
-			// width: 100%;
-		}
+		top: 50%;
+		width: 100%;
 
 		&:nth-of-type(1) {
-			transform: rotate(-45deg);
-
-			.menu.active > & {
-				animation: menu-close 0.6s
-					map-get($easing-functions, easeOutCirc) 0.5s forwards;
+			transform-origin: bottom left;
+			transform: rotate(-45deg) translate(-1.2em, -0.1em);
+			transition: width 0.6s map-get($easing-functions, easeOutCirc) 0.2s;
+			.menu[aria-hidden="false"] > & {
+				animation: menu-close-show 0.6s map-get($easing-functions, easeOutCirc) 0.5s backwards;
+			}
+			.menu[aria-hidden="true"] > & {
+				width: 0%;
 			}
 		}
 		&:nth-of-type(2) {
-			transform: rotate(45deg);
-
-			.menu.active > & {
-				animation: menu-close 0.6s
-					map-get($easing-functions, easeOutCirc) 0.7s forwards;
+			transform-origin: top left;
+			transform: rotate(225deg) translate(-1.4em, -0.1em);
+			transition: width 0.6s map-get($easing-functions, easeOutCirc) 0s;
+			.menu[aria-hidden="false"] > & {
+				animation: menu-close-show 0.6s map-get($easing-functions, easeOutCirc) 0.7s backwards;
+			}
+			.menu[aria-hidden="true"] > & {
+				width: 0%;
 			}
 		}
 	}
 }
 
-@keyframes menu-close {
+@keyframes menu-close-show {
 	0% {
 		width: 0%;
 	}

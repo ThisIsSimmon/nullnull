@@ -12,23 +12,31 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		border-radius: 50%;
-		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15), 0 0 0 transparent,
-			inset -2px -2px 4px rgba(0, 0, 0, 0.1),
-			inset 2px 2px 4px rgba(255, 255, 255, 0.2);
+		box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15), 0 0 0 transparent, inset -2px -2px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(255, 255, 255, 0.2);
 		height: math.div(4, 1.035) + 0rem;
 		transition: box-shadow 0.6s map-get($easing-functions, easeOutCirc);
 		width: math.div(4, 1.035) + 0rem;
 
+		.menu[aria-hidden="false"] & {
+			animation: menu-sns-show 1.2s map-get($easing-functions, easeOutCirc) 1.9s backwards;
+		}
+
 		&:hover {
-			box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.3),
-				-1px -1px 4px rgba(0, 0, 0, 0.3),
-				inset -2px -2px 4px rgba(255, 255, 255, 0.2),
-				inset 2px 2px 4px rgba(0, 0, 0, 0.2);
+			box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.3), -1px -1px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.2), inset 2px 2px 4px rgba(0, 0, 0, 0.2);
 		}
 		&--twitter {
 			background-image: url("#{$image-dir}/profile/sns/twitter_menu.svg");
-			background-size: math.div(1.6, 1.035) + 0rem math.div(1.4, 1.035) +
-				0rem;
+			background-size: math.div(1.6, 1.035) + 0rem math.div(1.4, 1.035) + 0rem;
 		}
+	}
+}
+
+@keyframes menu-sns-show {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }
