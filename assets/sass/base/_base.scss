@@ -8,6 +8,10 @@ body {
 	background-color: map-get($colors, bg-base);
 }
 
+p {
+	margin: 1em 0 0;
+}
+
 ol,
 ul,
 dl {

@@ -629,6 +629,10 @@ body {
   background-color: #e9ebf1;
 }
 
+p {
+  margin: 1em 0 0;
+}
+
 ol,
 ul,
 dl {
@@ -800,16 +804,17 @@ a:hover {
   margin-top: 1rem;
 }
 .tag-list__link {
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 1px 1px 2px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   border-radius: 0.6rem;
-  display: block;
+  display: flex;
   font-size: 1.2rem;
   font-weight: 400;
+  height: 2em;
   letter-spacing: 0.1em;
-  line-height: 1;
+  line-height: 2.2em;
   margin-right: 1rem;
-  padding: 0.6em 1.243em 0.4em;
+  padding: 0 1.243em;
 }
 .tag-list__link:hover {
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
@@ -833,7 +838,7 @@ a:hover {
   font-weight: 700;
 }
 .pagination > .page-numbers:not(.current) {
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 1px 1px 2px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .pagination > .page-numbers:not(.current):hover {
@@ -853,6 +858,38 @@ a:hover {
 .pagination > .page-numbers.next {
   background-image: url("assets/img/dist/archive/pagination_next.svg");
   background-position: right 0.7em center;
+}
+
+.button-gradient {
+  background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  box-shadow: 1px 1px 2px transparent, 4px 4px 4px rgba(0, 0, 0, 0.12), inset 2px 2px 4px rgba(255, 255, 255, 0.6), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 1rem;
+  color: #fff;
+}
+.button-gradient:hover {
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+}
+.button-gradient:hover {
+  color: #fff;
+}
+.button-gradient__text {
+  align-items: center;
+  display: flex;
+  font-size: 2rem;
+  padding: 1.5em 2em;
+}
+.button-gradient--404 .button-gradient__text {
+  padding: 1.5em 2.9422em;
+}
+.button-gradient__text--en {
+  height: 0.775em;
+  line-height: 0.775;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
 .header {
@@ -875,11 +912,15 @@ a:hover {
   display: flex;
   justify-content: center;
   background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.12), inset 2px 2px 4px rgba(255, 255, 255, 0.6), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px transparent, 4px 4px 4px rgba(0, 0, 0, 0.12), inset 2px 2px 4px rgba(255, 255, 255, 0.6), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   border-radius: 50%;
   height: 7em;
   margin-right: auto;
   width: 7em;
+}
+.header-logo:hover {
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 }
 @media (max-width: 48em) {
   .header-logo {
@@ -1059,7 +1100,7 @@ a:hover {
   margin-top: 6rem;
 }
 .sns__button {
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 1px 1px 2px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   background-position: center;
   background-repeat: no-repeat;
@@ -1425,6 +1466,15 @@ a:hover {
   100% {
     opacity: 1;
   }
+}
+.page-not-found {
+  display: grid;
+  margin-top: 25rem;
+  justify-items: center;
+  row-gap: 4em;
+}
+.page-not-found__img:first-of-type {
+  margin-bottom: -1em;
 }
 
 /*# sourceMappingURL=style.css.map */

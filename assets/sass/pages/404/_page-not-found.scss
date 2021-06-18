@@ -1,0 +1,15 @@
+@use '../../abstracts/' as *;
+
+.page-not-found {
+	display: grid;
+	margin-top: 25rem;
+	// justify-content: center;
+	justify-items: center;
+	row-gap: 4em;
+
+	&__img {
+		&:first-of-type {
+			margin-bottom: -1em;
+		}
+	}
+}
