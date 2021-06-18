@@ -1,0 +1,29 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.button-gradient {
+	$this: &;
+	@include bg-gradient;
+	@include center;
+	@include shadow(button-gradient);
+	border-radius: 1rem;
+	color: #fff;
+	&:hover {
+		color: #fff;
+	}
+
+	&__text {
+		align-items: center;
+		display: flex;
+		font-size: 2rem;
+		padding: 1.5em 2em;
+		#{$this}--404 & {
+			padding: 1.5em 2.9422em;
+		}
+		&--en {
+			@include quicksand-one-line;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+		}
+	}
+}
