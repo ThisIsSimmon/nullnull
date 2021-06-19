@@ -8,7 +8,10 @@
 	grid-template-rows: 4em;
 	justify-content: center;
 	margin-top: 6rem;
-
+	@include mq(mobile) {
+		column-gap: 1.4rem;
+		margin-top: 4rem;
+	}
 	& > .page-numbers {
 		$font-size: 22;
 		@include center;

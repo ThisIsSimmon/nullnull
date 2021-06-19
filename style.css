@@ -828,6 +828,12 @@ a:hover {
   justify-content: center;
   margin-top: 6rem;
 }
+@media (max-width: 48em) {
+  .pagination {
+    column-gap: 1.4rem;
+    margin-top: 4rem;
+  }
+}
 .pagination > .page-numbers {
   align-items: center;
   display: flex;
