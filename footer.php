@@ -10,7 +10,7 @@
             </ul>
         </nav>
 
-        <div class="sns">
+        <div class="sns sns--footer">
             <a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="sns__button sns__button--twitter"></a>
         </div>
 
@@ -18,10 +18,6 @@
     </footer>
 
     <?php wp_footer(); ?>
-    <script type="module" src="<?php echo get_theme_file_uri();
-                                ?>/assets/js/app.js"></script>
-    <script src="<?php echo get_theme_file_uri(); ?>/assets/js/focus-visible.min.js"></script>
-    <script src="<?php echo get_theme_file_uri(); ?>/assets/js/micromodal.min.js"></script>
     </body>
 
     </html>

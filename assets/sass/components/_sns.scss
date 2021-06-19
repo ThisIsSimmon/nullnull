@@ -1,0 +1,36 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.sns {
+	display: grid;
+	column-gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(1rem, max-content));
+	justify-content: center;
+	&--footer {
+		margin-top: 6rem;
+		@include mq(mobile) {
+			margin-top: 4rem;
+		}
+	}
+	&__button {
+		@include shadow(button-base);
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		height: 4em;
+		width: 4em;
+		@include mq(mobile) {
+			font-size: 0.9rem;
+		}
+
+		&--twitter {
+			background-image: url('#{$image-dir}/profile/sns/twitter.svg');
+			background-size: 1.6em 1.4em;
+		}
+
+		&--email {
+			background-image: url('#{$image-dir}/profile/sns/email.svg');
+			background-size: 2em 1.4em;
+		}
+	}
+}

@@ -5,7 +5,10 @@
 	margin-top: 20rem;
 	padding: 6rem 0;
 	position: relative;
-
+	@include mq(mobile) {
+		margin-top: 10rem;
+		padding: 4rem 0;
+	}
 	&::before {
 		@include shadow(hr);
 		content: "";
@@ -27,5 +30,8 @@
 		letter-spacing: 0.2em;
 		margin-top: math.div(60, 12) * 1em;
 		text-align: center;
+		@include mq(mobile) {
+			margin-top: math.div(40, 12) * 1em;
+		}
 	}
 }

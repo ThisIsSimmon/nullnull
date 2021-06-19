@@ -19,6 +19,9 @@
 		padding: 1.5em 2em;
 		#{$this}--404 & {
 			padding: 1.5em 2.9422em;
+			@include mq(mobile) {
+				font-size: 1.8rem;
+			}
 		}
 		&--en {
 			@include quicksand-one-line;
