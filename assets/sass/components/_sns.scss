@@ -24,12 +24,12 @@
 		}
 
 		&--twitter {
-			background-image: url("#{$image-dir}/profile/sns/twitter.svg");
+			background-image: url('#{$image-dir}/profile/sns/twitter.svg');
 			background-size: 1.6em 1.4em;
 		}
 
 		&--email {
-			background-image: url("#{$image-dir}/profile/sns/email.svg");
+			background-image: url('#{$image-dir}/profile/sns/email.svg');
 			background-size: 2em 1.4em;
 		}
 	}
