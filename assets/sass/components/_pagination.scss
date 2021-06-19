@@ -16,12 +16,9 @@
 		color: map-get($colors, text-main);
 		font-size: #{math.div($font-size, 10)}rem;
 		font-weight: 700;
-		// height: math.div(40, 22) + 0em;
-		// width: math.div(40, 22) + 0em;
 
 		&:not(.current) {
 			@include shadow(button-base);
-			// transition: box-shadow 0.9s ease;
 		}
 
 		&.current {
@@ -31,8 +28,7 @@
 		&.prev,
 		&.next {
 			background-repeat: no-repeat;
-			background-size: math.div(8, $font-size) + 0em,
-				math.div(12, $font-size) + 0em;
+			background-size: math.div(8, $font-size) + 0em, math.div(12, $font-size) + 0em;
 		}
 
 		&.prev {
