@@ -1222,7 +1222,7 @@ a:hover {
   display: block;
 }
 .menu[aria-hidden=false] {
-  animation: menu-show 1.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s backwards;
+  animation: menu-show 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s backwards;
 }
 .menu[aria-hidden=true] {
   animation: menu-hide 4s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s backwards;
@@ -1249,39 +1249,23 @@ a:hover {
   animation: menu-hide 4s cubic-bezier(1, 0, 0, 1) 0s backwards;
   animation: menu-hide 4s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s backwards;
   animation: menu-hide 4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s backwards;
-  animation: menu-hide 0.6s cubic-bezier(0.73, 0.1, 1, 0.13) 0s backwards;
+  animation: menu-hide 0.6s cubic-bezier(0.73, 0.4, 0.7, 0.13) 0s backwards;
 }
 
 @keyframes menu-show {
   0% {
-    border-radius: 50%;
-    height: 1px;
-    top: -50%;
-    right: -150%;
-    width: 1px;
+    clip-path: circle(0% at 100vw 0);
   }
   100% {
-    border-radius: 50%;
-    height: 160vh;
-    top: -50%;
-    right: -150%;
-    width: 160vh;
+    clip-path: circle(100%);
   }
 }
 @keyframes menu-hide {
   0% {
-    border-radius: 50%;
-    height: 160vh;
-    top: -50%;
-    right: -150%;
-    width: 160vh;
+    clip-path: circle(100%);
   }
   100% {
-    border-radius: 50%;
-    height: 1px;
-    top: -50%;
-    right: -150%;
-    width: 1px;
+    clip-path: circle(0% at 100vw 0);
   }
 }
 .menu-close {
