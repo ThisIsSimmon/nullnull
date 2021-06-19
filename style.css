@@ -885,6 +885,11 @@ a:hover {
 .button-gradient--404 .button-gradient__text {
   padding: 1.5em 2.9422em;
 }
+@media (max-width: 48em) {
+  .button-gradient--404 .button-gradient__text {
+    font-size: 1.8rem;
+  }
+}
 .button-gradient__text--en {
   height: 0.775em;
   line-height: 0.775;
@@ -1467,10 +1472,51 @@ a:hover {
   display: grid;
   margin-top: 25rem;
   justify-items: center;
-  row-gap: 4em;
+  row-gap: 4rem;
+}
+@media (max-width: 48em) {
+  .page-not-found {
+    margin-top: 20rem;
+  }
+}
+.page-not-found__img {
+  position: relative;
+}
+@media (max-width: 48em) {
+  .page-not-found__img {
+    font-size: 0.7rem;
+  }
+}
+.page-not-found__img::before {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: "";
+  font-size: 10em;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: top left;
+  transform: scale(0.1);
 }
 .page-not-found__img:first-of-type {
+  height: 17.6em;
   margin-bottom: -1em;
+  width: 47em;
+}
+.page-not-found__img:first-of-type::before {
+  background-image: url("assets/img/dist/404/404.svg");
+  height: 17.6em;
+  width: 47em;
+}
+.page-not-found__img:nth-of-type(2) {
+  height: 4.2em;
+  width: 34.8em;
+}
+.page-not-found__img:nth-of-type(2)::before {
+  background-image: url("assets/img/dist/404/page_not_found.svg");
+  height: 4.2em;
+  width: 34.8em;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,15 +1,57 @@
 @use '../../abstracts/' as *;
+@use 'sass:math';
 
 .page-not-found {
 	display: grid;
 	margin-top: 25rem;
 	// justify-content: center;
 	justify-items: center;
-	row-gap: 4em;
+	row-gap: 4rem;
+	@include mq(mobile) {
+		margin-top: 20rem;
+	}
 
 	&__img {
+		position: relative;
+		@include mq(mobile) {
+			font-size: 0.7rem;
+		}
+		&::before {
+			$mag: 10;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			content: "";
+			font-size: #{$mag}em;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transform-origin: top left;
+			transform: scale(math.div(1, $mag));
+		}
 		&:first-of-type {
+			$height: 17.6em;
+			$width: 47em;
+			height: $height;
 			margin-bottom: -1em;
+			width: $width;
+			&::before {
+				background-image: url("#{$image-dir}/404/404.svg");
+				height: $height;
+				width: $width;
+			}
+		}
+
+		&:nth-of-type(2) {
+			$height: 4.2em;
+			$width: 34.8em;
+			height: $height;
+			width: $width;
+			&::before {
+				background-image: url("#{$image-dir}/404/page_not_found.svg");
+				height: $height;
+				width: $width;
+			}
 		}
 	}
 }
