@@ -10,7 +10,7 @@
             </ul>
         </nav>
 
-        <div class="sns">
+        <div class="sns sns--footer">
             <a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="sns__button sns__button--twitter"></a>
         </div>
 
