@@ -22,7 +22,7 @@
 		width: 100%;
 		z-index: map-get($layer, menu) + 1;
 
-		#{$this}[aria-hidden="true"] & {
+		#{$this}[aria-hidden='true'] & {
 			opacity: 0;
 		}
 	}
@@ -30,50 +30,34 @@
 		display: block;
 	}
 
-	&[aria-hidden="false"] {
-		animation: menu-show 1.3s map-get($easing-functions, easeOutCirc) 0.2s backwards;
+	&[aria-hidden='false'] {
+		animation: menu-show 2s map-get($easing-functions, easeOutCirc) 0.2s backwards;
 	}
 
-	&[aria-hidden="true"] {
+	&[aria-hidden='true'] {
 		@each $easing-name, $easing-value in $easing-functions {
 			animation: menu-hide 4s $easing-value 0s backwards;
 		}
-		animation: menu-hide 0.6s cubic-bezier(0.73, 0.1, 1, 0.13) 0s backwards;
+		animation: menu-hide 0.6s cubic-bezier(0.73, 0.4, 0.7, 0.13) 0s backwards;
 	}
 }
 
 @keyframes menu-show {
 	0% {
-		border-radius: 50%;
-		height: 1px;
-		top: -50%;
-		right: -150%;
-		width: 1px;
+		clip-path: circle(0% at 100vw 0);
 	}
 
 	100% {
-		border-radius: 50%;
-		height: 160vh;
-		top: -50%;
-		right: -150%;
-		width: 160vh;
+		clip-path: circle(100%);
 	}
 }
 
 @keyframes menu-hide {
 	0% {
-		border-radius: 50%;
-		height: 160vh;
-		top: -50%;
-		right: -150%;
-		width: 160vh;
+		clip-path: circle(100%);
 	}
 
 	100% {
-		border-radius: 50%;
-		height: 1px;
-		top: -50%;
-		right: -150%;
-		width: 1px;
+		clip-path: circle(0% at 100vw 0);
 	}
 }
