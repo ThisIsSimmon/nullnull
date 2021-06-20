@@ -14,11 +14,11 @@
 	&::before {
 		// Safariでsvgがぼやける対策
 		$mag: 10;
-		background-image: url("#{$image-dir}/archive/blog_card_blob.svg");
+		background-image: url('#{$image-dir}/archive/blog_card_blob.svg');
 		background-repeat: no-repeat;
 		background-size: 9.309em 8.68em;
 		bottom: -4.44em;
-		content: "";
+		content: '';
 		font-size: #{$mag}rem;
 		height: 8.68em;
 		position: absolute;
@@ -33,7 +33,7 @@
 
 	&__title {
 		font-size: 1.6rem;
-
+		font-weight: 700;
 		& > a {
 			@include line-clamp(3);
 			color: map-get($colors, text-main);
