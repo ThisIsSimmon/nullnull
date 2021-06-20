@@ -1,0 +1,6 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.entry {
+	padding: 0 map-get($spacers, base-horizontal);
+}

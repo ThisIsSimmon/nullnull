@@ -1,0 +1,16 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.entry-header {
+	margin-top: 12rem;
+	@include mq(mobile) {
+		margin-top: 8rem;
+	}
+	&__title {
+		@include line-height-crop($heading-line-height, 1, bottom);
+		font-size: 4.4rem;
+		font-weight: 500;
+		letter-spacing: 0.2em;
+		text-align: center;
+	}
+}
