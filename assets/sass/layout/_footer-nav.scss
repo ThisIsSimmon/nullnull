@@ -4,9 +4,6 @@
 .footer-nav {
 	$font-size: 20;
 	$letter-spacing: 0.2;
-	@include mq(mobile) {
-		$font-size: 16;
-	}
 	&__list {
 		display: grid;
 		column-gap: 6rem - ($font-size * $letter-spacing * 1.5) * 0.1rem;
@@ -14,7 +11,7 @@
 		justify-content: center;
 		margin: 0 auto;
 		@include mq(mobile) {
-			column-gap: 4rem - ($font-size * $letter-spacing * 1.5) * 0.1rem;
+			column-gap: 4rem - ($font-size * 0.8 * $letter-spacing * 1.5) * 0.1rem;
 		}
 	}
 
@@ -24,5 +21,8 @@
 		font-size: math.div($font-size, 10) + 0rem;
 		font-weight: 500;
 		letter-spacing: $letter-spacing + 0em;
+		@include mq(mobile) {
+			font-size: math.div($font-size * 0.8, 10) + 0rem;
+		}
 	}
 }
