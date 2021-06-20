@@ -1,0 +1,38 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.entry-content {
+	margin: 13rem auto 0;
+	max-width: 80rem;
+	width: 100%;
+	@include mq(mobile) {
+		margin: 9rem auto 0;
+	}
+	> h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		&::after {
+			@include shadow(hr);
+			background: map-get($colors, bg-base);
+			content: '';
+			display: block;
+			height: 2px;
+			margin-top: calc(1.2rem - ((1em * #{$heading-line-height} - 1em) / 2));
+		}
+	}
+
+	&--privacy {
+		> h2 {
+			font-size: 2.4rem;
+			@include mq(mobile) {
+				font-size: 2.1rem;
+			}
+			&:nth-of-type(n + 2) {
+				margin-top: 5.2rem;
+			}
+		}
+	}
+}

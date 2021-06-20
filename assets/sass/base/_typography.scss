@@ -3,10 +3,7 @@
 html {
 	color: map-get($colors, text-main);
 	font-size: 62.5%;
-	font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI",
-		Roboto, "M PLUS Rounded 1c", "Hiragino Sans", "Noto Sans CJK JP",
-		"Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+	font-family: Quicksand, 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP', 'Original Yu Gothic', 'Yu Gothic', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Sans Emoji';
 	font-weight: 400;
 	@include mq(mobile) {
 		font-size: calc(100vw / 40);
@@ -20,15 +17,41 @@ h4,
 h5,
 h6 {
 	@include line-height-crop($heading-line-height, 1, top);
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: 0.05em;
 	line-height: $heading-line-height;
+	margin: 0;
 }
 
-p {
+h2 {
+	font-size: 3.6rem;
+}
+
+h3 {
+	font-size: 3.2rem;
+}
+
+h4 {
+	font-size: 2.8rem;
+}
+
+h5 {
+	font-size: 2.4rem;
+}
+
+h6 {
+	font-size: 2rem;
+}
+
+p,
+ul,
+ol {
 	font-size: 1.6rem;
 	line-height: $text-line-height;
 	letter-spacing: 0.01em;
+	@include mq(mobile) {
+		font-size: 1.4rem;
+	}
 }
 
 a {
@@ -38,4 +61,13 @@ a {
 a:hover {
 	color: currentColor;
 	text-decoration: none;
+}
+
+input[type='text'],
+input[type='search'],
+textarea {
+	font-size: 1.4rem;
+	@include mq(mobile) {
+		font-size: clamp(16px, 1.4rem, 1.4rem);
+	}
 }
