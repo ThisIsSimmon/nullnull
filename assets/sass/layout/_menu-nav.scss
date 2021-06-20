@@ -4,6 +4,7 @@
 .menu-nav {
 	margin-top: math.div(6, 1.035) + 0rem;
 	&__list {
+		padding: 0;
 	}
 
 	&__item {
@@ -18,7 +19,7 @@
 			background-color: #fff;
 			border-radius: 1.5px;
 			box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1), -1px -1px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 1px rgba(255, 255, 255, 0.1), inset 1px 1px 1px rgba(0, 0, 0, 0.1);
-			content: "";
+			content: '';
 			display: block;
 			height: 2px;
 			margin-top: clamp(10px, #{math.div(1, 1.035) + 0rem}, #{math.div(1, 1.035) + 0rem});
@@ -37,7 +38,7 @@
 	}
 }
 
-.menu[aria-hidden="false"] {
+.menu[aria-hidden='false'] {
 	.menu-nav__item {
 		&::after {
 			animation: menu-nav-line-show 0.8s map-get($easing-functions, easeOutCirc) 0.9s backwards;
