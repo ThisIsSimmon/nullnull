@@ -8,8 +8,10 @@ body {
 	background-color: map-get($colors, bg-base);
 }
 
-p {
-	margin: 1em 0 0;
+p,
+ul,
+ol {
+	margin: 0.75em 0 0;
 }
 
 ol,
@@ -19,8 +21,25 @@ dl {
 	padding: 0;
 }
 
-input[type="text"],
-input[type="search"],
+ol,
+ul {
+	margin: 0.75em 0 0;
+	padding-left: calc(0.95em + 7px);
+}
+
+ol ul,
+ol ol,
+ul ul,
+ul ol {
+	padding-left: calc(1.45em + 7px);
+}
+
+ul li::marker {
+	font-size: 1em;
+}
+
+input[type='text'],
+input[type='search'],
 textarea {
 	background-color: #fff;
 	border: none;
