@@ -1,0 +1,16 @@
+{
+	"phpcs.standard": "WordPress-Extra",
+	"phpsab.executablePathCS": "/Users/simmon/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs",
+	"phpsab.executablePathCBF": "/Users/simmon/.composer/vendor/squizlabs/php_codesniffer/bin/phpcbf",
+	"phpsab.standard": "WordPress-Extra",
+	"[json]": {
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace",
+		"gitlens.codeLens.scopes": ["document"]
+	},
+	"[php]": {
+		"editor.formatOnSave": true
+	}
+}
