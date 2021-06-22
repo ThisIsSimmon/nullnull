@@ -12,5 +12,7 @@
 	},
 	"[php]": {
 		"editor.formatOnSave": true
-	}
+	},
+	"html.format.endWithNewline": true,
+	"editor.insertSpaces": false
 }
