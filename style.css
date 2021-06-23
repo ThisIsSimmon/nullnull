@@ -629,9 +629,7 @@ body {
   background-color: #e9ebf1;
 }
 
-p,
-ul,
-ol {
+p {
   margin: 0.75em 0 0;
 }
 
@@ -640,12 +638,6 @@ ul,
 dl {
   margin: 0;
   padding: 0;
-}
-
-ol,
-ul {
-  margin: 0.75em 0 0;
-  padding-left: calc(0.95em + 7px);
 }
 
 ol ul,
@@ -866,6 +858,9 @@ textarea {
 .tag-list--blog-card {
   margin-top: 1rem;
 }
+.tag-list--entry {
+  margin-top: 1.9rem;
+}
 .tag-list__link {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 1px 1px 2px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -873,9 +868,9 @@ textarea {
   display: flex;
   font-size: 1.2rem;
   font-weight: 400;
-  height: 2em;
+  height: 2.2em;
   letter-spacing: 0.1em;
-  line-height: 2.2em;
+  line-height: 2.4em;
   margin-right: 1rem;
   padding: 0 1.243em;
 }
@@ -1032,6 +1027,27 @@ textarea {
   margin-bottom: calc((1 - 1.5) * 0.5em);
   width: 0;
 }
+.entry-header__title--blog {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: left;
+}
+.entry-header__title--blog::after {
+  content: "";
+  display: block;
+  height: 0;
+  margin-bottom: calc((1 - 1.5) * 0.5em);
+  width: 0;
+}
+.entry-header__date {
+  color: #8f93a3;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  margin-top: 2.8571428571em;
+}
 
 .entry-content {
   margin: 13rem auto 0;
@@ -1055,6 +1071,11 @@ textarea {
   display: block;
   height: 2px;
   margin-top: calc(1.2rem - ((1em * 1.5 - 1em) / 2));
+}
+.entry-content ol,
+.entry-content ul {
+  margin: 0.75em 0 0;
+  padding-left: calc(0.95em + 7px);
 }
 .entry-content--privacy > h2 {
   font-size: 2.4rem;

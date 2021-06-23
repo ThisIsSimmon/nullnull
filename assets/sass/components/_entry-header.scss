@@ -13,5 +13,22 @@
 		font-weight: 500;
 		letter-spacing: 0.2em;
 		text-align: center;
+
+		&--blog {
+			@include line-height-crop($heading-line-height, 1, bottom);
+			font-size: 4rem;
+			font-weight: 700;
+			text-align: left;
+		}
+	}
+
+	&__date {
+		color: map-get($colors, text-sub);
+		display: block;
+		font-size: 1.4rem;
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: 0.1em;
+		margin-top: #{math.div(40, 14)}em;
 	}
 }
