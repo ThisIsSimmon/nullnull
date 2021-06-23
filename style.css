@@ -801,6 +801,11 @@ textarea {
   padding: 0 2rem;
   width: 100%;
 }
+@media (max-width: 48em) {
+  .blog-card-list {
+    grid-auto-rows: calc((100vw - map-get($spacers, base-horizontal) * 2) * 0.625);
+  }
+}
 .blog-card-list--home {
   margin-top: 12.5rem;
 }
