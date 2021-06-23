@@ -1,0 +1,28 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.scroll-indicator {
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: none;
+	height: 0.8rem;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+
+	&::-webkit-progress-bar {
+		background: transparent;
+	}
+
+	&::-webkit-progress-value {
+		@include bg-gradient;
+		background-attachment: fixed;
+	}
+
+	&::-moz-progress-bar {
+		@include bg-gradient;
+		background-attachment: fixed;
+	}
+}
