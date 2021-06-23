@@ -2,7 +2,8 @@
 @use 'sass:math';
 
 .entry-header {
-	margin-top: 12rem;
+	margin: 12rem auto 0;
+	max-width: 80rem;
 	@include mq(mobile) {
 		margin-top: 8rem;
 	}

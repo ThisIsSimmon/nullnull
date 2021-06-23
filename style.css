@@ -1011,7 +1011,8 @@ textarea {
 }
 
 .entry-header {
-  margin-top: 12rem;
+  margin: 12rem auto 0;
+  max-width: 80rem;
 }
 @media (max-width: 48em) {
   .entry-header {
