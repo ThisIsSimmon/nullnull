@@ -18,11 +18,15 @@
 
 	&::-webkit-progress-value {
 		@include bg-gradient;
+		@include shadow(button-gradient);
 		background-attachment: fixed;
+		border-radius: 0.4rem;
 	}
 
 	&::-moz-progress-bar {
 		@include bg-gradient;
+		@include shadow(button-gradient);
 		background-attachment: fixed;
+		border-radius: 0.4rem;
 	}
 }
