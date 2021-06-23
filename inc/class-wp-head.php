@@ -7,6 +7,7 @@ class WP_Head {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_debug_mode_styles' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
+		add_filter( 'script_loader_tag', array( $this, 'defer_parsing_of_js' ), 10, 1 );
 	}
 
 	public function enqueue_debug_mode_styles() {
@@ -31,5 +32,12 @@ class WP_Head {
 
 	public function faster_tags() {
 		echo '<link rel="preconnect" href="https://fonts.gstatic.com">';
+	}
+
+	public function defer_parsing_of_js( $tag ) {
+		if ( is_admin() ) {
+			return;
+		}
+		return str_replace( "type='text/javascript'", 'defer', $tag );
 	}
 }
