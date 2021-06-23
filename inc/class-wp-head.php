@@ -36,7 +36,7 @@ class WP_Head {
 
 	public function defer_parsing_of_js( $tag ) {
 		if ( is_admin() ) {
-			return;
+			return $tag;
 		}
 		return str_replace( "type='text/javascript'", 'defer', $tag );
 	}
