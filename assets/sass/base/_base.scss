@@ -8,9 +8,7 @@ body {
 	background-color: map-get($colors, bg-base);
 }
 
-p,
-ul,
-ol {
+p {
 	margin: 0.75em 0 0;
 }
 
@@ -19,12 +17,6 @@ ul,
 dl {
 	margin: 0;
 	padding: 0;
-}
-
-ol,
-ul {
-	margin: 0.75em 0 0;
-	padding-left: calc(0.95em + 7px);
 }
 
 ol ul,

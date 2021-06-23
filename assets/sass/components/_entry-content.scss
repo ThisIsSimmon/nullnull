@@ -24,6 +24,12 @@
 		}
 	}
 
+	ol,
+	ul {
+		margin: 0.75em 0 0;
+		padding-left: calc(0.95em + 7px);
+	}
+
 	&--privacy {
 		> h2 {
 			font-size: 2.4rem;
