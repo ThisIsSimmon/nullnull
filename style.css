@@ -1067,6 +1067,29 @@ textarea {
   margin-top: 5.2rem;
 }
 
+.scroll-indicator {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  height: 0.8rem;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.scroll-indicator::-webkit-progress-bar {
+  background: transparent;
+}
+.scroll-indicator::-webkit-progress-value {
+  background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
+  background-attachment: fixed;
+}
+.scroll-indicator::-moz-progress-bar {
+  background: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
+  background-attachment: fixed;
+}
+
 .header {
   align-items: center;
   display: flex;

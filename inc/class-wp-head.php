@@ -7,6 +7,7 @@ class WP_Head {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_debug_mode_styles' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
+		add_filter( 'script_loader_tag', array( $this, 'defer_parsing_of_js' ), 10, 1 );
 	}
 
 	public function enqueue_debug_mode_styles() {
@@ -25,11 +26,20 @@ class WP_Head {
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'focus-visible', THEME_URI . '/assets/js/focus-visible.min.js', array(), '5.2.0', false );
 		wp_enqueue_script( 'micromodal', THEME_URI . '/assets/js/micromodal.min.js', array(), '0.4.6', false );
-		wp_enqueue_script( 'app', THEME_URI . '/assets/js/app.js', array( 'micromodal' ), filemtime( THEME_PATH . '/assets/js/app.js' ), false );
+		wp_enqueue_script( 'gsap', THEME_URI . '/assets/js/gsap.min.js', array(), '3.7.0', false );
+		wp_enqueue_script( 'ScrollTrigger', THEME_URI . '/assets/js/ScrollTrigger.min.js', array( 'gsap' ), '3.7.0', false );
+		wp_enqueue_script( 'app', THEME_URI . '/assets/js/app.js', array( 'micromodal', 'ScrollTrigger' ), filemtime( THEME_PATH . '/assets/js/app.js' ), false );
 	}
 
 
 	public function faster_tags() {
 		echo '<link rel="preconnect" href="https://fonts.gstatic.com">';
+	}
+
+	public function defer_parsing_of_js( $tag ) {
+		if ( is_admin() ) {
+			return $tag;
+		}
+		return str_replace( "type='text/javascript'", 'defer', $tag );
 	}
 }
