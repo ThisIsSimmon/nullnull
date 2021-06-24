@@ -9,7 +9,7 @@
 		"server": "browser-sync start --config bs-config.js",
 		"cssnano": "postcss -c ./postcss.config.js ./style.css -o ./style.min.css",
 		"autoprefix": "postcss ./style.css -u autoprefixer --replace",
-		"imagemin": "onchange './assets/img/src/**/*.{jpg,png,gif,svg}' -- node ./imagemin.js {{changed}}"
+		"imagemin": "onchange './assets/img/src/**/*.{jpg,png,gif}' -- node ./imagemin.js {{changed}}"
 	},
 	"browserslist": [
 		"since 2015"
