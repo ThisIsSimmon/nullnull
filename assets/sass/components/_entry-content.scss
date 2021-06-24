@@ -8,28 +8,6 @@
 	@include mq(mobile) {
 		margin: 9rem auto 0;
 	}
-	> h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		&::after {
-			@include shadow(hr);
-			background: map-get($colors, bg-base);
-			content: '';
-			display: block;
-			height: 2px;
-			margin-top: calc(1.2rem - ((1em * #{$heading-line-height} - 1em) / 2));
-		}
-	}
-
-	ol,
-	ul {
-		margin: 0.75em 0 0;
-		padding-left: calc(0.95em + 7px);
-	}
-
 	&--privacy {
 		> h2 {
 			font-size: 2.4rem;
@@ -40,5 +18,71 @@
 				margin-top: 5.2rem;
 			}
 		}
+	}
+	&--blog {
+		margin: 10rem auto 0;
+	}
+
+	> h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 700;
+		margin-top: 1.75em;
+		&::after {
+			@include shadow(hr);
+			background: map-get($colors, bg-base);
+			content: '';
+			display: block;
+			height: 2px;
+			margin-top: calc(1.2rem - ((1em * #{$heading-line-height} - 1em) / 2));
+		}
+	}
+
+	> h2:nth-child(1) {
+		margin-top: 0;
+	}
+
+	> p:nth-child(1) {
+		@include line-height-crop($text-line-height, 1, top);
+		margin-top: 0;
+	}
+
+	ol,
+	ul {
+		margin: 1.8em 0 0;
+		padding-left: calc(0.95em + 7px);
+	}
+
+	ol ul,
+	ol ol,
+	ul ul,
+	ul ol {
+		margin: 0.75em 0 0;
+	}
+
+	p + p {
+		margin-top: 1.8em;
+	}
+
+	.wp-block-image,
+	.wp-block-columns .wp-block-image {
+		margin: 3em 0 0;
+	}
+
+	.wp-block-columns {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+		margin: 3em 0 0;
+		gap: 1.5em;
+		.wp-block-image {
+			margin: 0;
+		}
+	}
+
+	.wp-block-column:not(:first-child) {
+		margin-left: 0;
 	}
 }

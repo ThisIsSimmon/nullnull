@@ -1051,7 +1051,7 @@ textarea {
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.1em;
-  margin-top: 2.8571428571em;
+  margin-top: 3.0714285714em;
 }
 
 .entry-content {
@@ -1063,6 +1063,29 @@ textarea {
   .entry-content {
     margin: 9rem auto 0;
   }
+}
+.entry-content--privacy > h2 {
+  font-size: 2.4rem;
+}
+@media (max-width: 48em) {
+  .entry-content--privacy > h2 {
+    font-size: 2.1rem;
+  }
+}
+.entry-content--privacy > h2:nth-of-type(n + 2) {
+  margin-top: 5.2rem;
+}
+.entry-content--blog {
+  margin: 10rem auto 0;
+}
+.entry-content > h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  font-weight: 700;
+  margin-top: 1.75em;
 }
 .entry-content > h1::after,
 .entry-content h2::after,
@@ -1077,21 +1100,48 @@ textarea {
   height: 2px;
   margin-top: calc(1.2rem - ((1em * 1.5 - 1em) / 2));
 }
+.entry-content > h2:nth-child(1) {
+  margin-top: 0;
+}
+.entry-content > p:nth-child(1) {
+  margin-top: 0;
+}
+.entry-content > p:nth-child(1)::before {
+  content: "";
+  display: block;
+  height: 0;
+  margin-top: calc((1 - 1.75) * 0.5em);
+  width: 0;
+}
 .entry-content ol,
 .entry-content ul {
-  margin: 0.75em 0 0;
+  margin: 1.8em 0 0;
   padding-left: calc(0.95em + 7px);
 }
-.entry-content--privacy > h2 {
-  font-size: 2.4rem;
+.entry-content ol ul,
+.entry-content ol ol,
+.entry-content ul ul,
+.entry-content ul ol {
+  margin: 0.75em 0 0;
 }
-@media (max-width: 48em) {
-  .entry-content--privacy > h2 {
-    font-size: 2.1rem;
-  }
+.entry-content p + p {
+  margin-top: 1.8em;
 }
-.entry-content--privacy > h2:nth-of-type(n + 2) {
-  margin-top: 5.2rem;
+.entry-content .wp-block-image,
+.entry-content .wp-block-columns .wp-block-image {
+  margin: 3em 0 0;
+}
+.entry-content .wp-block-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  margin: 3em 0 0;
+  gap: 1.5em;
+}
+.entry-content .wp-block-columns .wp-block-image {
+  margin: 0;
+}
+.entry-content .wp-block-column:not(:first-child) {
+  margin-left: 0;
 }
 
 .scroll-indicator {
