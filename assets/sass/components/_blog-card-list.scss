@@ -10,7 +10,9 @@
 	max-width: 100rem + (map-get($spacers, base-horizontal) * 2);
 	padding: 0 map-get($spacers, base-horizontal);
 	width: 100%;
-
+	@include mq(mobile) {
+		grid-auto-rows: calc((100vw - map-get($spacers, base-horizontal) * 2) * 0.625);
+	}
 	&--home {
 		margin-top: 12.5rem;
 	}

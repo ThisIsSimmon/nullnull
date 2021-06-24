@@ -15,21 +15,20 @@
 	</header>
 
 
-	<div class="entry-content entry-content--privacy">
-		<h2>個人情報の定義</h2>
-		<p>本プライバシーポリシーにおいて、個人情報とは生存する個人に関する情報であり、氏名、生年月日、住所、電話番号、メールアドレス等、特定の個人を識別することができるものをいいます。</p>
-
-
+	<div class="entry-content entry-content--blog">
+		<?php the_content(); ?>
 	</div>
+
+	<footer class="entry-footer">
+		<div class="share">
+			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--twitter"></a>
+			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--line"></a>
+			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--pocket"></a>
+			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--facebook"></a>
+			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--hatena"></a>
+		</div>
+	</footer>
 </article>
-
-
-<?php
-foreach ( range( 1, 300 ) as $key => $value ) {
-	echo '<br>';
-}
-?>
-
 
 <?php
 get_footer();
