@@ -1,0 +1,47 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.share {
+	display: grid;
+	column-gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(1rem, max-content));
+	@include mq(mobile) {
+		column-gap: 1.2rem;
+	}
+	&__button {
+		@include shadow(button-base);
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		height: 5em;
+		width: 5em;
+		@include mq(mobile) {
+			font-size: 0.8rem;
+		}
+
+		&--twitter {
+			background-image: url('#{$image-dir}/post/twitter.svg');
+			background-size: 2em 1.8em;
+		}
+
+		&--line {
+			background-image: url('#{$image-dir}/post/line.svg');
+			background-size: 2em 2em;
+		}
+
+		&--pocket {
+			background-image: url('#{$image-dir}/post/pocket.svg');
+			background-size: 2em 1.8em;
+		}
+
+		&--facebook {
+			background-image: url('#{$image-dir}/post/facebook.svg');
+			background-size: 2em 2em;
+		}
+
+		&--hatena {
+			background-image: url('#{$image-dir}/post/hatena.svg');
+			background-size: 2em 1.8em;
+		}
+	}
+}
