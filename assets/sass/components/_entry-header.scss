@@ -19,6 +19,9 @@
 			font-size: 4rem;
 			font-weight: 700;
 			text-align: left;
+			@include mq(mobile) {
+				font-size: 3.4rem;
+			}
 		}
 	}
 
