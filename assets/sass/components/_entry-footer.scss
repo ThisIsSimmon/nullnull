@@ -1,0 +1,10 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.entry-footer {
+	margin: 6rem auto 0;
+	max-width: 80rem;
+	@include mq(mobile) {
+		margin: 4rem auto 0;
+	}
+}

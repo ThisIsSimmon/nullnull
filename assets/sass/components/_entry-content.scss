@@ -23,7 +23,42 @@
 		margin: 10rem auto 0;
 	}
 
-	> h1,
+	h2 {
+		font-size: 3.6rem;
+		@include mq(mobile) {
+			font-size: 3rem;
+		}
+	}
+
+	h3 {
+		font-size: 3.2rem;
+		@include mq(mobile) {
+			font-size: 2.7rem;
+		}
+	}
+
+	h4 {
+		font-size: 2.8rem;
+		@include mq(mobile) {
+			font-size: 2.4rem;
+		}
+	}
+
+	h5 {
+		font-size: 2.4rem;
+		@include mq(mobile) {
+			font-size: 2.1rem;
+		}
+	}
+
+	h6 {
+		font-size: 2rem;
+		@include mq(mobile) {
+			font-size: 1.8rem;
+		}
+	}
+
+	h1,
 	h2,
 	h3,
 	h4,

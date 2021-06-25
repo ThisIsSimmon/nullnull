@@ -29,6 +29,19 @@
 		}
 	} @else if press-button-base == $name {
 		box-shadow: $press-button-base;
+	} @else if button-share == $name {
+		box-shadow:
+        4px 4px 4px rgba(0, 0, 0, 0.1),
+        -4px -4px 4px transparent,
+        inset 2px 2px 4px rgba(255, 255, 255, 0.9),
+        inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+		transition: box-shadow 0.5s map-get($easing-functions, easeOutCirc);
+		&:hover {
+			box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9),
+			-2px -2px 4px rgba(0, 0, 0, 0.1),
+			inset -2px -2px 4px rgba(255, 255, 255, 0.9),
+			inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+		}
 	} @else if button-gradient == $name {
 		box-shadow:
         1px 1px 2px transparent,
