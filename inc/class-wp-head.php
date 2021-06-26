@@ -3,7 +3,7 @@
 class WP_Head {
 
 	public function __construct() {
-		add_action( 'wp_head', array( $this, 'faster_tags' ), 1 );
+		add_action( 'wp_head', array( $this, 'link_tags' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_debug_mode_styles' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
@@ -32,8 +32,23 @@ class WP_Head {
 	}
 
 
-	public function faster_tags() {
-		echo '<link rel="preconnect" href="https://fonts.gstatic.com">';
+	public function link_tags() {
+		$theme_image_uri = THEME_IMAGE_URI;
+		$allowed_html    = array(
+			'link' => array(
+				'rel'  => array(),
+				'href' => array(),
+				'type' => array(),
+			),
+		);
+
+		$output_link_tags = <<<EOT
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="icon" href="{$theme_image_uri}/common/favicon.svg" type="image/svg+xml">
+		<link rel="icon alternate" href="{$theme_image_uri}/common/favicon.png" type="image/png">
+		<link rel="apple-touch-icon" href="{$theme_image_uri}/common/apple-touch-icon.png">
+EOT;
+		echo wp_kses( $output_link_tags, $allowed_html );
 	}
 
 	public function defer_parsing_of_js( $tag ) {
@@ -42,4 +57,5 @@ class WP_Head {
 		}
 		return str_replace( "type='text/javascript'", 'defer', $tag );
 	}
+
 }
