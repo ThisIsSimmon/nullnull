@@ -30,5 +30,7 @@
 	</footer>
 </article>
 
+<?php get_template_part( 'template-parts/profile' ); ?>
+
 <?php
 get_footer();
