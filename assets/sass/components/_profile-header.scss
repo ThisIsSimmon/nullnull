@@ -1,0 +1,26 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.profile-header {
+	align-items: flex-end;
+	display: flex;
+	column-gap: 2rem;
+	// grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+	&__inner {
+	}
+
+	&__name {
+		@include quicksand-one-line;
+		font-size: 2.8rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		margin-top: 0;
+	}
+
+	&__desc {
+		@include quicksand-one-line;
+		color: map-get($colors, text-sub);
+		letter-spacing: 0.1em;
+		margin-top: #{math.div(12, 14)}em;
+	}
+}

@@ -1,0 +1,131 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.skills {
+	margin-top: 5rem;
+
+	&__title {
+		@include quicksand-one-line;
+		color: map-get($colors, text-sub);
+		font-size: 1.8rem;
+		letter-spacing: 0.1em;
+		margin-top: 0;
+	}
+
+	&__list {
+		gap: 1rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(3rem, max-content));
+		list-style-type: none;
+		margin-top: 1.2rem;
+	}
+
+	&__list-item {
+		@include shadow(skills);
+		background-repeat: no-repeat;
+		background-position: center;
+		border-radius: 0.6em;
+		font-size: 1rem;
+		height: 3em;
+		width: 3em;
+		&--html {
+			background-image: url('#{$image-dir}/profile/skills/html.svg');
+		}
+
+		&--css {
+			background-image: url('#{$image-dir}/profile/skills/css.svg');
+		}
+
+		&--sass {
+			background-image: url('#{$image-dir}/profile/skills/sass.svg');
+		}
+
+		&--js {
+			background-image: url('#{$image-dir}/profile/skills/js.svg');
+		}
+
+		&--jquery {
+			background-image: url('#{$image-dir}/profile/skills/jquery.svg');
+		}
+
+		&--php {
+			background-image: url('#{$image-dir}/profile/skills/php.svg');
+		}
+
+		&--tableplus {
+			background-image: url('#{$image-dir}/profile/skills/tableplus.png');
+		}
+
+		&--sql {
+			background-image: url('#{$image-dir}/profile/skills/sql.svg');
+		}
+
+		&--wordpress {
+			background-image: url('#{$image-dir}/profile/skills/wordpress.svg');
+		}
+
+		&--npm {
+			background-image: url('#{$image-dir}/profile/skills/npm.svg');
+		}
+
+		&--docker {
+			background-image: url('#{$image-dir}/profile/skills/docker.svg');
+		}
+
+		&--vim {
+			background-image: url('#{$image-dir}/profile/skills/vim.png');
+		}
+
+		&--vscode {
+			background-image: url('#{$image-dir}/profile/skills/vscode.svg');
+		}
+
+		&--awscloud9 {
+			background-image: url('#{$image-dir}/profile/skills/awscloud9.png');
+		}
+
+		&--aws {
+			background-image: url('#{$image-dir}/profile/skills/aws.svg');
+		}
+
+		&--kusanagi {
+			background-image: url('#{$image-dir}/profile/skills/kusanagi.svg');
+		}
+
+		&--nginx {
+			background-image: url('#{$image-dir}/profile/skills/nginx.svg');
+		}
+
+		&--linux {
+			background-image: url('#{$image-dir}/profile/skills/linux.svg');
+		}
+
+		&--codepen {
+			background-image: url('#{$image-dir}/profile/skills/codepen.svg');
+		}
+
+		&--git {
+			background-image: url('#{$image-dir}/profile/skills/git.svg');
+		}
+
+		&--github {
+			background-image: url('#{$image-dir}/profile/skills/github.svg');
+		}
+
+		&--figma {
+			background-image: url('#{$image-dir}/profile/skills/figma.svg');
+		}
+
+		&--affinity-designer {
+			background-image: url('#{$image-dir}/profile/skills/affinity-designer.svg');
+		}
+
+		&--affinity-photo {
+			background-image: url('#{$image-dir}/profile/skills/affinity-photo.svg');
+		}
+
+		&--pixelsnap {
+			background-image: url('#{$image-dir}/profile/skills/pixelsnap.png');
+		}
+	}
+}
