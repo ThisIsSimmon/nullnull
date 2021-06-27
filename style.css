@@ -653,12 +653,14 @@ ul li::marker {
 
 input[type=text],
 input[type=search],
+input[type=email],
 textarea {
+  -webkit-appearance: none;
   background-color: #fff;
   border: none;
   box-sizing: border-box;
   caret-color: #8e57a8;
-  padding: 1rem 2rem;
+  padding: 0.9em 1.2em;
 }
 
 button {
@@ -748,15 +750,9 @@ a:hover {
 
 input[type=text],
 input[type=search],
+input[type=email],
 textarea {
-  font-size: 1.4rem;
-}
-@media (max-width: 48em) {
-  input[type=text],
-input[type=search],
-textarea {
-    font-size: clamp(16px, 1.4rem, 1.4rem);
-  }
+  font-size: clamp(16px, 1.4rem, 1.6rem);
 }
 
 .visually-hidden {
@@ -1182,6 +1178,9 @@ textarea {
 }
 .entry-content--privacy > h2:nth-of-type(n + 2) {
   margin-top: 5.2rem;
+}
+.entry-content--contact {
+  max-width: 60rem;
 }
 .entry-content--blog {
   margin: 10rem auto 0;
@@ -1658,9 +1657,9 @@ textarea {
   }
 }
 .header-search__field {
-  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.69), inset 2px 2px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
   border-radius: 1.9rem;
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
   height: 3.8rem;
   width: 22rem;
 }
@@ -2129,6 +2128,30 @@ textarea {
   background-image: url("assets/img/dist/404/page_not_found.svg");
   height: 4.2em;
   width: 34.8em;
+}
+
+.contact-form {
+  display: grid;
+  row-gap: 4rem;
+}
+.contact-form__label {
+  height: 0.775em;
+  line-height: 0.775;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  width: 100%;
+}
+.contact-form__input {
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
+  border-radius: 1rem;
+  margin-top: 0.75em;
+  width: 100%;
+}
+.contact-form__input--input {
+  height: 4rem;
+}
+.contact-form__input--textarea {
+  height: 30rem;
 }
 
 /*# sourceMappingURL=style.css.map */

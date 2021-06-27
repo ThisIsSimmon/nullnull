@@ -1,0 +1,32 @@
+@use '../../abstracts/' as *;
+@use 'sass:math';
+
+.contact-form {
+	display: grid;
+	row-gap: 4rem;
+
+	&__filed {
+	}
+
+	&__label {
+		@include quicksand-one-line;
+		font-size: 2rem;
+		letter-spacing: 0.2em;
+		width: 100%;
+	}
+
+	&__input {
+		@include shadow(input);
+		border-radius: 1rem;
+		margin-top: 0.75em;
+		width: 100%;
+
+		&--input {
+			height: 4rem;
+		}
+
+		&--textarea {
+			height: 30rem;
+		}
+	}
+}
