@@ -3,13 +3,18 @@
 
 .skills {
 	margin-top: 5rem;
-
+	@include mq(mobile) {
+		margin-top: 4rem;
+	}
 	&__title {
 		@include quicksand-one-line;
 		color: map-get($colors, text-sub);
 		font-size: 1.8rem;
 		letter-spacing: 0.1em;
 		margin-top: 0;
+		> span {
+			margin: 0 0.3em;
+		}
 	}
 
 	&__list {
@@ -18,114 +23,201 @@
 		grid-template-columns: repeat(auto-fit, minmax(3rem, max-content));
 		list-style-type: none;
 		margin-top: 1.2rem;
+		@include mq(mobile) {
+			gap: 0.6rem;
+			grid-template-columns: repeat(auto-fit, minmax(#{(3 * 0.725)}rem, max-content));
+		}
 	}
 
 	&__list-item {
 		@include shadow(skills);
 		background-repeat: no-repeat;
 		background-position: center;
+		// background-size: contain;
 		border-radius: 0.6em;
 		font-size: 1rem;
 		height: 3em;
+		padding: 0.45em;
+		position: relative;
 		width: 3em;
+		@include mq(mobile) {
+			font-size: 0.725rem;
+		}
+
+		&::after {
+			animation: tooltip-hide 0.6s map-get($easing-functions, easeOutCirc) 0s forwards;
+			background-color: map-get($colors, text-main);
+			bottom: -2em;
+			border-radius: 0.4em;
+			box-shadow: 1px 1px 2px rgb(255, 255, 255, 0.9), -1px -1px 2px rgb(0, 0, 0, 0.2), inset -2px -2px 4px rgb(255, 255, 255, 0.4);
+			color: white;
+			content: attr(data-title);
+			font-size: 1.2em;
+			left: 0;
+			line-height: 1;
+			opacity: 0;
+			overflow: hidden;
+			padding: 0.5em 1em;
+			pointer-events: none;
+			position: absolute;
+			transform-origin: top left;
+			transform: scaleY(0);
+			white-space: nowrap;
+			width: auto;
+			z-index: map-get($layer, default);
+		}
+
+		&:hover::after {
+			animation: tooltip-show 0.4s map-get($easing-functions, easeOutCirc) 0s forwards;
+		}
+
+		@keyframes tooltip-show {
+			100% {
+				opacity: 1;
+				transform: scaleY(1);
+			}
+		}
+
+		@keyframes tooltip-hide {
+			0% {
+				opacity: 1;
+				transform: scaleY(1);
+			}
+
+			100% {
+				opacity: 0;
+				transform: scaleY(0);
+			}
+		}
+
 		&--html {
 			background-image: url('#{$image-dir}/profile/skills/html.svg');
+			background-size: auto 2.2em;
 		}
 
 		&--css {
 			background-image: url('#{$image-dir}/profile/skills/css.svg');
+			background-size: auto 2.2em;
 		}
 
 		&--sass {
 			background-image: url('#{$image-dir}/profile/skills/sass.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--js {
 			background-image: url('#{$image-dir}/profile/skills/js.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--jquery {
 			background-image: url('#{$image-dir}/profile/skills/jquery.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--php {
 			background-image: url('#{$image-dir}/profile/skills/php.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--tableplus {
 			background-image: url('#{$image-dir}/profile/skills/tableplus.png');
+			background-size: 2.1em 2.1em;
 		}
 
 		&--sql {
 			background-image: url('#{$image-dir}/profile/skills/sql.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--wordpress {
 			background-image: url('#{$image-dir}/profile/skills/wordpress.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--npm {
 			background-image: url('#{$image-dir}/profile/skills/npm.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--docker {
 			background-image: url('#{$image-dir}/profile/skills/docker.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--vim {
 			background-image: url('#{$image-dir}/profile/skills/vim.png');
+			background-size: 2.1em 2.1em;
 		}
 
 		&--vscode {
 			background-image: url('#{$image-dir}/profile/skills/vscode.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--awscloud9 {
 			background-image: url('#{$image-dir}/profile/skills/awscloud9.png');
+			background-size: 2.1em 2.1em;
 		}
 
 		&--aws {
 			background-image: url('#{$image-dir}/profile/skills/aws.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--kusanagi {
 			background-image: url('#{$image-dir}/profile/skills/kusanagi.svg');
+			background-size: 1.8em auto;
 		}
 
 		&--nginx {
 			background-image: url('#{$image-dir}/profile/skills/nginx.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--linux {
 			background-image: url('#{$image-dir}/profile/skills/linux.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--codepen {
 			background-image: url('#{$image-dir}/profile/skills/codepen.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--git {
 			background-image: url('#{$image-dir}/profile/skills/git.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--github {
 			background-image: url('#{$image-dir}/profile/skills/github.svg');
+			background-size: 2.2em auto;
+		}
+
+		&--photoshop {
+			background-image: url('#{$image-dir}/profile/skills/photoshop.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--figma {
 			background-image: url('#{$image-dir}/profile/skills/figma.svg');
+			background-size: auto 2.2em;
 		}
 
 		&--affinity-designer {
 			background-image: url('#{$image-dir}/profile/skills/affinity-designer.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--affinity-photo {
 			background-image: url('#{$image-dir}/profile/skills/affinity-photo.svg');
+			background-size: 2.2em auto;
 		}
 
 		&--pixelsnap {
 			background-image: url('#{$image-dir}/profile/skills/pixelsnap.png');
+			background-size: 2.625em 2.625em;
 		}
 	}
 }

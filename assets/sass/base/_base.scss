@@ -32,12 +32,14 @@ ul li::marker {
 
 input[type='text'],
 input[type='search'],
+input[type='email'],
 textarea {
+	-webkit-appearance: none;
 	background-color: #fff;
 	border: none;
 	box-sizing: border-box;
 	caret-color: map-get($colors, text-link);
-	padding: 1rem 2rem;
+	padding: 0.9em 1.2em;
 }
 
 button {

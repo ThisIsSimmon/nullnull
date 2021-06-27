@@ -2,13 +2,17 @@
 @use 'sass:math';
 
 .profile {
-	@include shadow(card);
-	margin: 10rem auto 0;
-	max-width: 80rem;
-	position: relative;
-
+	padding: 0 map-get($spacers, base-horizontal);
 	&__inner {
+		@include shadow(card);
+		border-radius: 1rem;
+		margin: 10rem auto 0;
+		max-width: 80rem;
 		padding: 6rem 6rem 6rem 14rem;
+		position: relative;
+		@include mq(mobile) {
+			padding: 5rem 3rem 3rem 3rem;
+		}
 	}
 
 	&__image {
@@ -21,10 +25,14 @@
 		position: absolute;
 		top: -4rem;
 		width: 15em;
+		@include mq(mobile) {
+			font-size: 0.75rem;
+			left: -2rem;
+			top: -6rem;
+		}
 
 		> img {
 			backface-visibility: hidden;
-
 			width: 13em;
 		}
 	}
