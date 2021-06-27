@@ -14,7 +14,7 @@
 		@include shadow(input);
 		$height: 3.8rem;
 		border-radius: math.div($height, 2);
-		font-size: 1.4rem;
+		font-size: 1.4rem !important;
 		height: $height;
 		width: 22rem;
 
@@ -25,7 +25,7 @@
 	}
 
 	&__submit-button {
-		background-image: url("#{$image-dir}/header/search_icon.svg");
+		background-image: url('#{$image-dir}/header/search_icon.svg');
 		background-repeat: no-repeat;
 		background-size: contain;
 		height: 1.5em;
