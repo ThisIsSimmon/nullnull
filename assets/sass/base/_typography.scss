@@ -45,9 +45,7 @@ a:hover {
 
 input[type='text'],
 input[type='search'],
+input[type='email'],
 textarea {
-	font-size: 1.4rem;
-	@include mq(mobile) {
-		font-size: clamp(16px, 1.4rem, 1.4rem);
-	}
+	font-size: clamp(16px, 1.4rem, 1.6rem);
 }
