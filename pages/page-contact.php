@@ -8,15 +8,15 @@
 	</header>
 
 	<div class="entry-content entry-content--contact">
-		<form class="contact-form" action="" method="post">
+		<form class="contact-form" action="" method="post" novalidate>
 			<div class="contact-form__filed">
 				<label class="contact-form__label" for="name">Name</label>
-				<input class="contact-form__input contact-form__input--input" type="text" name="name" id="name" />
+				<input class="contact-form__input contact-form__input--input" type="text" name="name" id="name" autocomplete="name" />
 			</div>
 
 			<div class="contact-form__filed">
 				<label class="contact-form__label" for="email">Email</label>
-				<input class="contact-form__input contact-form__input--input" type="email" name="email" id="email" />
+				<input class="contact-form__input contact-form__input--input" type="email" name="email" id="email" autocomplete="email" />
 			</div>
 
 			<div class="contact-form__filed">
