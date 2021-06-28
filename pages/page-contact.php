@@ -33,7 +33,7 @@
 				<textarea class="contact-form__input contact-form__input--textarea" name="message" id="message" cols="30" rows="13"></textarea>
 			</div>
 
-			<button type="submit" class="button-gradient">
+			<button type="button" id="js-submit" class="button-gradient">
 				<span class="button-gradient__text button-gradient__text--en">SUBMIT</span>
 			</button>
 		</form>
