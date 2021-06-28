@@ -35,9 +35,6 @@
 	}
 
 	&[aria-hidden='true'] {
-		@each $easing-name, $easing-value in $easing-functions {
-			animation: menu-hide 4s $easing-value 0s backwards;
-		}
 		animation: menu-hide 0.6s cubic-bezier(0.73, 0.4, 0.7, 0.13) 0s backwards;
 	}
 }

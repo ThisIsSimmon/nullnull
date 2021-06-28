@@ -15,6 +15,25 @@
 		width: 100%;
 	}
 
+	&__error {
+		color: map-get($colors, text-error);
+		display: block;
+		font-size: 0.6em;
+		line-height: 1;
+		margin-top: 0;
+		overflow: hidden;
+		transition: height 0.4s ease-out, margin-top 0.4s ease-out;
+
+		&[aria-hidden='true'] {
+			height: 0;
+		}
+
+		&[aria-hidden='false'] {
+			height: 1em;
+			margin-top: 0.9em;
+		}
+	}
+
 	&__input {
 		@include shadow(input);
 		border-radius: 1rem;

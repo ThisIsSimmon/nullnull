@@ -1,3 +1,5 @@
+import Validate from './class-validate.js';
+
 MicroModal.init({
 	onShow: (modal) => {
 		document.getElementById('js-menu-open').classList.add('active');
@@ -19,3 +21,5 @@ if (scrollIndicator) {
 		scrollTrigger: { scrub: 0.3 },
 	});
 }
+
+new Validate();

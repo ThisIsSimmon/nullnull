@@ -7,7 +7,7 @@ class WP_Head {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_debug_mode_styles' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
-		add_filter( 'script_loader_tag', array( $this, 'defer_parsing_of_js' ), 10, 1 );
+		add_filter( 'script_loader_tag', array( $this, 'replace_script_tags' ), 10, 2 );
 	}
 
 	public function enqueue_debug_mode_styles() {
@@ -51,10 +51,15 @@ EOT;
 		echo wp_kses( $output_link_tags, $allowed_html );
 	}
 
-	public function defer_parsing_of_js( $tag ) {
+	public function replace_script_tags( $tag, $handle ) {
 		if ( is_admin() ) {
 			return $tag;
 		}
+
+		if ( 'app' === $handle ) {
+			return str_replace( "type='text/javascript'", 'type="module" defer', $tag );
+		}
+
 		return str_replace( "type='text/javascript'", 'defer', $tag );
 	}
 

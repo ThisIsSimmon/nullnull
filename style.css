@@ -1814,30 +1814,6 @@ textarea {
   animation: menu-show 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s backwards;
 }
 .menu[aria-hidden=true] {
-  animation: menu-hide 4s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.47, 0, 0.745, 0.715) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.6, 0.04, 0.98, 0.335) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.165, 0.84, 0.44, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.23, 1, 0.32, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.39, 0.575, 0.565, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.19, 1, 0.22, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.77, 0, 0.275, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.86, 0, 0.07, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(1, 0, 0, 1) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s backwards;
-  animation: menu-hide 4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s backwards;
   animation: menu-hide 0.6s cubic-bezier(0.73, 0.4, 0.7, 0.13) 0s backwards;
 }
 
@@ -2140,6 +2116,22 @@ textarea {
   font-size: 2rem;
   letter-spacing: 0.2em;
   width: 100%;
+}
+.contact-form__error {
+  color: #da2f82;
+  display: block;
+  font-size: 0.6em;
+  line-height: 1;
+  margin-top: 0;
+  overflow: hidden;
+  transition: height 0.4s ease-out, margin-top 0.4s ease-out;
+}
+.contact-form__error[aria-hidden=true] {
+  height: 0;
+}
+.contact-form__error[aria-hidden=false] {
+  height: 1em;
+  margin-top: 0.9em;
 }
 .contact-form__input {
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
