@@ -14,6 +14,8 @@ new Init();
 require THEME_PATH . '/inc/class-wp-head.php';
 new WP_Head();
 
+require THEME_PATH . '/inc/class-email.php';
+new Email();
 
 // カテゴリーの階層維持
 add_filter(

@@ -1,2 +1,3 @@
 node_modules/
+.wp-env.json
 .DS_Store
