@@ -921,6 +921,10 @@ textarea {
 .button-gradient:hover {
   color: #fff;
 }
+.button-gradient--contact {
+  margin-top: 1rem;
+  width: 100%;
+}
 .button-gradient__text {
   align-items: center;
   display: flex;
@@ -2120,7 +2124,8 @@ textarea {
 .contact-form__error {
   color: #da2f82;
   display: block;
-  font-size: 0.6em;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
   line-height: 1;
   margin-top: 0;
   overflow: hidden;
