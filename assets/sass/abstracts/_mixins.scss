@@ -17,6 +17,11 @@
     inset -2px -2px 4px rgba(255, 255, 255, 0.9),
     inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 
+	$press-button-base: 2px 2px 4px rgb(255, 255, 255, 0.9),
+	-2px -2px 4px rgb(0, 0, 0, 0.1),
+	inset -2px -2px 4px rgb(255, 255, 255, 0.9),
+	inset 2px 2px 4px rgb(0, 0, 0, 0.16);
+
 	@if button-base == $name {
 		box-shadow:
         4px 4px 4px rgba(0, 0, 0, 0.1),
@@ -50,12 +55,10 @@
         inset -2px -2px 4px rgba(0, 0, 0, 0.1);
 		transition: box-shadow 0.5s map-get($easing-functions, easeOutCirc);
 		&:hover {
-			box-shadow:
-            2px 2px 4px rgb(255, 255, 255, 0.9),
-            -2px -2px 4px rgb(0, 0, 0, 0.1),
-            inset -2px -2px 4px rgb(255, 255, 255, 0.9),
-            inset 2px 2px 4px rgb(0, 0, 0, 0.16);
+			box-shadow:$press-button-base;
 		}
+	} @else if press-button-gradient == $name {
+		box-shadow:$press-button-base;
 	} @else if card == $name {
 		box-shadow:
         4px 4px 4px rgba(0, 0, 0, 0.1),
