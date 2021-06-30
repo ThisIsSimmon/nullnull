@@ -12,14 +12,6 @@
 		color: #fff;
 	}
 
-	&--contact {
-		margin-top: 1rem;
-		width: 100%;
-		&:disabled {
-			@include shadow(press-button-gradient);
-		}
-	}
-
 	&__text {
 		align-items: center;
 		display: flex;
