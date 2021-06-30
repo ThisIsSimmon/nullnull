@@ -2,7 +2,7 @@
 @use './blog-card';
 @use './tag-list';
 @use './pagination';
-@use './button-gradient';
+@use './gradient-button';
 @use './sns';
 @use './scroll-indicator';
 @use './entry';
@@ -13,3 +13,4 @@
 @use './profile';
 @use './profile-header';
 @use './skills';
+@use './submit-button';
