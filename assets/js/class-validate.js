@@ -27,13 +27,16 @@ export default class Validate {
 				},
 			},
 		});
-
-		const submitButton = document.getElementById('js-submit');
-		if (submitButton) {
-			submitButton.addEventListener('click', (e) => {
+		this.contactForm = document.getElementById('js-contact-form');
+		this.submitButton = document.getElementById('js-submit');
+		if (this.submitButton) {
+			this.submitButton.addEventListener('click', (e) => {
 				const isValid = this.validate();
 
-				isValid && this.send();
+				if (isValid) {
+					this.changeSubmitButtonStatus('sending');
+					this.send();
+				}
 			});
 		}
 	}
@@ -65,9 +68,8 @@ export default class Validate {
 	};
 
 	send = () => {
-		const contactForm = document.getElementById('js-contact-form');
-		const url = contactForm.getAttribute('action');
-		const formData = new FormData(contactForm);
+		const url = this.contactForm.getAttribute('action');
+		const formData = new FormData(this.contactForm);
 		formData.append('action', 'send_email');
 
 		fetch(url, {
@@ -82,11 +84,16 @@ export default class Validate {
 				}
 				return response.json();
 			})
-			.then((data) => {
-				this.showFeedbacks(data);
+			.then((status) => {
+				this.showFeedbacks(status);
+				if ('success' === status.submit) {
+					this.resetForm();
+					this.changeSubmitButtonStatus('success');
+				}
 			})
 			.catch((error) => {
 				this.showFeedbacks({ submit: 'failure' });
+				this.changeSubmitButtonStatus('default');
 			});
 	};
 
@@ -96,5 +103,23 @@ export default class Validate {
 			errorElement.textContent = this.feedbacks[property][status];
 			errorElement.setAttribute('aria-hidden', false);
 		}
+	};
+
+	changeSubmitButtonStatus = (status) => {
+		switch (status) {
+			case 'default':
+				this.submitButton.disabled = false;
+				break;
+			case 'sending':
+				this.submitButton.disabled = true;
+				break;
+			case 'success':
+				break;
+		}
+		this.submitButton.dataset.status = status;
+	};
+
+	resetForm = () => {
+		this.contactForm.reset();
 	};
 }

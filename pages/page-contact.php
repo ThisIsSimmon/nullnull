@@ -36,10 +36,20 @@
 			<?php wp_nonce_field( CONTACT_FORM_NONCE, '_contactformnonce' ); ?>
 			<div class="contact-form__filed">
 				<span class="contact-form__error contact-form__error--submit" aria-hidden="true"></span>
-				<button type="button" id="js-submit" class="button-gradient button-gradient--contact">
-					<span class="button-gradient__text button-gradient__text--en">SUBMIT</span>
+				<button type="button" id="js-submit" class="submit-button" data-status="">
+					<span class="submit-button__text">SUBMIT</span>
+					<div class="submit-button__loader">
+						<svg class="submit-button__loader-svg" viewBox="0 0 40 40">
+							<circle class="submit-button__loader-circle" cx="20" cy="20" r="18" />
+						</svg>
+					</div>
+					<svg class="submit-button__checkmark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="52" height="52">
+						<path class="submit-button__checkmark-path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+					</svg>
+
 				</button>
 			</div>
+
 		</form>
 	</div>
 

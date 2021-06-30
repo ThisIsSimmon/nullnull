@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 @use 'sass:math';
 
-.button-gradient {
+.gradient-button {
 	$this: &;
 	@include bg-gradient;
 	@include center;
@@ -10,11 +10,6 @@
 	color: #fff;
 	&:hover {
 		color: #fff;
-	}
-
-	&--contact {
-		margin-top: 1rem;
-		width: 100%;
 	}
 
 	&__text {
