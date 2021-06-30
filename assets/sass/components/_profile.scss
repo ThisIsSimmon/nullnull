@@ -32,7 +32,7 @@
 		}
 
 		> img {
-			backface-visibility: hidden;
+			image-rendering: -webkit-optimize-contrast;
 			width: 13em;
 		}
 	}
