@@ -1,0 +1,37 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.archive-header {
+	margin: 12rem auto 0;
+	max-width: 80rem;
+	@include mq(mobile) {
+		margin-top: 8rem;
+	}
+	&__title {
+		@include line-height-crop($heading-line-height, 1, bottom);
+		font-size: 4.4rem;
+		font-weight: 500;
+		letter-spacing: 0.2em;
+		text-align: center;
+
+		&--blog {
+			@include line-height-crop($heading-line-height, 1, bottom);
+			font-size: 4rem;
+			font-weight: 700;
+			text-align: left;
+			@include mq(mobile) {
+				font-size: 3.4rem;
+			}
+		}
+	}
+
+	&__date {
+		color: map-get($colors, text-sub);
+		display: block;
+		font-size: 1.4rem;
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: 0.1em;
+		margin-top: #{math.div(43, 14)}em;
+	}
+}

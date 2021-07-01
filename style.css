@@ -1656,6 +1656,55 @@ textarea {
     stroke-dashoffset: 0;
   }
 }
+.archive-header {
+  margin: 12rem auto 0;
+  max-width: 80rem;
+}
+@media (max-width: 48em) {
+  .archive-header {
+    margin-top: 8rem;
+  }
+}
+.archive-header__title {
+  font-size: 4.4rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+.archive-header__title::after {
+  content: "";
+  display: block;
+  height: 0;
+  margin-bottom: calc((1 - 1.25) * 0.5em);
+  width: 0;
+}
+.archive-header__title--blog {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: left;
+}
+.archive-header__title--blog::after {
+  content: "";
+  display: block;
+  height: 0;
+  margin-bottom: calc((1 - 1.25) * 0.5em);
+  width: 0;
+}
+@media (max-width: 48em) {
+  .archive-header__title--blog {
+    font-size: 3.4rem;
+  }
+}
+.archive-header__date {
+  color: #8f93a3;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  margin-top: 3.0714285714em;
+}
+
 .header {
   align-items: center;
   display: flex;
