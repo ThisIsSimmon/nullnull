@@ -1,14 +1,16 @@
 @use '../abstracts/' as *;
+@use 'sass:math';
 
 .tag-list {
 	display: flex;
+	flex-wrap: wrap;
 	list-style-type: none;
 	&--blog-card {
-		margin-top: 1rem;
+		// margin-top: 1rem;
 	}
 
 	&--entry {
-		margin-top: 1.9rem;
+		margin-top: 0.9rem;
 	}
 
 	&__item {
@@ -23,7 +25,10 @@
 		height: 2.2em;
 		letter-spacing: 0.1em;
 		line-height: 2.4em;
-		margin-right: 1rem;
+		margin: #{math.div(10, 12)}em 1rem 0 0;
 		padding: 0 1.243em;
+		@include mq(mobile) {
+			font-size: 1.1rem;
+		}
 	}
 }

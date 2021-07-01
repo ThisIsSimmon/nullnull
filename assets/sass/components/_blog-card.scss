@@ -34,6 +34,9 @@
 	&__title {
 		font-size: 1.6rem;
 		font-weight: 700;
+		@include mq(mobile) {
+			font-size: 1.8rem;
+		}
 		& > a {
 			@include line-clamp(3);
 			color: map-get($colors, text-main);
