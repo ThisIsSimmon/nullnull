@@ -17,6 +17,7 @@
 		<time datetime="<?php the_time( 'c' ); ?>" class="blog-card__date"><?php the_time( 'Y.m.d' ); ?></time>
 		<ul class="tag-list tag-list--blog-card">
 			<?php $tags = get_the_tags(); ?>
+			<?php if ( $tags ) : ?>
 			<?php foreach ( $tags as $tag ) : ?>
 			<li class="tag-list__item">
 				<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="tag-list__link">
@@ -24,6 +25,7 @@
 				</a>
 			</li>
 			<?php endforeach; ?>
+			<?php endif; ?>
 		</ul>
 	</article>
 	<?php endwhile; ?>
