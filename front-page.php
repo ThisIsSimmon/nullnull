@@ -1,22 +1,34 @@
 <?php get_header(); ?>
 <h1 class="visually-hidden">NullNull</h1>
 
+<?php if ( have_posts() ) : ?>
 <section class="blog-card-list blog-card-list--home">
-	<?php foreach ( range( 1, 8 ) as $i ) : ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
+
+
 	<article class="blog-card">
 		<header class="blog-card__header">
-			<h2 class="blog-card__title"><a href="">2020年に最適なfont-familyの書き方2020年に最適なfont-familyの書き方2020年に最適なfont-familyの書き方</a></h2>
+			<h2 class="blog-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		</header>
 
-		<time datetime="" class="blog-card__date">2021/04/11</time>
+		<time datetime="<?php the_time( 'c' ); ?>" class="blog-card__date"><?php the_time( 'Y.m.d' ); ?></time>
 		<ul class="tag-list tag-list--blog-card">
-			<li class="tag-list__item"><a href="" class="tag-list__link">HTML</a></li>
-			<li class="tag-list__item"><a href="" class="tag-list__link">CSS</a></li>
-			<li class="tag-list__item"><a href="" class="tag-list__link">ビジネス</a></li>
+			<?php $tags = get_the_tags(); ?>
+			<?php foreach ( $tags as $tag ) : ?>
+			<li class="tag-list__item">
+				<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="tag-list__link">
+					<?php echo esc_html( $tag->name ); ?>
+				</a>
+			</li>
+			<?php endforeach; ?>
 		</ul>
 	</article>
-	<?php endforeach; ?>
+	<?php endwhile; ?>
 </section>
+<?php endif; ?>
 
 
 <?php get_template_part( 'template-parts/pagination' ); ?>
