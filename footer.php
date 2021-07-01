@@ -6,7 +6,7 @@
 		<ul class="footer-nav__list">
 			<li class="footer-nav__item"><a href="/blog/" class="footer-nav__link">Blog</a></li>
 			<li class="footer-nav__item"><a href="/contact/" class="footer-nav__link">Contact</a></li>
-			<li class="footer-nav__item"><a href="/contact/" class="footer-nav__link">Privacy</a></li>
+			<li class="footer-nav__item"><a href="/privacy/" class="footer-nav__link">Privacy</a></li>
 		</ul>
 	</nav>
 
