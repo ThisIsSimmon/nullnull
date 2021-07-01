@@ -30,13 +30,12 @@ class Email {
 
 
 	public function send_email() {
+		$feedbacks = array();
 		try {
-
-			$feedbacks = array();
-			$nonce     = $_POST['_contactformnonce'] ?? null;
-			$name      = isset( $_POST['name'] ) ? wp_strip_all_tags( $_POST['name'], true ) : '';
-			$email     = isset( $_POST['email'] ) ? wp_strip_all_tags( $_POST['email'], true ) : '';
-			$message   = isset( $_POST['message'] ) ? wp_strip_all_tags( $_POST['message'] ) : '';
+			$nonce   = $_POST['_contactformnonce'] ?? null;
+			$name    = isset( $_POST['name'] ) ? wp_strip_all_tags( $_POST['name'], true ) : '';
+			$email   = isset( $_POST['email'] ) ? wp_strip_all_tags( $_POST['email'], true ) : '';
+			$message = isset( $_POST['message'] ) ? wp_strip_all_tags( $_POST['message'] ) : '';
 			if ( ! wp_verify_nonce( $nonce, CONTACT_FORM_NONCE ) ) {
 				$feedbacks['submit'] = 'failure';
 			}
@@ -63,11 +62,11 @@ class Email {
 			$successfully_sent   = wp_mail( SMTP_USER, 'お問い合わせ', $message, $admin_headers );
 			$feedbacks['submit'] = $successfully_sent ? 'success' : 'failure';
 
-			wp_send_json( $feedbacks );
-
 		} catch ( Exception $e ) {
-			wp_send_json( array( 'submit' => 'failure' ) );
+			$feedbacks['submit'] = 'failure';
 		}
+
+		wp_send_json( $feedbacks );
 	}
 
 }

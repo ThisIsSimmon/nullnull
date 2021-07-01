@@ -89,6 +89,8 @@ export default class Validate {
 				if ('success' === status.submit) {
 					this.resetForm();
 					this.changeSubmitButtonStatus('success');
+				} else {
+					this.changeSubmitButtonStatus('default');
 				}
 			})
 			.catch((error) => {
