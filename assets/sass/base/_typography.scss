@@ -39,7 +39,7 @@ a {
 }
 
 a:hover {
-	color: currentColor;
+	color: map-get($colors, text-link);
 	text-decoration: none;
 }
 
