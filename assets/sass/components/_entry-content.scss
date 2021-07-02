@@ -84,6 +84,24 @@
 		margin: 0.75em 0 0;
 	}
 
+	a {
+		// text-decoration: underline;
+		&[target='_blank']::after {
+			background-image: url('#{$image-dir}/post/link.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			content: '';
+			display: inline-flex;
+			height: 1.2em;
+			transform: translateY(0.2em);
+			width: 1.2em;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 	p + p {
 		margin-top: 1.8em;
 	}
