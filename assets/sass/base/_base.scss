@@ -55,14 +55,14 @@ button {
 }
 
 :focus {
-	outline: map-get($colors, text-link) solid 2px;
+	outline: map-get($colors, text-link) solid 3px;
 }
 
 :focus-visible {
-	outline: map-get($colors, text-link) solid 2px;
+	outline: map-get($colors, text-link) solid 3px;
 }
 
 a:focus,
 button:focus {
-	outline: map-get($colors, text-link) solid 2px;
+	outline: map-get($colors, text-link) solid 3px;
 }
