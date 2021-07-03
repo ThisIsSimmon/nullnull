@@ -676,16 +676,16 @@ button {
 }
 
 :focus {
-  outline: #8e57a8 solid 2px;
+  outline: #8e57a8 solid 3px;
 }
 
 :focus-visible {
-  outline: #8e57a8 solid 2px;
+  outline: #8e57a8 solid 3px;
 }
 
 a:focus,
 button:focus {
-  outline: #8e57a8 solid 2px;
+  outline: #8e57a8 solid 3px;
 }
 
 html {
@@ -1670,6 +1670,67 @@ pre[class*=language-] {
 }
 .entry-content .wp-block-column:not(:first-child) {
   margin-left: 0;
+}
+.entry-content :not(pre) > code[class*=language-],
+.entry-content pre[class*=language-] {
+  box-shadow: 2px 2px 4px white, -2px -2px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 6px rgba(255, 255, 255, 0.3), inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+  background: #292d3d;
+}
+.entry-content code[class*=language-],
+.entry-content pre[class*=language-] {
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  text-shadow: none;
+}
+.entry-content pre[class*=language-] {
+  margin: 2rem 0 0;
+  padding: 4rem 2rem 3rem;
+}
+.entry-content .token.operator,
+.entry-content .token.entity,
+.entry-content .token.url,
+.entry-content .language-css .token.string,
+.entry-content .style .token.string {
+  background: none;
+}
+.entry-content div.code-toolbar > .toolbar {
+  display: flex;
+  opacity: 1;
+  right: 0.6rem;
+  top: 0.6rem;
+}
+.entry-content div.code-toolbar > .toolbar > .toolbar-item:not(:last-of-type) {
+  margin-right: 0.7em;
+}
+.entry-content div.code-toolbar > .toolbar > .toolbar-item > button,
+.entry-content div.code-toolbar > .toolbar > .toolbar-item > span {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.7), inset 1px 1px 2px rgba(255, 255, 255, 0.4), inset -1px -1px 2px rgba(0, 0, 0, 0.7);
+  background: #292d3d;
+  border-radius: 0.5em;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.5em 0.6em;
+  transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@media (max-width: 48em) {
+  .entry-content div.code-toolbar > .toolbar > .toolbar-item > button,
+.entry-content div.code-toolbar > .toolbar > .toolbar-item > span {
+    font-size: 1.1rem;
+  }
+}
+.entry-content div.code-toolbar > .toolbar > .toolbar-item > button:hover, .entry-content div.code-toolbar > .toolbar > .toolbar-item > button[data-copy-state=copy-success] {
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.3), inset 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.entry-content div.code-toolbar > .toolbar span {
+  background: none;
+  box-shadow: none;
+  color: #8f93a3;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
 .entry-footer {
