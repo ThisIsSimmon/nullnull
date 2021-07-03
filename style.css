@@ -859,7 +859,7 @@ textarea {
   padding: 0 1.243em;
 }
 .tag-list__link:hover {
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 }
 @media (max-width: 48em) {
   .tag-list__link {
@@ -895,10 +895,10 @@ textarea {
   transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .pagination > .page-numbers:not(.current):hover {
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 }
 .pagination > .page-numbers.current {
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 }
 .pagination > .page-numbers.prev, .pagination > .page-numbers.next {
   background-repeat: no-repeat;
@@ -973,7 +973,7 @@ textarea {
   width: 4em;
 }
 .sns__button:hover {
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 }
 @media (max-width: 48em) {
   .sns__button {
@@ -1254,7 +1254,7 @@ textarea {
   width: 5em;
 }
 .share__button:hover {
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 }
 @media (max-width: 48em) {
   .share__button {
@@ -1569,7 +1569,7 @@ textarea {
   color: #fff;
 }
 .submit-button:disabled {
-  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
   cursor: not-allowed;
 }
 .submit-button__loader {
