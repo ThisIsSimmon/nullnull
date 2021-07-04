@@ -17,6 +17,9 @@ new WP_Head();
 require THEME_PATH . '/inc/class-email.php';
 new Email();
 
+require THEME_PATH . '/inc/class-open-graph.php';
+new Open_Graph();
+
 // カテゴリーの階層維持
 add_filter(
 	'wp_terms_checklist_args',
