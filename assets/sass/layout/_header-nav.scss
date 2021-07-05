@@ -28,7 +28,7 @@
 		letter-spacing: $letter-spacing;
 		position: relative;
 		&::before {
-			content: "";
+			content: '';
 			height: 3em;
 			left: 0;
 			position: absolute;
@@ -39,21 +39,23 @@
 			@include bg-gradient;
 			bottom: -1em;
 			border-radius: 2px;
-			content: "";
+			content: '';
 			height: 4px;
 			left: 0;
 			opacity: 1;
 			position: absolute;
 			transform-origin: bottom right;
-			transition: transform 0.6s map-get($easing-functions, easeOutCirc),
-				bottom 0.6s map-get($easing-functions, easeOutCirc);
+			transition: transform 0.6s map-get($easing-functions, easeOutCirc), bottom 0.6s map-get($easing-functions, easeOutCirc);
 			transform: scaleX(0);
 			width: calc(100% - #{$letter-spacing});
 		}
 
-		&:hover::after {
-			transform-origin: bottom left;
-			transform: scaleX(1);
+		&:hover {
+			color: currentColor;
+			&::after {
+				transform-origin: bottom left;
+				transform: scaleX(1);
+			}
 		}
 	}
 }

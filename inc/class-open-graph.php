@@ -4,9 +4,10 @@ class Open_Graph {
 
 	public function __construct() {
 		if ( is_admin() ) {
+			require_once ABSPATH . 'wp-admin/includes/file.php';
 			add_action( 'save_post', array( $this, 'generate_og_image' ), 10, 2 );
+			add_action( 'add_meta_boxes', array( $this, 'register_og_image_meta_box' ) );
 		}
-
 	}
 
 	public function generate_og_image( $post_ID, $post ) {
@@ -40,7 +41,6 @@ class Open_Graph {
 			array( 'linespacing' => 1 )
 		);
 
-		require_once ABSPATH . 'wp-admin/includes/file.php';
 		if ( WP_Filesystem() ) {
 			global $wp_filesystem;
 			if ( ! $wp_filesystem->is_dir( $upload_dir ) ) {
@@ -50,6 +50,22 @@ class Open_Graph {
 			imagedestroy( $new_image );
 		}
 
+	}
+
+	public function register_og_image_meta_box() {
+		add_meta_box( 'og-image', 'OG Image', array( $this, 'og_image_meta_box' ), 'post', 'side', 'low' );
+	}
+
+	public function og_image_meta_box() {
+		if ( WP_Filesystem() ) {
+			global $wp_filesystem, $post;
+			$og_dir     = wp_upload_dir()['basedir'] . '/og/';
+			$og_url     = wp_upload_dir()['baseurl'] . '/og/';
+			$image_name = "og_blog_{$post->ID}.png";
+			if ( $wp_filesystem->exists( $og_dir . $image_name ) ) {
+				printf( '<img src="%s" style="image-rendering: -webkit-optimize-contrast; margin-top: 1rem;">', esc_url( $og_url . $image_name ) );
+			}
+		}
 	}
 
 	private function mb_wordwrap( $string, $width = 75, $break = "\n", $cut = false ) {

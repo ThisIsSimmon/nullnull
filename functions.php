@@ -7,6 +7,7 @@ define( 'THEME_URI', get_theme_file_uri() );
 define( 'THEME_IMAGE_URI', THEME_URI . '/assets/img/dist' );
 define( 'THEME_PATH', get_theme_file_path() );
 
+require THEME_PATH . '/inc/debug.php';
 
 require THEME_PATH . '/inc/class-init.php';
 new Init();
@@ -24,7 +25,6 @@ new Open_Graph();
 add_filter(
 	'wp_terms_checklist_args',
 	function( $args, $post_id ) {
-
 		if ( ! isset( $args['checked_ontop'] ) ) {
 			$args['checked_ontop'] = false;
 		}
