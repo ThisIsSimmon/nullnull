@@ -50,7 +50,7 @@ EOT;
 			case is_home():
 				$title = get_bloginfo( 'name' );
 				$url   = home_url();
-				$image = THEME_URI . '/assets/img/dist/common/og_home.png';
+				$image = THEME_IMAGE_URI . '/common/og_home.png';
 				break;
 			case is_singular():
 				global $post;
@@ -58,7 +58,7 @@ EOT;
 				$url         = get_the_permalink();
 				$post_type   = get_post_type( $post );
 				$post_ID     = get_the_ID();
-				$image       = THEME_URI . "/assets/img/dist/common/og_{$post_type}_{$post_ID}.png";
+				$image       = THEME_IMAGE_URI . "/common/og_{$post_type}_{$post_ID}.png";
 				$type        = 'article';
 				$description = get_the_excerpt( $post_ID );
 				break;
@@ -67,7 +67,7 @@ EOT;
 				global $post;
 				$title       = get_the_title();
 				$url         = get_the_permalink();
-				$image       = THEME_URI . "/assets/img/dist/common/og_{$post->post_name}.png";
+				$image       = THEME_IMAGE_URI . "/common/og_{$post->post_name}.png";
 				$type        = 'article';
 				$description = get_the_excerpt( $post_ID );
 				break;
@@ -83,6 +83,7 @@ EOT;
 		}
 
 		$output_og_tags = <<<EOT
+		<meta name="descriptioin" content="{$description}">
 		<meta property="og:site_name" content="{$site_name}">
 		<meta property="og:title" content="{$title}">
 		<meta property="og:description" content="{$description}">
