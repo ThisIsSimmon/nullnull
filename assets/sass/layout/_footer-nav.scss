@@ -24,5 +24,8 @@
 		@include mq(mobile) {
 			font-size: math.div($font-size * 0.8, 10) + 0rem;
 		}
+		&:hover {
+			color: currentColor;
+		}
 	}
 }

@@ -2342,6 +2342,9 @@ pre[class*=language-] {
   transform: scaleX(0);
   width: calc(100% - 0.2em);
 }
+.header-nav__link:hover {
+  color: currentColor;
+}
 .header-nav__link:hover::after {
   transform-origin: bottom left;
   transform: scaleX(1);
@@ -2444,6 +2447,9 @@ pre[class*=language-] {
   .footer-nav__link {
     font-size: 1.6rem;
   }
+}
+.footer-nav__link:hover {
+  color: currentColor;
 }
 
 .menu-open {
