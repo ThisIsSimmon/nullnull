@@ -9,6 +9,7 @@ class WP_Head {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
 		add_filter( 'script_loader_tag', array( $this, 'replace_script_tags' ), 10, 2 );
+		$this->remove_unnecessary_tags();
 	}
 
 	public function link_tags() {
@@ -132,6 +133,12 @@ EOT;
 		}
 
 		return str_replace( "type='text/javascript'", 'defer', $tag );
+	}
+
+	public function remove_unnecessary_tags() {
+		remove_action( 'wp_head', 'wp_generator' );
+		remove_action( 'wp_head', 'rsd_link' );
+		remove_action( 'wp_head', 'wlwmanifest_link' );
 	}
 
 }
