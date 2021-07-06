@@ -6,12 +6,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-header__title--blog">', '</h1>' ); ?>
-		<time datetime="" class="entry-header__date">2021.04.11</time>
-		<ul class="tag-list tag-list--entry">
-			<li class="tag-list__item"><a href="" class="tag-list__link">HTML</a></li>
-			<li class="tag-list__item"><a href="" class="tag-list__link">CSS</a></li>
-			<li class="tag-list__item"><a href="" class="tag-list__link">ビジネス</a></li>
-		</ul>
+		<time datetime="<?php the_time( 'c' ); ?>" class="entry-header__date"><?php the_time( 'Y.m.d' ); ?></time>
+		<?php get_template_part( 'template-parts/tag-list', null, array( 'class' => 'tag-list--entry' ) ); ?>
 	</header>
 
 
