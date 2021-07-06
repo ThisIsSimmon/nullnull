@@ -20,13 +20,7 @@
 	</div>
 
 	<footer class="entry-footer">
-		<div class="share">
-			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--twitter"></a>
-			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--line"></a>
-			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--pocket"></a>
-			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--facebook"></a>
-			<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="share__button share__button--hatena"></a>
-		</div>
+		<?php get_template_part( 'template-parts/share' ); ?>
 	</footer>
 </article>
 
