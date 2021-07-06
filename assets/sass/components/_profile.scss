@@ -11,6 +11,7 @@
 		padding: 6rem 6rem 6rem 14rem;
 		position: relative;
 		@include mq(mobile) {
+			margin: 12rem auto 0;
 			padding: 5rem 3rem 3rem 3rem;
 		}
 	}

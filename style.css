@@ -1804,6 +1804,7 @@ pre[class*=language-] {
 }
 @media (max-width: 48em) {
   .profile__inner {
+    margin: 12rem auto 0;
     padding: 5rem 3rem 3rem 3rem;
   }
 }
