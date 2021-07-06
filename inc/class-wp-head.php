@@ -3,14 +3,34 @@
 class WP_Head {
 
 	public function __construct() {
-		add_action( 'wp_head', array( $this, 'link_tags' ), 1 );
-		add_action( 'wp_head', array( $this, 'og_tags' ), 2 );
+		add_action( 'wp_head', array( $this, 'google_analytics_tag' ), 1 );
+		add_action( 'wp_head', array( $this, 'link_tags' ), 2 );
+		add_action( 'wp_head', array( $this, 'og_tags' ), 3 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_debug_mode_styles' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
 		add_filter( 'script_loader_tag', array( $this, 'replace_script_tags' ), 10, 2 );
 		$this->remove_unnecessary_tags();
 	}
+
+	public function google_analytics_tag() {
+		if ( 'local' === wp_get_environment_type() || is_admin() ) {
+			return;
+		}
+		$gtag = <<<GTAG
+		 <!-- Global site tag (gtag.js) - Google Analytics -->
+		 <script async src="https://www.googletagmanager.com/gtag/js?id=%s"></script>
+		 <script>
+		   window.dataLayer = window.dataLayer || [];
+		   function gtag(){dataLayer.push(arguments);}
+		   gtag('js', new Date());
+
+		   gtag('config', '%s');
+		 </script>
+GTAG;
+		printf( $gtag, GTAG_ID, GTAG_ID );
+	}
+
 
 	public function link_tags() {
 		$theme_image_uri = THEME_IMAGE_URI;
