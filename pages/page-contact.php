@@ -36,7 +36,7 @@
 			<?php wp_nonce_field( CONTACT_FORM_NONCE, '_contactformnonce' ); ?>
 			<div class="contact-form__filed">
 				<span class="contact-form__error contact-form__error--submit" aria-hidden="true"></span>
-				<button type="button" id="js-submit" class="submit-button" data-status="">
+				<button type="button" id="js-submit" class="submit-button" data-status="" aria-label="送信">
 					<span class="submit-button__text">SUBMIT</span>
 					<div class="submit-button__loader">
 						<svg class="submit-button__loader-svg" viewBox="0 0 40 40">

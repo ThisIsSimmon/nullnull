@@ -11,7 +11,7 @@
 	</nav>
 
 	<div class="sns sns--footer">
-		<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="sns__button sns__button--twitter"></a>
+		<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="sns__button sns__button--twitter" aria-label="Twitter"></a>
 	</div>
 
 	<small class="footer__copyright">&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> Simmon</small>
