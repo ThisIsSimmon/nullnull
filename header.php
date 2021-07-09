@@ -11,7 +11,7 @@
 
 	<header id="header" class="header">
 
-		<a href="/" class="header-logo">
+		<a href="/" class="header-logo" aria-label="NullNull">
 			<div class="header-logo__inner"></div>
 		</a>
 
@@ -24,11 +24,11 @@
 
 		<form action="/" method="get" class="header-search">
 			<input type="search" name="s" value="<?php the_search_query(); ?>" placeholder="Search" class="header-search__field" />
-			<button type="submit" class="header-search__submit-button">
+			<button type="submit" class="header-search__submit-button" aria-label="検索">
 			</button>
 		</form>
 
-		<button type="button" id="js-menu-open" class="menu-open" data-micromodal-trigger="js-menu">
+		<button type="button" id="js-menu-open" class="menu-open" data-micromodal-trigger="js-menu" aria-label="メニューを開く">
 			<span></span>
 			<span></span>
 			<span></span>
@@ -43,7 +43,7 @@
 
 				<form action="/" method="get" class="menu-search">
 					<input type="search" name="s" value="<?php the_search_query(); ?>" placeholder="Search" class="menu-search__field" />
-					<button type="submit" class="menu-search__submit-button">
+					<button type="submit" class="menu-search__submit-button" aria-label="検索">
 						<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 14 15" width="14" height="15">
 							<use href="#submit" />
 						</svg>

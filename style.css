@@ -659,7 +659,7 @@ textarea {
   background-color: #fff;
   border: none;
   box-sizing: border-box;
-  caret-color: #8e57a8;
+  caret-color: #8953a2;
   padding: 0.9em 1.2em;
 }
 
@@ -676,16 +676,16 @@ button {
 }
 
 :focus {
-  outline: #8e57a8 solid 3px;
+  outline: #8953a2 solid 3px;
 }
 
 :focus-visible {
-  outline: #8e57a8 solid 3px;
+  outline: #8953a2 solid 3px;
 }
 
 a:focus,
 button:focus {
-  outline: #8e57a8 solid 3px;
+  outline: #8953a2 solid 3px;
 }
 
 html {
@@ -740,11 +740,11 @@ ol {
 }
 
 a {
-  color: #8e57a8;
+  color: #8953a2;
 }
 
 a:hover {
-  color: #8e57a8;
+  color: #8953a2;
   text-decoration: none;
 }
 
