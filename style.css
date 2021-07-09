@@ -1732,6 +1732,37 @@ pre[class*=language-] {
   font-weight: 700;
   letter-spacing: 0.1em;
 }
+.entry-content .wp-block-table {
+  border-radius: 1rem;
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 6px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
+  margin: 2rem 0 0;
+  max-width: 100%;
+  width: max-content;
+}
+.entry-content .wp-block-table table {
+  width: auto;
+}
+.entry-content .wp-block-table table > thead {
+  background-color: rgba(143, 147, 163, 0.1);
+}
+.entry-content .wp-block-table table th,
+.entry-content .wp-block-table table td {
+  font-size: 1.6rem;
+  padding: 0.5em 1.5em;
+}
+@media (max-width: 48em) {
+  .entry-content .wp-block-table table th,
+.entry-content .wp-block-table table td {
+    font-size: 1.4rem;
+  }
+}
+.entry-content .wp-block-table table th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.entry-content .wp-block-table table > tbody > tr:nth-of-type(even) {
+  background-color: rgba(143, 147, 163, 0.1);
+}
 
 .entry-footer {
   margin: 6rem auto 0;
