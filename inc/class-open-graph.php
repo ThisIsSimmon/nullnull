@@ -38,10 +38,11 @@ class Open_Graph {
 			$font_color,
 			$font_file,
 			$text,
-			array( 'linespacing' => 1 )
+			array( 'linespacing' => 1.5 )
 		);
 
-		if ( WP_Filesystem() ) {
+		$creds = request_filesystem_credentials( '', '', false, false, null );
+		if ( WP_Filesystem( $creds ) ) {
 			global $wp_filesystem;
 			if ( ! $wp_filesystem->is_dir( $upload_dir ) ) {
 				$wp_filesystem->mkdir( $upload_dir );
@@ -57,7 +58,8 @@ class Open_Graph {
 	}
 
 	public function og_image_meta_box() {
-		if ( WP_Filesystem() ) {
+		$creds = request_filesystem_credentials( '', '', false, false, null );
+		if ( WP_Filesystem( $creds ) ) {
 			global $wp_filesystem, $post;
 			$og_dir     = wp_upload_dir()['basedir'] . '/og/';
 			$og_url     = wp_upload_dir()['baseurl'] . '/og/';
