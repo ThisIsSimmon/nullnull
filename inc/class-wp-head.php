@@ -104,7 +104,7 @@ EOT;
 		}
 
 		$output_og_tags = <<<EOT
-		<meta name="descriptioin" content="{$description}">
+		<meta name="description" content="{$description}">
 		<meta property="fb:app_id" content="789202198451880">
 		<meta property="og:site_name" content="{$site_name}">
 		<meta property="og:title" content="{$title}">
