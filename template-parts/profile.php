@@ -10,8 +10,8 @@
 				<p class="profile-header__desc">Freelance Web Developer</p>
 			</div>
 			<div class="sns">
-				<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="sns__button sns__button--twitter"></a>
-				<a href="/contact/" class="sns__button sns__button--email"></a>
+				<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="sns__button sns__button--twitter" aria-label="Twitter"></a>
+				<a href="/contact/" class="sns__button sns__button--email" aria-label="お問い合わせ"></a>
 			</div>
 		</div>
 

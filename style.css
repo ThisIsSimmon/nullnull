@@ -754,6 +754,12 @@ input[type=email],
 textarea {
   font-size: clamp(16px, 1.4rem, 1.6rem);
 }
+input[type=text]::placeholder,
+input[type=search]::placeholder,
+input[type=email]::placeholder,
+textarea::placeholder {
+  color: #8f93a3;
+}
 
 .visually-hidden {
   border: 0 !important;
@@ -1278,7 +1284,7 @@ pre[class*=language-] {
   max-height: 3.55em;
 }
 .blog-card__date {
-  color: #8f93a3;
+  color: #656a7b;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1;
@@ -1516,7 +1522,7 @@ pre[class*=language-] {
   }
 }
 .entry-header__date {
-  color: #8f93a3;
+  color: #656a7b;
   display: block;
   font-size: 1.4rem;
   font-weight: 500;
@@ -1727,7 +1733,7 @@ pre[class*=language-] {
 .entry-content div.code-toolbar > .toolbar span {
   background: none;
   box-shadow: none;
-  color: #8f93a3;
+  color: #656a7b;
   font-size: 1em;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -1743,7 +1749,7 @@ pre[class*=language-] {
   width: auto;
 }
 .entry-content .wp-block-table table > thead {
-  background-color: rgba(143, 147, 163, 0.1);
+  background-color: rgba(101, 106, 123, 0.1);
 }
 .entry-content .wp-block-table table th,
 .entry-content .wp-block-table table td {
@@ -1761,7 +1767,7 @@ pre[class*=language-] {
   white-space: nowrap;
 }
 .entry-content .wp-block-table table > tbody > tr:nth-of-type(even) {
-  background-color: rgba(143, 147, 163, 0.1);
+  background-color: rgba(101, 106, 123, 0.1);
 }
 
 .entry-footer {
@@ -1886,7 +1892,7 @@ pre[class*=language-] {
 .profile-header__desc {
   height: 0.775em;
   line-height: 0.775;
-  color: #8f93a3;
+  color: #656a7b;
   letter-spacing: 0.1em;
   margin-top: 0.8571428571em;
 }
@@ -1907,7 +1913,7 @@ pre[class*=language-] {
 .skills__title {
   height: 0.775em;
   line-height: 0.775;
-  color: #8f93a3;
+  color: #656a7b;
   font-size: 1.8rem;
   letter-spacing: 0.1em;
   margin-top: 0;
@@ -2251,7 +2257,7 @@ pre[class*=language-] {
   }
 }
 .archive-header__date {
-  color: #8f93a3;
+  color: #656a7b;
   display: block;
   font-size: 1.4rem;
   font-weight: 500;
@@ -2400,7 +2406,7 @@ pre[class*=language-] {
   width: 22rem;
 }
 .header-search__field::placeholder {
-  color: #8f93a3;
+  color: #656a7b;
   letter-spacing: 0.1em;
 }
 .header-search__submit-button {
@@ -2441,7 +2447,7 @@ pre[class*=language-] {
 .footer__copyright {
   height: 0.775em;
   line-height: 0.775;
-  color: #8f93a3;
+  color: #656a7b;
   display: block;
   font-size: 1.2rem;
   font-weight: 500;
@@ -2640,7 +2646,7 @@ pre[class*=language-] {
   width: 100%;
 }
 .menu-search__field::placeholder {
-  color: #8f93a3;
+  color: #656a7b;
   letter-spacing: 0.1em;
 }
 .menu-search__field:focus {
