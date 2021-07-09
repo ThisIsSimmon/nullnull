@@ -38,7 +38,7 @@ class Open_Graph {
 			$font_color,
 			$font_file,
 			$text,
-			array( 'linespacing' => 1 )
+			array( 'linespacing' => 1.5 )
 		);
 
 		$creds = request_filesystem_credentials( '', '', false, false, null );
