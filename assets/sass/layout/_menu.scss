@@ -3,7 +3,7 @@
 
 .menu {
 	$this: &;
-	background-color: map-get($colors, text-sub);
+	background-color: map-get($colors, bg-menu);
 	border-radius: 0;
 	display: none;
 	height: 100vh;
