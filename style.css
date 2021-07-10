@@ -1282,6 +1282,10 @@ pre[class*=language-] {
   overflow: hidden;
   color: #292d3d;
   max-height: 4.35em;
+  transition: color ease 0.3s;
+}
+.blog-card__title > a:hover {
+  color: #8953a2;
 }
 .blog-card__date {
   color: #656a7b;
@@ -2512,6 +2516,7 @@ pre[class*=language-] {
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.2em;
+  transition: text-decoration 0.3s ease;
 }
 @media (max-width: 48em) {
   .footer-nav__link {
@@ -2520,6 +2525,7 @@ pre[class*=language-] {
 }
 .footer-nav__link:hover {
   color: currentColor;
+  text-decoration: underline;
 }
 
 .menu-open {

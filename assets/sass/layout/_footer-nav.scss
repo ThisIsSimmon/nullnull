@@ -21,11 +21,13 @@
 		font-size: math.div($font-size, 10) + 0rem;
 		font-weight: 500;
 		letter-spacing: $letter-spacing + 0em;
+		transition: text-decoration 0.3s ease;
 		@include mq(mobile) {
 			font-size: math.div($font-size * 0.8, 10) + 0rem;
 		}
 		&:hover {
 			color: currentColor;
+			text-decoration: underline;
 		}
 	}
 }
