@@ -1647,6 +1647,7 @@ pre[class*=language-] {
 }
 .entry-content small {
   color: #656a7b;
+  display: block;
   font-size: 1.4rem;
   line-height: 1.75;
   letter-spacing: 0.01em;
