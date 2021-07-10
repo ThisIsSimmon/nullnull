@@ -34,16 +34,6 @@ ol {
 	}
 }
 
-small {
-	color: map-get($colors, text-sub);
-	font-size: 1.4rem;
-	line-height: $text-line-height;
-	letter-spacing: 0.01em;
-	@include mq(mobile) {
-		font-size: 1.2rem;
-	}
-}
-
 a {
 	color: map-get($colors, text-link);
 }

@@ -102,8 +102,36 @@
 		}
 	}
 
-	p + p {
-		margin-top: 1.8em;
+	small {
+		color: map-get($colors, text-sub);
+		font-size: 1.4rem;
+		line-height: $text-line-height;
+		letter-spacing: 0.01em;
+		@include mq(mobile) {
+			font-size: 1.2rem;
+		}
+	}
+
+	strong {
+		@include bg-gradient;
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: 100% 30%;
+		font-weight: 700;
+	}
+
+	p {
+		+ p {
+			margin-top: 1.8em;
+		}
+
+		> code {
+			background-color: lighten(map-get($colors, text-sub), 40%);
+			border-radius: 0.25em;
+			font-size: 1em;
+			font-family: inherit;
+			padding: 0.05em 0.4em;
+		}
 	}
 
 	&--privacy {

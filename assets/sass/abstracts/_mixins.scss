@@ -7,7 +7,7 @@
 }
 
 @mixin bg-gradient {
-	background: linear-gradient(to bottom right, map-get($colors, bg-gradient));
+	background-image: linear-gradient(to bottom right, map-get($colors, bg-gradient));
 }
 
 @mixin shadow($name) {
