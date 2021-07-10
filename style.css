@@ -1733,10 +1733,17 @@ pre[class*=language-] {
 .entry-content div.code-toolbar > .toolbar span {
   background: none;
   box-shadow: none;
-  color: #656a7b;
+  color: #9296a5;
   font-size: 1em;
   font-weight: 700;
   letter-spacing: 0.1em;
+}
+.entry-content .token.comment,
+.entry-content .token.block-comment,
+.entry-content .token.prolog,
+.entry-content .token.doctype,
+.entry-content .token.cdata {
+  color: #9095b2;
 }
 .entry-content .wp-block-table {
   border-radius: 1rem;
