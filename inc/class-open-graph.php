@@ -19,7 +19,7 @@ class Open_Graph {
 
 		$upload_dir    = wp_upload_dir()['basedir'] . '/og/';
 		$base_image    = THEME_PATH . '/assets/img/dist/common/og_blog_post.png';
-		$new_file_name = "og_blog_{$post_ID}.png";
+		$new_file_name = "{$post->post_type}_{$post_ID}.png";
 		$new_image     = imagecreatefrompng( $base_image );
 		$text          = $this->mb_wordwrap( $post_title, 15, PHP_EOL, true );
 		$font_file     = THEME_PATH . '/assets/font/m-plus-rounded-1c-v10-latin_japanese-700.ttf';
@@ -63,7 +63,7 @@ class Open_Graph {
 			global $wp_filesystem, $post;
 			$og_dir     = wp_upload_dir()['basedir'] . '/og/';
 			$og_url     = wp_upload_dir()['baseurl'] . '/og/';
-			$image_name = "og_blog_{$post->ID}.png";
+			$image_name = "{$post->post_type}_{$post->ID}.png";
 			if ( $wp_filesystem->exists( $og_dir . $image_name ) ) {
 				printf( '<img src="%s" style="image-rendering: -webkit-optimize-contrast; margin-top: 1rem;">', esc_url( $og_url . $image_name ) );
 			}
