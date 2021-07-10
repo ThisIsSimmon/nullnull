@@ -73,13 +73,13 @@ EOT;
 				$url   = home_url();
 				$image = THEME_IMAGE_URI . '/common/og_home.png';
 				break;
-			case is_singular():
+			case is_singular( 'post' ):
 				global $post;
 				$title       = get_the_title();
 				$url         = get_the_permalink();
 				$post_type   = get_post_type( $post );
 				$post_ID     = get_the_ID();
-				$image       = THEME_IMAGE_URI . "/common/og_{$post_type}_{$post_ID}.png";
+				$image       = wp_upload_dir()['baseurl'] . "/og/{$post_type}_{$post_ID}.png";
 				$type        = 'article';
 				$description = get_the_excerpt( $post_ID );
 				break;
@@ -90,6 +90,7 @@ EOT;
 				$url         = get_the_permalink();
 				$image       = THEME_IMAGE_URI . "/common/og_{$post->post_name}.png";
 				$type        = 'article';
+				$post_ID     = get_the_ID();
 				$description = get_the_excerpt( $post_ID );
 				break;
 			case is_tag():
