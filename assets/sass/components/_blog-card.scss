@@ -40,7 +40,7 @@
 		& > a {
 			@include line-clamp(3);
 			color: map-get($colors, text-main);
-			max-height: ($heading-line-height * 3 - 0.2em);
+			max-height: ($heading-line-height * 3 - 0.15em);
 			&:hover {
 				// text-decoration: underline;
 			}
