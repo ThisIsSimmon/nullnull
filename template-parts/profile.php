@@ -1,7 +1,7 @@
 <aside class="profile">
 	<div class="profile__inner">
 		<div class="profile__image">
-			<img src="<?php echo esc_url( THEME_IMAGE_URI ); ?>/profile/simmon.png" alt="Simmon" />
+			<img src="<?php echo esc_url( THEME_IMAGE_URI ); ?>/profile/simmon.png" alt="Simmon" decoding="async" width="130" height="131" />
 		</div>
 
 		<div class="profile-header">
