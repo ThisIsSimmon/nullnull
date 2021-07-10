@@ -208,11 +208,19 @@
 		span {
 			background: none;
 			box-shadow: none;
-			color: map-get($colors, text-sub);
+			color: lighten(map-get($colors, text-sub), 17%);
 			font-size: 1em;
 			font-weight: 700;
 			letter-spacing: 0.1em;
 		}
+	}
+
+	.token.comment,
+	.token.block-comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata {
+		color: #9095b2;
 	}
 
 	.wp-block-table {
