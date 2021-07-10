@@ -739,6 +739,18 @@ ol {
   }
 }
 
+small {
+  color: #656a7b;
+  font-size: 1.4rem;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 48em) {
+  small {
+    font-size: 1.2rem;
+  }
+}
+
 a {
   color: #8953a2;
 }
