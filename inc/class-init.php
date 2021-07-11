@@ -6,6 +6,7 @@ class Init {
 		add_action( 'init', array( $this, 'convert_tags_from_flat_to_hierarchical' ) );
 		add_action( 'init', array( $this, 'enable_page_excerpt' ) );
 		add_action( 'init', array( $this, 'disable_revisions' ) );
+		add_action( 'init', array( $this, 'disable_autosave' ) );
 
 	}
 
@@ -33,6 +34,10 @@ class Init {
 		foreach ( $post_types as $post_type ) {
 			remove_post_type_support( $post_type, 'revisions' );
 		}
+	}
+
+	public function disable_autosave() {
+		wp_deregister_script( 'autosave' );
 	}
 
 }
