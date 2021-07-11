@@ -11,9 +11,11 @@ class Open_Graph {
 	}
 
 	public function generate_og_image( $post_ID, $post ) {
-		$post_title = wp_strip_all_tags( $post->post_title );
+		$post_title          = wp_strip_all_tags( $post->post_title );
+		$nonce               = $_POST['og_image_nonce'] ?? null;
+		$regenerate_og_image = isset( $_POST['regenerate_og_image'] ) ? true : false;
 
-		if ( '' === $post_title ) {
+		if ( '' === $post_title || ! wp_verify_nonce( $nonce, 'save_og_image' ) ) {
 			return;
 		}
 
@@ -47,8 +49,11 @@ class Open_Graph {
 			if ( ! $wp_filesystem->is_dir( $upload_dir ) ) {
 				$wp_filesystem->mkdir( $upload_dir );
 			}
-			imagepng( $new_image, $upload_dir . $new_file_name );
-			imagedestroy( $new_image );
+
+			if ( ! $wp_filesystem->exists( $upload_dir . $new_file_name ) || $regenerate_og_image ) {
+				imagepng( $new_image, $upload_dir . $new_file_name );
+				imagedestroy( $new_image );
+			}
 		}
 
 	}
@@ -65,8 +70,11 @@ class Open_Graph {
 			$og_url     = wp_upload_dir()['baseurl'] . '/og/';
 			$image_name = "{$post->post_type}_{$post->ID}.png";
 			if ( $wp_filesystem->exists( $og_dir . $image_name ) ) {
-				printf( '<img src="%s" style="image-rendering: -webkit-optimize-contrast; margin-top: 1rem;">', esc_url( $og_url . $image_name ) );
+				echo '<label for="regenerate-og-image" style="display:block; margin-top: 1rem;"><input type="checkbox" id="regenerate-og-image" name="regenerate_og_image">Regenerate</label>';
+				printf( '<img src="%s?ver=%s" style="image-rendering: -webkit-optimize-contrast; margin-top: 1rem;">', esc_url( $og_url . $image_name ), filemtime( $og_dir . $image_name ) );
 			}
+
+			wp_nonce_field( 'save_og_image', 'og_image_nonce' );
 		}
 	}
 
