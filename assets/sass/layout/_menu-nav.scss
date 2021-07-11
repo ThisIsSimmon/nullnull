@@ -9,7 +9,7 @@
 
 	&__item {
 		&:not(:last-of-type) {
-			margin-bottom: clamp(24px, #{math.div(2.4, 1.035) + 0rem}, #{math.div(2.4, 1.035) + 0rem});
+			margin-bottom: max(24px, #{math.div(2.4, 1.035) + 0rem});
 		}
 		&::before {
 			content: normal;
@@ -22,19 +22,19 @@
 			content: '';
 			display: block;
 			height: 2px;
-			margin-top: clamp(10px, #{math.div(1, 1.035) + 0rem}, #{math.div(1, 1.035) + 0rem});
+			margin-top: max(10px, #{math.div(1, 1.035) + 0rem});
 			width: 100%;
 		}
 	}
 	&__link {
 		@include quicksand-one-line;
-		font-size: clamp(16px, #{math.div(1.8, 1.035) + 0rem}, #{math.div(1.8, 1.035) + 0rem});
+		font-size: max(16px, #{math.div(1.8, 1.035) + 0rem});
 		font-weight: 500;
 		color: #fff;
 		display: block;
 		letter-spacing: 0.2em;
 
-		text-indent: clamp(10px, #{math.div(1, 1.035) + 0rem}, #{math.div(1, 1.035) + 0rem});
+		text-indent: max(10px, #{math.div(1, 1.035) + 0rem});
 	}
 }
 

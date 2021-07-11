@@ -12,9 +12,9 @@
 	}
 
 	&__field {
-		border-radius: clamp(19px, #{math.div(math.div(3.8, 1.035), 2) + 0rem}, #{math.div(math.div(3.8, 1.035), 2) + 0rem});
+		border-radius: max(19px, #{math.div(math.div(3.8, 1.035), 2) + 0rem});
 		box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.3), -1px -1px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 3px rgba(255, 255, 255, 0.2), inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-		height: clamp(38px, #{math.div(3.8, 1.035) + 0rem}, #{math.div(3.8, 1.035) + 0rem});
+		height: max(38px, #{math.div(3.8, 1.035) + 0rem});
 		width: 100%;
 
 		&::placeholder {
@@ -31,7 +31,7 @@
 		background-image: url('#{$image-dir}/header/search_icon.svg');
 		background-repeat: no-repeat;
 		background-size: contain;
-		font-size: clamp(12px, 1rem, 1rem);
+		font-size: max(12px, 1rem);
 		height: 1.5em;
 		position: absolute;
 		right: math.div(1.5, 1.035) + 0rem;
