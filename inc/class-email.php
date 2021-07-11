@@ -32,11 +32,11 @@ class Email {
 	public function send_email() {
 		$feedbacks = array();
 		try {
-			$nonce   = $_POST['_contactformnonce'] ?? null;
+			$nonce   = $_POST['contact_form_nonce'] ?? null;
 			$name    = isset( $_POST['name'] ) ? wp_strip_all_tags( $_POST['name'], true ) : '';
 			$email   = isset( $_POST['email'] ) ? wp_strip_all_tags( $_POST['email'], true ) : '';
 			$message = isset( $_POST['message'] ) ? wp_strip_all_tags( $_POST['message'] ) : '';
-			if ( ! wp_verify_nonce( $nonce, CONTACT_FORM_NONCE ) ) {
+			if ( ! wp_verify_nonce( $nonce, 'submit_contact_form' ) ) {
 				$feedbacks['submit'] = 'failure';
 			}
 
