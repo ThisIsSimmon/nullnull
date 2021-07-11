@@ -33,7 +33,7 @@
 				<textarea class="contact-form__input contact-form__input--textarea" name="message" id="message" cols="30" rows="13"></textarea>
 			</div>
 
-			<?php wp_nonce_field( CONTACT_FORM_NONCE, '_contactformnonce' ); ?>
+			<?php wp_nonce_field( 'submit_contact_form', 'contact_form_nonce' ); ?>
 			<div class="contact-form__filed">
 				<span class="contact-form__error contact-form__error--submit" aria-hidden="true"></span>
 				<button type="button" id="js-submit" class="submit-button" data-status="" aria-label="送信">
