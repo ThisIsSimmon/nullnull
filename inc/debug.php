@@ -30,13 +30,9 @@ function d() {
 			array(
 				'background: #e9ebf1',
 				'font-size: 1.6rem',
-				'height: 100%',
-				'left: 0',
+				'max-height: 100vh',
 				'padding: 8rem 2rem',
-				'position: fixed',
-				'top: 0',
 				'width: 100%',
-				'z-index: 1000',
 			)
 		)
 	);
@@ -49,7 +45,7 @@ function d() {
 				'background-color: #fff',
 				'margin: 0 auto',
 				'max-width: 1000px',
-				'max-height: 100%',
+				'max-height: calc(100% - 16rem)',
 				'overflow: scroll',
 				'padding: 4rem',
 			)
