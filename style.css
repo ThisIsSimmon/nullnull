@@ -2679,9 +2679,9 @@ pre[class*=language-] {
   animation: menu-search-show 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s backwards;
 }
 .menu-search__field {
-  border-radius: clamp(19px, 1.8357487923rem, 1.8357487923rem);
+  border-radius: max(19px, 1.8357487923rem);
   box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.3), -1px -1px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 3px rgba(255, 255, 255, 0.2), inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  height: clamp(38px, 3.6714975845rem, 3.6714975845rem);
+  height: max(38px, 3.6714975845rem);
   width: 100%;
 }
 .menu-search__field::placeholder {
@@ -2695,7 +2695,7 @@ pre[class*=language-] {
   background-image: url("assets/img/dist/header/search_icon.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  font-size: clamp(12px, 1rem, 1rem);
+  font-size: max(12px, 1rem);
   height: 1.5em;
   position: absolute;
   right: 1.4492753623rem;
@@ -2731,7 +2731,7 @@ pre[class*=language-] {
   padding: 0;
 }
 .menu-nav__item:not(:last-of-type) {
-  margin-bottom: clamp(24px, 2.3188405797rem, 2.3188405797rem);
+  margin-bottom: max(24px, 2.3188405797rem);
 }
 .menu-nav__item::before {
   content: normal;
@@ -2743,18 +2743,18 @@ pre[class*=language-] {
   content: "";
   display: block;
   height: 2px;
-  margin-top: clamp(10px, 0.9661835749rem, 0.9661835749rem);
+  margin-top: max(10px, 0.9661835749rem);
   width: 100%;
 }
 .menu-nav__link {
   height: 0.775em;
   line-height: 0.775;
-  font-size: clamp(16px, 1.7391304348rem, 1.7391304348rem);
+  font-size: max(16px, 1.7391304348rem);
   font-weight: 500;
   color: #fff;
   display: block;
   letter-spacing: 0.2em;
-  text-indent: clamp(10px, 0.9661835749rem, 0.9661835749rem);
+  text-indent: max(10px, 0.9661835749rem);
 }
 
 .menu[aria-hidden=false] .menu-nav__item::after {
