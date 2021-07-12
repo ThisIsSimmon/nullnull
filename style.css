@@ -1757,8 +1757,26 @@ pre[class*=language-] {
     font-size: 1.1rem;
   }
 }
+.entry-content div.code-toolbar > .toolbar > .toolbar-item > button {
+  background-image: url("assets/img/dist/post/copy.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 1.3em;
+  position: relative;
+}
 .entry-content div.code-toolbar > .toolbar > .toolbar-item > button:hover, .entry-content div.code-toolbar > .toolbar > .toolbar-item > button[data-copy-state=copy-success] {
   box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.3), inset 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.entry-content div.code-toolbar > .toolbar > .toolbar-item > button > span {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0;
+}
+.entry-content div.code-toolbar > .toolbar > .toolbar-item > button[data-copy-state=copy-success] > span {
+  animation: copied-show 5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s backwards;
 }
 .entry-content div.code-toolbar > .toolbar span {
   background: none;
@@ -1807,6 +1825,29 @@ pre[class*=language-] {
   background-color: rgba(101, 106, 123, 0.1);
 }
 
+@keyframes copied-show {
+  0% {
+    height: auto;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    width: auto;
+  }
+  10% {
+    height: auto;
+    left: 0;
+    opacity: 1;
+    top: -2em;
+    width: auto;
+  }
+  100% {
+    height: auto;
+    left: 0;
+    opacity: 1;
+    top: -2em;
+    width: auto;
+  }
+}
 .entry-footer {
   margin: 6rem auto 0;
   max-width: 80rem;
