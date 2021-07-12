@@ -1,4 +1,3 @@
-
 /*
  |--------------------------------------------------------------------------
  | Browser-sync config file
@@ -12,9 +11,9 @@
  |
  |
  */
- module.exports = {
-    "files": ["./style.css", "./**/*.js", "./*.php", "./**/*.php"],
-    "proxy": "localhost:8888",
-    "port": 3000,
-    "open": false
+module.exports = {
+	files: ['./style.pre.css', './**/*.js', './*.php', './**/*.php'],
+	proxy: 'localhost:8888',
+	port: 3000,
+	open: false,
 };
