@@ -12,7 +12,9 @@ class Init {
 		$tag_slug_args->hierarchical = true;
 		$tag_slug_args->meta_box_cb  = 'post_categories_meta_box';
 		$tag_slug_args->labels       = array(
-			'parent_item' => 'Parent tag',
+			'parent_item'   => '親タグ',
+			'add_new_item'  => '新規タグを追加',
+			'new_item_name' => '新規タグ名',
 		);
 		register_taxonomy( 'post_tag', 'post', (array) $tag_slug_args );
 	}
