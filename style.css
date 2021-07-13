@@ -668,6 +668,10 @@ button {
   padding: 0;
 }
 
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
 /* Disable outline when mouse down */
 .js-focus-visible:focus:not(.focus-visible),
 [data-js-focus-visible]:focus:not([data-focus-visible-added]),
@@ -1945,7 +1949,6 @@ pre[class*=language-] {
   }
 }
 .profile__image > img {
-  image-rendering: -webkit-optimize-contrast;
   width: 13em;
 }
 
