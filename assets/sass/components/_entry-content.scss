@@ -190,7 +190,9 @@
 
 	pre[class*='language-'] {
 		margin: 2rem 0 0;
+		max-height: min(75vh, 60rem);
 		padding: 4rem 2rem 3rem;
+		position: static;
 	}
 
 	.token.operator,
@@ -269,6 +271,16 @@
 	.token.doctype,
 	.token.cdata {
 		color: #9095b2;
+	}
+
+	.line-highlight {
+		background: none;
+		background-color: rgba(lighten(map-get($colors, text-main), 30%), 0.2);
+		margin-top: 1.4em;
+		&::before,
+		&::after {
+			display: none;
+		}
 	}
 
 	.wp-block-table {
