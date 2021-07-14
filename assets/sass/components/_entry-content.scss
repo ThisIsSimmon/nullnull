@@ -177,8 +177,11 @@
 
 	.wp-block-image,
 	.wp-block-columns .wp-block-image {
-		@include shadow(press-button-base);
 		margin: 3em 0 0;
+		img {
+			box-shadow: 2px 2px 4px rgb(255 255 255 / 90%), -2px -2px 4px rgb(0 0 0 / 10%), inset -2px -2px 4px rgb(255 255 255 / 90%), inset 2px 2px 4px rgb(0 0 0 / 16%);
+			border-radius: 1rem !important;
+		}
 	}
 
 	.wp-block-columns {
