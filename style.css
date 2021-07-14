@@ -1725,9 +1725,8 @@ pre[class*=language-] {
 }
 .entry-content pre[class*=language-] {
   margin: 2rem 0 0;
-  max-height: min(75vh, 60rem);
+  max-height: min(50vh, 60rem);
   padding: 4rem 2rem 3rem;
-  position: static;
 }
 .entry-content .token.operator,
 .entry-content .token.entity,
@@ -1802,7 +1801,7 @@ pre[class*=language-] {
 }
 .entry-content .line-highlight {
   background: none;
-  background-color: rgba(102, 113, 153, 0.2);
+  background: linear-gradient(to right, rgba(102, 113, 153, 0.2) 90%, rgba(102, 113, 153, 0));
   margin-top: 1.4em;
 }
 .entry-content .line-highlight::before, .entry-content .line-highlight::after {

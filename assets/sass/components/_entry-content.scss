@@ -190,9 +190,8 @@
 
 	pre[class*='language-'] {
 		margin: 2rem 0 0;
-		max-height: min(75vh, 60rem);
+		max-height: min(50vh, 60rem);
 		padding: 4rem 2rem 3rem;
-		position: static;
 	}
 
 	.token.operator,
@@ -275,7 +274,8 @@
 
 	.line-highlight {
 		background: none;
-		background-color: rgba(lighten(map-get($colors, text-main), 30%), 0.2);
+		// background-color: rgba(lighten(map-get($colors, text-main), 30%), 0.2);
+		background: linear-gradient(to right, rgba(lighten(map-get($colors, text-main), 30%), 0.2) 90%, rgba(lighten(map-get($colors, text-main), 30%), 0));
 		margin-top: 1.4em;
 		&::before,
 		&::after {
