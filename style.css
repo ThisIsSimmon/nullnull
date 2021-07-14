@@ -1629,6 +1629,22 @@ pre[class*=language-] {
   margin: 1.8em 0 0;
   padding-left: calc(0.95em + 7px);
 }
+.entry-content ol > li,
+.entry-content ul > li {
+  font-weight: 700;
+}
+.entry-content ol > li > p,
+.entry-content ul > li > p {
+  font-weight: initial;
+}
+.entry-content ol > li:not(:last-of-type) > p:last-child,
+.entry-content ul > li:not(:last-of-type) > p:last-child {
+  margin-bottom: 2.1em;
+}
+.entry-content ol > li:not(:last-of-type) > :is(div, img, figure):last-child,
+.entry-content ul > li:not(:last-of-type) > :is(div, img, figure):last-child {
+  margin-bottom: 4.3rem;
+}
 .entry-content ol ul,
 .entry-content ol ol,
 .entry-content ul ul,
@@ -1671,11 +1687,12 @@ pre[class*=language-] {
 .entry-content p + p {
   margin-top: 1.8em;
 }
-.entry-content p > code {
+.entry-content :not(pre) > code {
   background-color: #d2d4da;
   border-radius: 0.25em;
-  font-size: 1em;
   font-family: inherit;
+  font-size: 1em;
+  font-weight: inherit;
   margin: 0 0.1em;
   padding: 0.15em 0.4em;
 }
@@ -1698,6 +1715,7 @@ pre[class*=language-] {
 }
 .entry-content .wp-block-image,
 .entry-content .wp-block-columns .wp-block-image {
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
   margin: 3em 0 0;
 }
 .entry-content .wp-block-columns {

@@ -75,6 +75,22 @@
 	ul {
 		margin: 1.8em 0 0;
 		padding-left: calc(0.95em + 7px);
+
+		> li {
+			font-weight: 700;
+			> p {
+				font-weight: initial;
+			}
+			&:not(:last-of-type) {
+				> p:last-child {
+					margin-bottom: 2.1em;
+				}
+
+				> :is(div, img, figure):last-child {
+					margin-bottom: 4.3rem;
+				}
+			}
+		}
 	}
 
 	ol ul,
@@ -125,12 +141,15 @@
 		+ p {
 			margin-top: 1.8em;
 		}
+	}
 
+	:not(pre) {
 		> code {
 			background-color: lighten(map-get($colors, text-sub), 40%);
 			border-radius: 0.25em;
-			font-size: 1em;
 			font-family: inherit;
+			font-size: 1em;
+			font-weight: inherit;
 			margin: 0 0.1em;
 			padding: 0.15em 0.4em;
 		}
@@ -158,6 +177,7 @@
 
 	.wp-block-image,
 	.wp-block-columns .wp-block-image {
+		@include shadow(press-button-base);
 		margin: 3em 0 0;
 	}
 
