@@ -700,7 +700,7 @@ html {
 }
 @media (max-width: 48em) {
   html {
-    font-size: calc(100vw / 40);
+    font-size: calc(100vw / 41.4);
   }
 }
 
@@ -739,7 +739,7 @@ ol {
   p,
 ul,
 ol {
-    font-size: 1.4rem;
+    font-size: 1.45rem;
   }
 }
 
@@ -1526,7 +1526,7 @@ pre[class*=language-] {
 }
 @media (max-width: 48em) {
   .entry-header__title--blog {
-    font-size: 3.4rem;
+    font-size: 2.65rem;
   }
 }
 .entry-header__date {
@@ -1550,43 +1550,43 @@ pre[class*=language-] {
   }
 }
 .entry-content h2 {
-  font-size: 3.6rem;
-}
-@media (max-width: 48em) {
-  .entry-content h2 {
-    font-size: 3rem;
-  }
-}
-.entry-content h3 {
-  font-size: 3.2rem;
-}
-@media (max-width: 48em) {
-  .entry-content h3 {
-    font-size: 2.7rem;
-  }
-}
-.entry-content h4 {
   font-size: 2.8rem;
 }
 @media (max-width: 48em) {
+  .entry-content h2 {
+    font-size: 2.65rem;
+  }
+}
+.entry-content h3 {
+  font-size: 2.5rem;
+}
+@media (max-width: 48em) {
+  .entry-content h3 {
+    font-size: 2.35rem;
+  }
+}
+.entry-content h4 {
+  font-size: 2.2rem;
+}
+@media (max-width: 48em) {
   .entry-content h4 {
-    font-size: 2.4rem;
+    font-size: 2.05rem;
   }
 }
 .entry-content h5 {
-  font-size: 2.4rem;
+  font-size: 1.9rem;
 }
 @media (max-width: 48em) {
   .entry-content h5 {
-    font-size: 2.1rem;
+    font-size: 1.75rem;
   }
 }
 .entry-content h6 {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 @media (max-width: 48em) {
   .entry-content h6 {
-    font-size: 1.8rem;
+    font-size: 1.45rem;
   }
 }
 .entry-content h1,
@@ -1684,7 +1684,7 @@ pre[class*=language-] {
 }
 @media (max-width: 48em) {
   .entry-content--privacy > h2 {
-    font-size: 2.1rem;
+    font-size: 2.25rem;
   }
 }
 .entry-content--privacy > h2:nth-of-type(n + 2) {
@@ -1990,7 +1990,7 @@ pre[class*=language-] {
 }
 @media (max-width: 48em) {
   .profile-header__desc {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -2386,7 +2386,7 @@ pre[class*=language-] {
 }
 @media (max-width: 48em) {
   .header-logo {
-    font-size: 0.7392857143rem;
+    font-size: 0.7142857143rem;
   }
 }
 .header-logo__inner {
@@ -2588,9 +2588,9 @@ pre[class*=language-] {
   align-items: flex-end;
   display: none;
   flex-direction: column;
-  height: 2.3188405797rem;
+  height: 2.4rem;
   justify-content: space-between;
-  width: 3.2850241546rem;
+  width: 3.4rem;
 }
 @media (max-width: 48em) {
   .menu-open {
@@ -2635,9 +2635,9 @@ pre[class*=language-] {
 }
 .menu__inner {
   left: 50%;
-  padding: 0 3.8647342995rem;
+  padding: 0 4rem;
   position: fixed;
-  top: 11.5942028986rem;
+  top: 12rem;
   transition: opacity 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: translateX(-50%);
   width: 100%;
@@ -2676,11 +2676,11 @@ pre[class*=language-] {
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 2.8985507246rem;
+  height: 3rem;
   position: fixed;
-  right: 1.9323671498rem;
-  top: 3.2367149758rem;
-  width: 2.8985507246rem;
+  right: 2rem;
+  top: 3.35rem;
+  width: 3rem;
   z-index: 101;
 }
 .menu-close > span {
@@ -2695,7 +2695,7 @@ pre[class*=language-] {
 }
 .menu-close > span:nth-of-type(1) {
   transform-origin: bottom left;
-  transform: rotate(-45deg) translate(-1.2em, -0.1em);
+  transform: rotate(-45deg) translate(-1.3em, calc(0.05em - 50%));
   transition: width 0.6s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
 }
 .menu[aria-hidden=false] > .menu-close > span:nth-of-type(1) {
@@ -2706,7 +2706,7 @@ pre[class*=language-] {
 }
 .menu-close > span:nth-of-type(2) {
   transform-origin: top left;
-  transform: rotate(225deg) translate(-1.4em, -0.1em);
+  transform: rotate(225deg) translate(-1.475em, calc(0em - 50%));
   transition: width 0.6s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 }
 .menu[aria-hidden=false] > .menu-close > span:nth-of-type(2) {
@@ -2734,9 +2734,9 @@ pre[class*=language-] {
   animation: menu-search-show 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s backwards;
 }
 .menu-search__field {
-  border-radius: max(19px, 1.8357487923rem);
+  border-radius: max(19px, 1.9rem);
   box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.3), -1px -1px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 3px rgba(255, 255, 255, 0.2), inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  height: max(38px, 3.6714975845rem);
+  height: max(38px, 3.8rem);
   width: 100%;
 }
 .menu-search__field::placeholder {
@@ -2753,7 +2753,7 @@ pre[class*=language-] {
   font-size: max(12px, 1rem);
   height: 1.5em;
   position: absolute;
-  right: 1.4492753623rem;
+  right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
   width: 1.4em;
@@ -2780,13 +2780,13 @@ pre[class*=language-] {
   }
 }
 .menu-nav {
-  margin-top: 5.7971014493rem;
+  margin-top: 6rem;
 }
 .menu-nav__list {
   padding: 0;
 }
 .menu-nav__item:not(:last-of-type) {
-  margin-bottom: max(24px, 2.3188405797rem);
+  margin-bottom: max(24px, 2.4rem);
 }
 .menu-nav__item::before {
   content: normal;
@@ -2798,18 +2798,18 @@ pre[class*=language-] {
   content: "";
   display: block;
   height: 2px;
-  margin-top: max(10px, 0.9661835749rem);
+  margin-top: max(10px, 1rem);
   width: 100%;
 }
 .menu-nav__link {
   height: 0.775em;
   line-height: 0.775;
-  font-size: max(16px, 1.7391304348rem);
+  font-size: max(16px, 1.8rem);
   font-weight: 500;
   color: #fff;
   display: block;
   letter-spacing: 0.2em;
-  text-indent: max(10px, 0.9661835749rem);
+  text-indent: max(10px, 1rem);
 }
 
 .menu[aria-hidden=false] .menu-nav__item::after {
@@ -2864,16 +2864,16 @@ pre[class*=language-] {
   column-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(1rem, max-content));
   justify-content: center;
-  margin-top: 4.8309178744rem;
+  margin-top: 5rem;
 }
 .menu-sns__button {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 50%;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15), 0 0 0 transparent, inset -2px -2px 4px rgba(0, 0, 0, 0.1), inset 2px 2px 4px rgba(255, 255, 255, 0.2);
-  height: 3.8647342995rem;
+  height: 4rem;
   transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  width: 3.8647342995rem;
+  width: 4rem;
 }
 .menu[aria-hidden=false] .menu-sns__button {
   animation: menu-sns-show 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) 1.9s backwards;
@@ -2883,7 +2883,7 @@ pre[class*=language-] {
 }
 .menu-sns__button--twitter {
   background-image: url("assets/img/dist/profile/sns/twitter_menu.svg");
-  background-size: 1.5458937198rem 1.3526570048rem;
+  background-size: 1.6rem 1.4rem;
 }
 
 @keyframes menu-sns-show {

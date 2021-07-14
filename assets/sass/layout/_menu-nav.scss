@@ -2,14 +2,14 @@
 @use 'sass:math';
 
 .menu-nav {
-	margin-top: math.div(6, 1.035) + 0rem;
+	margin-top: 6rem;
 	&__list {
 		padding: 0;
 	}
 
 	&__item {
 		&:not(:last-of-type) {
-			margin-bottom: max(24px, #{math.div(2.4, 1.035) + 0rem});
+			margin-bottom: max(24px, 2.4rem);
 		}
 		&::before {
 			content: normal;
@@ -22,19 +22,19 @@
 			content: '';
 			display: block;
 			height: 2px;
-			margin-top: max(10px, #{math.div(1, 1.035) + 0rem});
+			margin-top: max(10px, 1rem);
 			width: 100%;
 		}
 	}
 	&__link {
 		@include quicksand-one-line;
-		font-size: max(16px, #{math.div(1.8, 1.035) + 0rem});
+		font-size: max(16px, 1.8rem);
 		font-weight: 500;
 		color: #fff;
 		display: block;
 		letter-spacing: 0.2em;
 
-		text-indent: max(10px, #{math.div(1, 1.035) + 0rem});
+		text-indent: max(10px, 1rem);
 	}
 }
 

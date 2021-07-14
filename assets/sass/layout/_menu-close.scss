@@ -4,11 +4,11 @@
 .menu-close {
 	@include center;
 	// align-items: flex-end;
-	height: math.div(3, 1.035) + 0rem;
+	height: 3rem;
 	position: fixed;
-	right: math.div(2, 1.035) + 0rem;
-	top: math.div(3.35, 1.035) + 0rem;
-	width: math.div(3, 1.035) + 0rem;
+	right: 2rem;
+	top: 3.35rem;
+	width: 3rem;
 	z-index: map-get($layer, menu) + 1;
 
 	& > span {
@@ -23,23 +23,23 @@
 
 		&:nth-of-type(1) {
 			transform-origin: bottom left;
-			transform: rotate(-45deg) translate(-1.2em, -0.1em);
+			transform: rotate(-45deg) translate(-1.3em, calc(0.05em - 50%));
 			transition: width 0.6s map-get($easing-functions, easeOutCirc) 0.2s;
-			.menu[aria-hidden="false"] > & {
+			.menu[aria-hidden='false'] > & {
 				animation: menu-close-show 0.6s map-get($easing-functions, easeOutCirc) 0.5s backwards;
 			}
-			.menu[aria-hidden="true"] > & {
+			.menu[aria-hidden='true'] > & {
 				width: 0%;
 			}
 		}
 		&:nth-of-type(2) {
 			transform-origin: top left;
-			transform: rotate(225deg) translate(-1.4em, -0.1em);
+			transform: rotate(225deg) translate(-1.475em, calc(0em - 50%));
 			transition: width 0.6s map-get($easing-functions, easeOutCirc) 0s;
-			.menu[aria-hidden="false"] > & {
+			.menu[aria-hidden='false'] > & {
 				animation: menu-close-show 0.6s map-get($easing-functions, easeOutCirc) 0.7s backwards;
 			}
-			.menu[aria-hidden="true"] > & {
+			.menu[aria-hidden='true'] > & {
 				width: 0%;
 			}
 		}

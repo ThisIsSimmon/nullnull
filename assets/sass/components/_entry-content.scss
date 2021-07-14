@@ -10,37 +10,37 @@
 	}
 
 	h2 {
-		font-size: 3.6rem;
+		font-size: 2.8rem;
 		@include mq(mobile) {
-			font-size: 3rem;
+			font-size: 2.65rem;
 		}
 	}
 
 	h3 {
-		font-size: 3.2rem;
+		font-size: 2.5rem;
 		@include mq(mobile) {
-			font-size: 2.7rem;
+			font-size: 2.35rem;
 		}
 	}
 
 	h4 {
-		font-size: 2.8rem;
+		font-size: 2.2rem;
 		@include mq(mobile) {
-			font-size: 2.4rem;
+			font-size: 2.05rem;
 		}
 	}
 
 	h5 {
-		font-size: 2.4rem;
+		font-size: 1.9rem;
 		@include mq(mobile) {
-			font-size: 2.1rem;
+			font-size: 1.75rem;
 		}
 	}
 
 	h6 {
-		font-size: 2rem;
+		font-size: 1.6rem;
 		@include mq(mobile) {
-			font-size: 1.8rem;
+			font-size: 1.45rem;
 		}
 	}
 
@@ -140,7 +140,7 @@
 		> h2 {
 			font-size: 2.4rem;
 			@include mq(mobile) {
-				font-size: 2.1rem;
+				font-size: 2.25rem;
 			}
 			&:nth-of-type(n + 2) {
 				margin-top: 5.2rem;

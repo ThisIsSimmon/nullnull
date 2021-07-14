@@ -12,7 +12,7 @@
 	width: 7em;
 
 	@include mq(mobile) {
-		font-size: math.div(50, 70) * 1.035 + 0rem;
+		font-size: math.div(50, 70) * 1rem;
 	}
 
 	&__inner {
@@ -31,11 +31,11 @@
 
 		&::before {
 			$mag: 10;
-			background-image: url("#{$image-dir}/header/logo_text.svg");
+			background-image: url('#{$image-dir}/header/logo_text.svg');
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: contain;
-			content: "";
+			content: '';
 			font-size: #{$mag}em;
 			height: 2.5em;
 			margin: 0.025em 0 0 0.025em;
