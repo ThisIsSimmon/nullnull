@@ -11,6 +11,7 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: map-get($layer, scroll-indicator);
 
 	&::-webkit-progress-bar {
 		background: transparent;
