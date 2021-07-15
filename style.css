@@ -1711,6 +1711,14 @@ pre[class*=language-] {
 .entry-content p + .wp-block-table {
   margin: 1.5rem 0 0;
 }
+@media (max-width: 48em) {
+  .entry-content p + .wp-block-image,
+.entry-content p + .wp-block-columns .wp-block-image,
+.entry-content p + .code-toolbar,
+.entry-content p + .wp-block-table {
+    margin: 1rem 0 0;
+  }
+}
 .entry-content :not(pre) > code {
   background-color: #d2d4da;
   border-radius: 0.25em;
