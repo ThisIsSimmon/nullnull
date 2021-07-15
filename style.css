@@ -630,7 +630,7 @@ body {
 }
 
 p {
-  margin: 0.75em 0 0;
+  margin: 1.4em 0 0;
 }
 
 ol,
@@ -1611,6 +1611,14 @@ pre[class*=language-] {
   height: 2px;
   margin-top: calc(1.2rem - ((1em * 1.5 - 1em) / 2));
 }
+.entry-content h1 + p,
+.entry-content h2 + p,
+.entry-content h3 + p,
+.entry-content h4 + p,
+.entry-content h5 + p,
+.entry-content h6 + p {
+  margin-top: 1.2em;
+}
 .entry-content > h2:nth-child(1) {
   margin-top: 0;
 }
@@ -1637,6 +1645,10 @@ pre[class*=language-] {
 .entry-content ul > li > p {
   font-weight: initial;
 }
+.entry-content ol > li > p:first-child,
+.entry-content ul > li > p:first-child {
+  margin-top: 0.2em;
+}
 .entry-content ol > li:not(:last-of-type) > p:last-child,
 .entry-content ul > li:not(:last-of-type) > p:last-child {
   margin-bottom: 2.1em;
@@ -1644,6 +1656,14 @@ pre[class*=language-] {
 .entry-content ol > li:not(:last-of-type) > :is(div, img, figure):last-child,
 .entry-content ul > li:not(:last-of-type) > :is(div, img, figure):last-child {
   margin-bottom: 4.3rem;
+}
+.entry-content ol > li > .code-toolbar:first-child,
+.entry-content ul > li > .code-toolbar:first-child {
+  margin-top: 1.5rem;
+}
+.entry-content ol > li > code:first-child + .code-toolbar,
+.entry-content ul > li > code:first-child + .code-toolbar {
+  margin-top: 1.5rem;
 }
 .entry-content ol ul,
 .entry-content ol ol,
@@ -1687,6 +1707,13 @@ pre[class*=language-] {
 .entry-content p + p {
   margin-top: 1.8em;
 }
+.entry-content p + .code-toolbar {
+  margin-top: 1.5rem;
+}
+.entry-content p + .wp-block-image,
+.entry-content p .wp-block-columns .wp-block-image {
+  margin-top: 1.5rem;
+}
 .entry-content :not(pre) > code {
   background-color: #d2d4da;
   border-radius: 0.25em;
@@ -1715,7 +1742,7 @@ pre[class*=language-] {
 }
 .entry-content .wp-block-image,
 .entry-content .wp-block-columns .wp-block-image {
-  margin: 3em 0 0;
+  margin: 3rem 0 0;
 }
 .entry-content .wp-block-image img,
 .entry-content .wp-block-columns .wp-block-image img {
@@ -1725,8 +1752,8 @@ pre[class*=language-] {
 .entry-content .wp-block-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  margin: 3em 0 0;
-  gap: 1.5em;
+  margin: 3rem 0 0;
+  gap: 1.5rem;
 }
 .entry-content .wp-block-columns .wp-block-image {
   margin: 0;
@@ -1746,7 +1773,7 @@ pre[class*=language-] {
   text-shadow: none;
 }
 .entry-content pre[class*=language-] {
-  margin: 2rem 0 0;
+  margin: 0;
   max-height: min(50vh, 60rem);
   padding: 4rem 2rem 3rem;
 }
@@ -1757,17 +1784,20 @@ pre[class*=language-] {
 .entry-content .style .token.string {
   background: none;
 }
-.entry-content div.code-toolbar > .toolbar {
+.entry-content .code-toolbar {
+  margin: 3rem 0 0;
+}
+.entry-content .code-toolbar > .toolbar {
   display: flex;
   opacity: 1;
   right: 0.6rem;
   top: 0.6rem;
 }
-.entry-content div.code-toolbar > .toolbar > .toolbar-item:not(:last-of-type) {
+.entry-content .code-toolbar > .toolbar > .toolbar-item:not(:last-of-type) {
   margin-right: 0.7em;
 }
-.entry-content div.code-toolbar > .toolbar > .toolbar-item > button,
-.entry-content div.code-toolbar > .toolbar > .toolbar-item > span {
+.entry-content .code-toolbar > .toolbar > .toolbar-item > button,
+.entry-content .code-toolbar > .toolbar > .toolbar-item > span {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -1780,12 +1810,12 @@ pre[class*=language-] {
   transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 @media (max-width: 48em) {
-  .entry-content div.code-toolbar > .toolbar > .toolbar-item > button,
-.entry-content div.code-toolbar > .toolbar > .toolbar-item > span {
+  .entry-content .code-toolbar > .toolbar > .toolbar-item > button,
+.entry-content .code-toolbar > .toolbar > .toolbar-item > span {
     font-size: 1.1rem;
   }
 }
-.entry-content div.code-toolbar > .toolbar > .toolbar-item > button {
+.entry-content .code-toolbar > .toolbar > .toolbar-item > button {
   background-image: url("assets/img/dist/post/copy.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -1793,20 +1823,20 @@ pre[class*=language-] {
   padding: 1em 1.3em;
   position: relative;
 }
-.entry-content div.code-toolbar > .toolbar > .toolbar-item > button:hover, .entry-content div.code-toolbar > .toolbar > .toolbar-item > button[data-copy-state=copy-success] {
+.entry-content .code-toolbar > .toolbar > .toolbar-item > button:hover, .entry-content .code-toolbar > .toolbar > .toolbar-item > button[data-copy-state=copy-success] {
   box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.3), inset 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
-.entry-content div.code-toolbar > .toolbar > .toolbar-item > button > span {
+.entry-content .code-toolbar > .toolbar > .toolbar-item > button > span {
   height: 0;
   overflow: hidden;
   padding: 0;
   position: absolute;
   width: 0;
 }
-.entry-content div.code-toolbar > .toolbar > .toolbar-item > button[data-copy-state=copy-success] > span {
+.entry-content .code-toolbar > .toolbar > .toolbar-item > button[data-copy-state=copy-success] > span {
   animation: copied-show 5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s backwards;
 }
-.entry-content div.code-toolbar > .toolbar span {
+.entry-content .code-toolbar > .toolbar span {
   background: none;
   box-shadow: none;
   color: #9296a5;
