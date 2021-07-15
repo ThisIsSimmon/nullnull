@@ -60,6 +60,10 @@
 			height: 2px;
 			margin-top: calc(1.2rem - ((1em * #{$heading-line-height} - 1em) / 2));
 		}
+
+		+ p {
+			margin-top: 1.2em;
+		}
 	}
 
 	> h2:nth-child(1) {
@@ -80,6 +84,9 @@
 			font-weight: 700;
 			> p {
 				font-weight: initial;
+				&:first-child {
+					margin-top: 0.2em;
+				}
 			}
 			&:not(:last-of-type) {
 				> p:last-child {
@@ -88,6 +95,20 @@
 
 				> :is(div, img, figure):last-child {
 					margin-bottom: 4.3rem;
+				}
+			}
+
+			> .code-toolbar {
+				&:first-child {
+					margin-top: 1.5rem;
+				}
+			}
+
+			> code {
+				&:first-child {
+					+ .code-toolbar {
+						margin-top: 1.5rem;
+					}
 				}
 			}
 		}
@@ -141,6 +162,15 @@
 		+ p {
 			margin-top: 1.8em;
 		}
+
+		+ .code-toolbar {
+			margin-top: 1.5rem;
+		}
+
+		+ .wp-block-image,
+		.wp-block-columns .wp-block-image {
+			margin-top: 1.5rem;
+		}
 	}
 
 	:not(pre) {
@@ -177,7 +207,7 @@
 
 	.wp-block-image,
 	.wp-block-columns .wp-block-image {
-		margin: 3em 0 0;
+		margin: 3rem 0 0;
 		img {
 			box-shadow: 2px 2px 4px rgb(255 255 255 / 90%), -2px -2px 4px rgb(0 0 0 / 10%), inset -2px -2px 4px rgb(255 255 255 / 90%), inset 2px 2px 4px rgb(0 0 0 / 16%);
 			border-radius: 1rem !important;
@@ -187,8 +217,8 @@
 	.wp-block-columns {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-		margin: 3em 0 0;
-		gap: 1.5em;
+		margin: 3rem 0 0;
+		gap: 1.5rem;
 		.wp-block-image {
 			margin: 0;
 		}
@@ -212,7 +242,7 @@
 	}
 
 	pre[class*='language-'] {
-		margin: 2rem 0 0;
+		margin: 0;
 		max-height: min(50vh, 60rem);
 		padding: 4rem 2rem 3rem;
 	}
@@ -225,65 +255,69 @@
 		background: none;
 	}
 
-	div.code-toolbar > .toolbar {
-		display: flex;
-		opacity: 1;
-		right: 0.6rem;
-		top: 0.6rem;
-		> .toolbar-item {
-			&:not(:last-of-type) {
-				margin-right: 0.7em;
-			}
-			> button,
-			> span {
-				@include center;
-				box-shadow: -1px -1px 2px rgba(255 255 255 / 40%), 2px 2px 4px rgb(0 0 0 / 70%), inset 1px 1px 2px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 70%);
-				background: map-get($colors, text-main);
-				border-radius: 0.5em;
-				font-size: 1.2rem;
-				line-height: 1;
-				padding: 0.5em 0.6em;
-				transition: box-shadow 0.5s map-get($easing-functions, easeOutCirc);
-				@include mq(mobile) {
-					font-size: 1.1rem;
-				}
-			}
+	.code-toolbar {
+		margin: 3rem 0 0;
 
-			> button {
-				background-image: url('#{$image-dir}/post/copy.svg');
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: contain;
-				padding: 1em 1.3em;
-				position: relative;
-				&:hover,
-				&[data-copy-state='copy-success'] {
-					box-shadow: 2px 2px 4px rgba(255 255 255 / 30%), -1px -1px 2px rgb(0 0 0 / 60%), inset -1px -1px 2px rgb(255 255 255 / 30%), inset 2px 2px 4px rgb(0 0 0 / 80%);
+		> .toolbar {
+			display: flex;
+			opacity: 1;
+			right: 0.6rem;
+			top: 0.6rem;
+			> .toolbar-item {
+				&:not(:last-of-type) {
+					margin-right: 0.7em;
 				}
+				> button,
 				> span {
-					height: 0;
-					overflow: hidden;
-					padding: 0;
-					position: absolute;
-					width: 0;
+					@include center;
+					box-shadow: -1px -1px 2px rgba(255 255 255 / 40%), 2px 2px 4px rgb(0 0 0 / 70%), inset 1px 1px 2px rgb(255 255 255 / 40%), inset -1px -1px 2px rgb(0 0 0 / 70%);
+					background: map-get($colors, text-main);
+					border-radius: 0.5em;
+					font-size: 1.2rem;
+					line-height: 1;
+					padding: 0.5em 0.6em;
+					transition: box-shadow 0.5s map-get($easing-functions, easeOutCirc);
+					@include mq(mobile) {
+						font-size: 1.1rem;
+					}
 				}
-				&[data-copy-state='copy-success'] {
+
+				> button {
+					background-image: url('#{$image-dir}/post/copy.svg');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					padding: 1em 1.3em;
+					position: relative;
+					&:hover,
+					&[data-copy-state='copy-success'] {
+						box-shadow: 2px 2px 4px rgba(255 255 255 / 30%), -1px -1px 2px rgb(0 0 0 / 60%), inset -1px -1px 2px rgb(255 255 255 / 30%), inset 2px 2px 4px rgb(0 0 0 / 80%);
+					}
 					> span {
-						animation: copied-show 5s map-get($easing-functions, easeOutCirc) 0s backwards;
+						height: 0;
+						overflow: hidden;
+						padding: 0;
+						position: absolute;
+						width: 0;
+					}
+					&[data-copy-state='copy-success'] {
+						> span {
+							animation: copied-show 5s map-get($easing-functions, easeOutCirc) 0s backwards;
+						}
 					}
 				}
 			}
-		}
-		a {
-		}
+			a {
+			}
 
-		span {
-			background: none;
-			box-shadow: none;
-			color: lighten(map-get($colors, text-sub), 17%);
-			font-size: 1em;
-			font-weight: 700;
-			letter-spacing: 0.1em;
+			span {
+				background: none;
+				box-shadow: none;
+				color: lighten(map-get($colors, text-sub), 17%);
+				font-size: 1em;
+				font-weight: 700;
+				letter-spacing: 0.1em;
+			}
 		}
 	}
 
