@@ -630,7 +630,7 @@ body {
 }
 
 p {
-  margin: 1.4em 0 0;
+  margin: 1.2em 0 0;
 }
 
 ol,
@@ -1611,14 +1611,6 @@ pre[class*=language-] {
   height: 2px;
   margin-top: calc(1.2rem - ((1em * 1.5 - 1em) / 2));
 }
-.entry-content h1 + p,
-.entry-content h2 + p,
-.entry-content h3 + p,
-.entry-content h4 + p,
-.entry-content h5 + p,
-.entry-content h6 + p {
-  margin-top: 1.2em;
-}
 .entry-content > h2:nth-child(1) {
   margin-top: 0;
 }
@@ -1634,7 +1626,7 @@ pre[class*=language-] {
 }
 .entry-content ol,
 .entry-content ul {
-  margin: 1.8em 0 0;
+  margin: 1.2em 0 0;
   padding-left: calc(0.95em + 7px);
 }
 .entry-content ol > li,
@@ -1647,14 +1639,18 @@ pre[class*=language-] {
 }
 .entry-content ol > li > p:first-child,
 .entry-content ul > li > p:first-child {
-  margin-top: 0.2em;
+  margin-top: 0.4em;
 }
 .entry-content ol > li:not(:last-of-type) > p:last-child,
 .entry-content ul > li:not(:last-of-type) > p:last-child {
   margin-bottom: 2.1em;
 }
-.entry-content ol > li:not(:last-of-type) > :is(div, img, figure):last-child,
-.entry-content ul > li:not(:last-of-type) > :is(div, img, figure):last-child {
+.entry-content ol > li:not(:last-of-type) > div:last-child,
+.entry-content ol > li:not(:last-of-type) img:last-child,
+.entry-content ol > li:not(:last-of-type) figure:last-child,
+.entry-content ul > li:not(:last-of-type) > div:last-child,
+.entry-content ul > li:not(:last-of-type) img:last-child,
+.entry-content ul > li:not(:last-of-type) figure:last-child {
   margin-bottom: 4.3rem;
 }
 .entry-content ol > li > .code-toolbar:first-child,
@@ -1704,15 +1700,16 @@ pre[class*=language-] {
   background-size: 100% 30%;
   font-weight: 700;
 }
-.entry-content p + p {
-  margin-top: 1.8em;
-}
-.entry-content p + .code-toolbar {
-  margin-top: 1.5rem;
+.entry-content p + p,
+.entry-content p + ol,
+.entry-content p + ul {
+  margin: 1.8em 0 0;
 }
 .entry-content p + .wp-block-image,
-.entry-content p .wp-block-columns .wp-block-image {
-  margin-top: 1.5rem;
+.entry-content p + .wp-block-columns .wp-block-image,
+.entry-content p + .code-toolbar,
+.entry-content p + .wp-block-table {
+  margin: 1.5rem 0 0;
 }
 .entry-content :not(pre) > code {
   background-color: #d2d4da;
@@ -1815,6 +1812,9 @@ pre[class*=language-] {
     font-size: 1.1rem;
   }
 }
+.entry-content .code-toolbar > .toolbar > .toolbar-item span {
+  pointer-events: none;
+}
 .entry-content .code-toolbar > .toolbar > .toolbar-item > button {
   background-image: url("assets/img/dist/post/copy.svg");
   background-position: center;
@@ -1862,7 +1862,7 @@ pre[class*=language-] {
 .entry-content .wp-block-table {
   border-radius: 1rem;
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 6px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
-  margin: 2rem 0 0;
+  margin: 3rem 0 0;
   max-width: 100%;
   width: max-content;
 }
