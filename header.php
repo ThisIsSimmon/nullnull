@@ -66,5 +66,4 @@
 
 	</header>
 
-
 	<main id="main" data-barba="container" data-barba-namespace="home">
