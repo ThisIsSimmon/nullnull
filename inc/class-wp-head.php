@@ -3,14 +3,21 @@
 class WP_Head {
 
 	public function __construct() {
-		add_action( 'wp_head', array( $this, 'google_analytics_tag' ), 1 );
-		add_action( 'wp_head', array( $this, 'link_tags' ), 2 );
-		add_action( 'wp_head', array( $this, 'og_tags' ), 3 );
+		add_action( 'wp_head', array( $this, 'robots_tags' ), 1 );
+		add_action( 'wp_head', array( $this, 'google_analytics_tag' ), 2 );
+		add_action( 'wp_head', array( $this, 'link_tags' ), 3 );
+		add_action( 'wp_head', array( $this, 'og_tags' ), 4 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_debug_mode_styles' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
 		add_filter( 'script_loader_tag', array( $this, 'replace_script_tags' ), 10, 2 );
 		$this->remove_unnecessary_tags();
+	}
+
+	public function robots_tags() {
+		if ( is_tag() ) {
+			echo '<meta name="robots" content="noindex, follow">';
+		}
 	}
 
 	public function google_analytics_tag() {
@@ -43,7 +50,8 @@ GTAG;
 		);
 
 		$output_link_tags = <<<EOT
-		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="icon" href="{$theme_image_uri}/common/favicon.svg" type="image/svg+xml">
 		<link rel="icon alternate" href="{$theme_image_uri}/common/favicon.png" type="image/png">
 		<link rel="apple-touch-icon" href="{$theme_image_uri}/common/apple-touch-icon.png">
