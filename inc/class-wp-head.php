@@ -43,7 +43,8 @@ GTAG;
 		);
 
 		$output_link_tags = <<<EOT
-		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="icon" href="{$theme_image_uri}/common/favicon.svg" type="image/svg+xml">
 		<link rel="icon alternate" href="{$theme_image_uri}/common/favicon.png" type="image/png">
 		<link rel="apple-touch-icon" href="{$theme_image_uri}/common/apple-touch-icon.png">
