@@ -709,7 +709,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+dt {
   font-weight: 500;
   letter-spacing: 0.05em;
   line-height: 1.5;
@@ -720,7 +721,8 @@ h2::before,
 h3::before,
 h4::before,
 h5::before,
-h6::before {
+h6::before,
+dt::before {
   content: "";
   display: block;
   height: 0;
@@ -730,7 +732,8 @@ h6::before {
 
 p,
 ul,
-ol {
+ol,
+dd {
   font-size: 1.6rem;
   line-height: 1.75;
   letter-spacing: 0.01em;
@@ -738,7 +741,8 @@ ol {
 @media (max-width: 48em) {
   p,
 ul,
-ol {
+ol,
+dd {
     font-size: 1.45rem;
   }
 }
@@ -1710,14 +1714,16 @@ pre[class*=language-] {
 .entry-content p + .wp-block-image,
 .entry-content p + .wp-block-columns .wp-block-image,
 .entry-content p + .code-toolbar,
-.entry-content p + .wp-block-table {
+.entry-content p + .wp-block-table,
+.entry-content p + dl {
   margin: 1rem 0 0;
 }
 @media (max-width: 48em) {
   .entry-content p + .wp-block-image,
 .entry-content p + .wp-block-columns .wp-block-image,
 .entry-content p + .code-toolbar,
-.entry-content p + .wp-block-table {
+.entry-content p + .wp-block-table,
+.entry-content p + dl {
     margin: 0.8rem 0 0;
   }
 }
@@ -1868,6 +1874,33 @@ pre[class*=language-] {
 }
 .entry-content .line-highlight::before, .entry-content .line-highlight::after {
   display: none;
+}
+.entry-content dl {
+  border-radius: 1rem;
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 6px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
+  margin: 3rem 0 0;
+  max-width: 100%;
+  padding: 3rem;
+}
+@media (max-width: 48em) {
+  .entry-content dl {
+    padding: 2.5rem 2rem;
+  }
+}
+.entry-content dl > dt {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+@media (max-width: 48em) {
+  .entry-content dl > dt {
+    font-size: 1.6rem;
+  }
+}
+.entry-content dl > dt:nth-of-type(n + 2) {
+  margin-top: 1.8em;
+}
+.entry-content dl > dd {
+  margin: 0;
 }
 .entry-content .wp-block-table {
   border-radius: 1rem;
