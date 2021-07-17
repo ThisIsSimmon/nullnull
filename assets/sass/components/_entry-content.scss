@@ -168,7 +168,8 @@
 		+ .wp-block-image,
 		+ .wp-block-columns .wp-block-image,
 		+ .code-toolbar,
-		+ .wp-block-table {
+		+ .wp-block-table,
+		+ dl {
 			margin: 1rem 0 0;
 			@include mq(mobile) {
 				margin: 0.8rem 0 0;
@@ -344,6 +345,32 @@
 		&::before,
 		&::after {
 			display: none;
+		}
+	}
+
+	dl {
+		border-radius: 1rem;
+		box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 6px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
+		margin: 3rem 0 0;
+		max-width: 100%;
+		padding: 3rem;
+		@include mq(mobile) {
+			padding: 2.5rem 2rem;
+		}
+
+		> dt {
+			font-size: 1.8rem;
+			font-weight: 700;
+			@include mq(mobile) {
+				font-size: 1.6rem;
+			}
+			&:nth-of-type(n + 2) {
+				margin-top: 1.8em;
+			}
+		}
+
+		> dd {
+			margin: 0;
 		}
 	}
 

@@ -15,7 +15,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+dt {
 	@include line-height-crop($heading-line-height, 1, top);
 	font-weight: 500;
 	letter-spacing: 0.05em;
@@ -25,7 +26,8 @@ h6 {
 
 p,
 ul,
-ol {
+ol,
+dd {
 	font-size: 1.6rem;
 	line-height: $text-line-height;
 	letter-spacing: 0.01em;
