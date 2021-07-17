@@ -2,7 +2,6 @@
 
 <?php get_template_part( 'template-parts/scroll-indicator' ); ?>
 
-
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-header__title--blog">', '</h1>' ); ?>
