@@ -10,7 +10,6 @@
 		<?php get_template_part( 'template-parts/tag-list', null, array( 'class' => 'tag-list--entry' ) ); ?>
 	</header>
 
-
 	<div class="entry-content entry-content--blog">
 		<?php the_content(); ?>
 	</div>
