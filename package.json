@@ -9,7 +9,8 @@
 		"cssnano": "postcss -c ./postcss.config.js ./style.pre.css -o ./style.min.css",
 		"autoprefix": "postcss ./style.css -u autoprefixer -o ./style.pre.css",
 		"imagemin": "onchange './assets/img/src/**/*.{jpg,png,gif}' -- node ./imagemin.js {{changed}}",
-		"watchCompiledStyle": "onchange ./style.css -- npm run autoprefix"
+		"watchCompiledStyle": "onchange ./style.css -- npm run autoprefix",
+		"compileLoginCSS": "sass ./assets/sass/pages/login/_login.scss:./assets/css/login.css --style=expanded --no-source-map"
 	},
 	"browserslist": [
 		"since 2015"
