@@ -12,6 +12,9 @@ require THEME_PATH . '/inc/debug.php';
 require THEME_PATH . '/inc/class-init.php';
 new Init();
 
+require THEME_PATH . '/inc/class-login.php';
+new Login();
+
 require THEME_PATH . '/inc/class-wp-head.php';
 new WP_Head();
 
