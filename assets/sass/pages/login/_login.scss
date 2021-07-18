@@ -1,0 +1,145 @@
+@use '../../abstracts/' as *;
+@use '../../base/typography';
+@use 'sass:math';
+
+body {
+	color: map-get($colors, text-main);
+	font-size: 62.5%;
+	font-family: Quicksand, 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP', 'Original Yu Gothic', 'Yu Gothic', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Sans Emoji';
+	font-weight: 400;
+	@include mq(mobile) {
+		font-size: calc(100vw / 41.4);
+	}
+}
+
+#login {
+	width: 44rem;
+	> h1 {
+		> a {
+			$this: &;
+			@include bg-gradient;
+			border-radius: 50%;
+			box-shadow: 1px 1px 2px transparent, 4px 4px 4px rgba(0, 0, 0, 0.12), inset 2px 2px 4px rgba(255, 255, 255, 0.6), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+			font-size: 1rem;
+			height: 7em;
+			margin-right: auto;
+			position: relative;
+			width: 7em;
+
+			@include mq(mobile) {
+				font-size: math.div(50, 70) * 1rem;
+			}
+
+			&::before {
+				@include bg-gradient;
+				border-radius: 50%;
+				box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -1px -1px 3px rgba(255, 255, 255, 0.3), inset 2px 2px 3px rgba(0, 0, 0, 0.12);
+				content: '';
+				height: 5.6em;
+				inset: 0;
+				margin: auto;
+				position: absolute;
+				transition: box-shadow 0.3s map-get($easing-functions, easeInQuad);
+				width: 5.6em;
+				z-index: map-get($layer, default);
+
+				#{$this}:hover & {
+					box-shadow: none;
+				}
+			}
+
+			&:hover::before {
+				box-shadow: none;
+			}
+
+			&::after {
+				$mag: 10;
+				background-image: url('../img/dist/header/logo_text.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				content: '';
+				font-size: #{$mag}em;
+				height: 2.5em;
+				left: 50%;
+				top: 50%;
+				margin: 0.015em 0 0 0.015em;
+				position: absolute;
+				transform: scale(math.div(1, $mag)) translate(calc(-50% * #{$mag}), calc(-50% * #{$mag}));
+				width: 2.3em;
+				z-index: map-get($layer, default) + 1;
+				@include mq(mobile) {
+					margin: 0.01em 0 0 0.01em;
+				}
+			}
+		}
+	}
+
+	#nav,
+	#backtoblog {
+		padding: 0;
+	}
+
+	.message,
+	.success,
+	#login_error {
+		@include shadow(card);
+		background-color: transparent;
+		background-image: linear-gradient(to right, #72aee6, #72aee6);
+		background-position: left;
+		background-repeat: no-repeat;
+		background-size: 1rem 100%;
+		border: none;
+		border-radius: 1rem;
+		font-size: 1.6rem;
+		padding: 1.2rem 2rem 1.2rem 3rem;
+	}
+}
+
+#loginform,
+#lostpasswordform {
+	background: none;
+	border: none;
+	box-shadow: none;
+	padding: 2rem 0;
+
+	label {
+		color: map-get($colors, text-main);
+		font-size: 2rem;
+		letter-spacing: 0.2em;
+		&[for='rememberme'] {
+			font-size: 1.4rem;
+		}
+	}
+
+	input[type='text'],
+	input[type='password'],
+	input[type='tel'] {
+		@include shadow(input);
+		border: none;
+		border-radius: 1rem;
+		font-size: 1.8rem;
+		padding-left: 0.75em;
+	}
+
+	input[type='checkbox'],
+	input[type='radio'] {
+		height: 1em;
+		width: 1em;
+		&::before {
+			margin: -0.1875em 0 0 -0.25em;
+			height: 1.3125em;
+			width: 1.3125em;
+		}
+	}
+
+	input[type='submit'] {
+		@include bg-gradient;
+		@include shadow(button-gradient);
+		border: none;
+		font-size: 1.6rem;
+		font-weight: 500;
+		border-radius: 1rem;
+		padding: 0.2em 1.2em;
+	}
+}
