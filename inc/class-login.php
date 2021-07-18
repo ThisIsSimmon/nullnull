@@ -16,4 +16,5 @@ class Login {
 		wp_enqueue_style( 'login-style', THEME_URI . '/assets/css/login.css', array( 'login-google-fonts', 'login' ), filemtime( THEME_PATH . '/assets/css/login.css' ) );
 	}
 
+
 }
