@@ -8,7 +8,8 @@ class Login {
 	}
 
 	public function change_login_header_url( $login_header_url ) {
-		return home_url();
+		$login_header_url = home_url();
+		return home_url;
 	}
 
 	public function enqueue_login_style() {
