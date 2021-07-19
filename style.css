@@ -1468,6 +1468,14 @@ pre[class*=language-] {
   width: 100%;
   z-index: 75;
 }
+.admin-bar .scroll-indicator {
+  top: 32px;
+}
+@media (max-width: 48em) {
+  .admin-bar .scroll-indicator {
+    top: 0;
+  }
+}
 .scroll-indicator::-webkit-progress-bar {
   background: transparent;
 }
