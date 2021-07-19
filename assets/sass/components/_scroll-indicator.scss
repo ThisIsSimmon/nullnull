@@ -14,6 +14,13 @@
 	width: 100%;
 	z-index: map-get($layer, scroll-indicator);
 
+	.admin-bar & {
+		top: 32px;
+		@include mq(mobile) {
+			top: 0;
+		}
+	}
+
 	&::-webkit-progress-bar {
 		background: transparent;
 	}
