@@ -227,6 +227,6 @@ body {
   padding: 0 !important;
 }
 .backup-methods-wrap a {
-  color: #656a7b;
+  color: #656a7b !important;
   font-size: 1.3rem;
 }
