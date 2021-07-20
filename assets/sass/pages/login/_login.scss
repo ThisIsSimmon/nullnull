@@ -13,7 +13,6 @@ body {
 }
 
 #login {
-	width: 44rem;
 	> h1 {
 		> a {
 			$this: &;
@@ -91,7 +90,7 @@ body {
 		background-size: 1rem 100%;
 		border: none;
 		border-radius: 1rem;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		padding: 1.2rem 2rem 1.2rem 3rem;
 	}
 }
@@ -105,10 +104,10 @@ body {
 
 	label {
 		color: map-get($colors, text-main);
-		font-size: 2rem;
+		font-size: 1.6rem;
 		letter-spacing: 0.2em;
 		&[for='rememberme'] {
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 		}
 	}
 
@@ -118,7 +117,7 @@ body {
 		@include shadow(input);
 		border: none;
 		border-radius: 1rem;
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 		padding-left: 0.75em;
 	}
 
