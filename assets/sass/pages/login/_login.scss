@@ -149,7 +149,7 @@ body {
 	padding: 0 !important;
 
 	a {
-		color: map-get($colors, text-sub);
+		color: map-get($colors, text-sub) !important;
 		font-size: 1.3rem;
 	}
 }
