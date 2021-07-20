@@ -136,6 +136,7 @@ body {
 		@include bg-gradient;
 		@include shadow(button-gradient);
 		border: none;
+		color: #fff;
 		font-size: 1.6rem;
 		font-weight: 500;
 		border-radius: 1rem;
@@ -146,4 +147,9 @@ body {
 
 .backup-methods-wrap {
 	padding: 0 !important;
+
+	a {
+		color: map-get($colors, text-sub);
+		font-size: 1.3rem;
+	}
 }
