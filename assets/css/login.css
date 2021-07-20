@@ -211,6 +211,7 @@ body {
   box-shadow: 1px 1px 2px transparent, 4px 4px 4px rgba(0, 0, 0, 0.12), inset 2px 2px 4px rgba(255, 255, 255, 0.6), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   border: none;
+  color: #fff;
   font-size: 1.6rem;
   font-weight: 500;
   border-radius: 1rem;
@@ -224,4 +225,8 @@ body {
 
 .backup-methods-wrap {
   padding: 0 !important;
+}
+.backup-methods-wrap a {
+  color: #656a7b;
+  font-size: 1.3rem;
 }
