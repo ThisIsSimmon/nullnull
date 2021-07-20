@@ -87,9 +87,6 @@ body {
   }
 }
 
-#login {
-  width: 44rem;
-}
 #login > h1 > a {
   background-image: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
   border-radius: 50%;
@@ -160,7 +157,7 @@ body {
   background-size: 1rem 100%;
   border: none;
   border-radius: 1rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 1.2rem 2rem 1.2rem 3rem;
 }
 
@@ -174,12 +171,12 @@ body {
 #loginform label,
 #lostpasswordform label {
   color: #292d3d;
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: 0.2em;
 }
 #loginform label[for=rememberme],
 #lostpasswordform label[for=rememberme] {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 #loginform input[type=text],
 #loginform input[type=password],
@@ -190,7 +187,7 @@ body {
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
   border: none;
   border-radius: 1rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   padding-left: 0.75em;
 }
 #loginform input[type=checkbox],
