@@ -1689,6 +1689,7 @@ pre[class*=language-] {
   content: "";
   display: inline-flex;
   height: 1.2em;
+  margin-left: 0.1em;
   transform: translateY(0.2em);
   width: 1.2em;
 }
@@ -1723,7 +1724,8 @@ pre[class*=language-] {
 .entry-content p + .wp-block-columns .wp-block-image,
 .entry-content p + .code-toolbar,
 .entry-content p + .wp-block-table,
-.entry-content p + dl {
+.entry-content p + dl,
+.entry-content p + blockquote {
   margin: 1rem 0 0;
 }
 @media (max-width: 48em) {
@@ -1731,7 +1733,8 @@ pre[class*=language-] {
 .entry-content p + .wp-block-columns .wp-block-image,
 .entry-content p + .code-toolbar,
 .entry-content p + .wp-block-table,
-.entry-content p + dl {
+.entry-content p + dl,
+.entry-content p + blockquote {
     margin: 0.8rem 0 0;
   }
 }
@@ -1882,6 +1885,63 @@ pre[class*=language-] {
 }
 .entry-content .line-highlight::before, .entry-content .line-highlight::after {
   display: none;
+}
+.entry-content blockquote {
+  border-radius: 1rem;
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 6px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
+  margin: 3rem 0 0;
+  max-width: 100%;
+  padding: 3rem;
+  position: relative;
+}
+@media (max-width: 48em) {
+  .entry-content blockquote {
+    padding: 2.5rem 2rem;
+  }
+}
+.entry-content blockquote::before {
+  content: "";
+  background-image: url("assets/img/dist/post/quote_open.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 6em;
+  display: inline-block;
+  left: 0.6rem;
+  position: absolute;
+  top: -2.5em;
+  width: 6em;
+  z-index: 1;
+}
+@media (max-width: 48em) {
+  .entry-content blockquote::before {
+    font-size: 0.8rem;
+    left: 0.3rem;
+  }
+}
+.entry-content blockquote > p {
+  color: #656a7b;
+  font-size: 1.4rem;
+}
+@media (max-width: 48em) {
+  .entry-content blockquote > p {
+    font-size: 1.3rem;
+  }
+}
+.entry-content blockquote > p:first-of-type {
+  margin-top: 0;
+}
+.entry-content blockquote > cite {
+  display: block;
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-top: 1.3em;
+  text-align: right;
+}
+@media (max-width: 48em) {
+  .entry-content blockquote > cite {
+    font-size: 1.2rem;
+  }
 }
 .entry-content dl {
   border-radius: 1rem;
