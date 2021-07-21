@@ -1696,7 +1696,7 @@ pre[class*=language-] {
 .entry-content a:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.1em;
+  text-underline-offset: max(1px, 0.1em);
 }
 .entry-content small {
   color: #656a7b;
@@ -2746,7 +2746,7 @@ pre[class*=language-] {
   color: currentColor;
   text-decoration: underline;
   text-underline-offset: 0.1em;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: max(1px, 0.1em);
 }
 
 .menu-open {

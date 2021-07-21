@@ -138,7 +138,7 @@
 		&:hover {
 			text-decoration: underline;
 			text-decoration-thickness: 1px;
-			text-underline-offset: 0.1em;
+			text-underline-offset: max(1px, 0.1em);
 		}
 	}
 
