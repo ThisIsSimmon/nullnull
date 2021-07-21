@@ -29,7 +29,7 @@
 			color: currentColor;
 			text-decoration: underline;
 			text-underline-offset: 0.1em;
-			text-decoration-thickness: 2px;
+			text-decoration-thickness: max(1px, 0.1em);
 		}
 	}
 }
