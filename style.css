@@ -228,9 +228,6 @@ a:hover {
   color: #3434e0;
   text-decoration: underline;
 }
-a:focus {
-  outline: thin dotted;
-}
 a:not([href]):not(class), a:not([href]):not([class]):hover {
   cursor: default;
   color: inherit;
@@ -364,10 +361,6 @@ label {
 button {
   border-radius: 0;
   text-transform: none;
-}
-button:focus {
-  outline: dotted 1px;
-  outline: -webkit-focus-ring-color auto 5px;
 }
 
 input,
@@ -673,22 +666,11 @@ img {
 }
 
 /* Disable outline when mouse down */
-.js-focus-visible:focus:not(.focus-visible),
-[data-js-focus-visible]:focus:not([data-focus-visible-added]),
-:focus:not(:focus-visible) {
+.js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }
 
-:focus {
-  outline: #8953a2 solid 3px;
-}
-
-:focus-visible {
-  outline: #8953a2 solid 3px;
-}
-
-a:focus,
-button:focus {
+.focus-visible {
   outline: #8953a2 solid 3px;
 }
 
