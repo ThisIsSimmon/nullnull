@@ -1695,6 +1695,8 @@ pre[class*=language-] {
 }
 .entry-content a:hover {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.1em;
 }
 .entry-content small {
   color: #656a7b;
@@ -2734,7 +2736,6 @@ pre[class*=language-] {
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.2em;
-  transition: text-decoration 0.3s ease;
 }
 @media (max-width: 48em) {
   .footer-nav__link {
@@ -2744,6 +2745,8 @@ pre[class*=language-] {
 .footer-nav__link:hover {
   color: currentColor;
   text-decoration: underline;
+  text-underline-offset: 0.1em;
+  text-decoration-thickness: 2px;
 }
 
 .menu-open {
