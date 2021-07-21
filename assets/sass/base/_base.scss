@@ -52,21 +52,10 @@ img {
 }
 
 /* Disable outline when mouse down */
-.js-focus-visible:focus:not(.focus-visible),
-[data-js-focus-visible]:focus:not([data-focus-visible-added]),
-:focus:not(:focus-visible) {
+.js-focus-visible :focus:not(.focus-visible) {
 	outline: none;
 }
 
-:focus {
-	outline: map-get($colors, text-link) solid 3px;
-}
-
-:focus-visible {
-	outline: map-get($colors, text-link) solid 3px;
-}
-
-a:focus,
-button:focus {
+.focus-visible {
 	outline: map-get($colors, text-link) solid 3px;
 }

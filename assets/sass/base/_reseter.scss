@@ -14,9 +14,7 @@
 	}
 }
 html {
-	font: 400 1rem/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
-		Cantarell, "Noto Sans", sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font: 400 1rem/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	background: inherit;
 	vertical-align: baseline;
 	word-break: normal;
@@ -40,7 +38,7 @@ nav,
 section {
 	display: block;
 }
-[tabindex="-1"]:focus:not(:focus-visible) {
+[tabindex='-1']:focus:not(:focus-visible) {
 	outline: 0;
 }
 hr {
@@ -131,7 +129,7 @@ nav li {
 	list-style: none;
 	padding: 0;
 	&::before {
-		content: "​";
+		content: '​';
 	}
 }
 dt {
@@ -178,9 +176,9 @@ a {
 		color: rgb(52, 52, 224);
 		text-decoration: underline;
 	}
-	&:focus {
-		outline: thin dotted;
-	}
+	// &:focus {
+	// 	outline: thin dotted;
+	// }
 	&:not([href]):not(class),
 	&:not([href]):not([class]):hover {
 		cursor: default;
@@ -203,12 +201,8 @@ pre,
 code,
 kbd,
 samp {
-	font: 1.05em "Fira Code", "Cascadia Code", Consolas, "Inconsolata", Monaco,
-		Menlo, "Noto Mono", "Roboto Mono", "Droid Sans Mono", "Ubuntu Mono",
-		"Ubuntu Monospace", "Source Code Pro", "Oxygen Mono", "Liberation Mono",
-		"DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-		"Noto Color Emoji";
+	font: 1.05em 'Fira Code', 'Cascadia Code', Consolas, 'Inconsolata', Monaco, Menlo, 'Noto Mono', 'Roboto Mono', 'Droid Sans Mono', 'Ubuntu Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Oxygen Mono', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 pre {
 	display: block;
@@ -306,10 +300,6 @@ label {
 button {
 	border-radius: 0;
 	text-transform: none;
-	&:focus {
-		outline: dotted 1px;
-		outline: -webkit-focus-ring-color auto 5px;
-	}
 }
 input,
 button {
@@ -340,7 +330,7 @@ button,
 select {
 	text-transform: none;
 }
-[role="button"] {
+[role='button'] {
 	cursor: pointer;
 }
 select {
@@ -359,9 +349,9 @@ select {
 	display: none;
 }
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
 	-webkit-appearance: button;
 	&:not(disabled) {
 		cursor: pointer;
@@ -440,23 +430,23 @@ dialog {
 input::placeholder {
 	opacity: 1;
 }
-[type="search"] {
+[type='search'] {
 	outline-offset: -2px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	box-sizing: content-box;
 }
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 }
-[type="tel"],
-[type="url"],
-[type="email"],
-[type="number"] {
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='number'] {
 	direction: ltr;
 }
 ::-webkit-color-swatch-wrapper {
@@ -504,17 +494,17 @@ template {
 [hidden] {
 	display: none;
 }
-[aria-busy="true"] {
+[aria-busy='true'] {
 	cursor: progress;
 }
 [aria-controls] {
 	cursor: pointer;
 }
-[aria-disabled="true"],
+[aria-disabled='true'],
 [disabled] {
 	cursor: not-allowed;
 }
-[aria-hidden="false"][hidden="false"] {
+[aria-hidden='false'][hidden='false'] {
 	display: initial;
 	&:not(:focus) {
 		clip: rect(0, 0, 0, 0);
