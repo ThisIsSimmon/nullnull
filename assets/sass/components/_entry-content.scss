@@ -385,6 +385,7 @@
 		> p {
 			color: map-get($colors, text-sub);
 			font-size: 1.4rem;
+			font-style: italic;
 			@include mq(mobile) {
 				font-size: 1.3rem;
 			}

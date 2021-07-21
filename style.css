@@ -1924,6 +1924,7 @@ pre[class*=language-] {
 .entry-content blockquote > p {
   color: #656a7b;
   font-size: 1.4rem;
+  font-style: italic;
 }
 @media (max-width: 48em) {
   .entry-content blockquote > p {
