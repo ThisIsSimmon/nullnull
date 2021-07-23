@@ -1872,20 +1872,20 @@ pre[class*=language-] {
 }
 .entry-content blockquote {
   background-image: url("assets/img/dist/post/quote_open.svg");
-  background-position: 1em 0.3em;
+  background-position: 1em 0.8em;
   background-repeat: no-repeat;
   background-size: 6em 6em;
   border-radius: 1rem;
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 6px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);
   margin: 3rem 0 0;
   max-width: 100%;
-  padding: 2.5rem 2.5rem 2.5rem 7.1rem;
+  padding: 3rem 3rem 3rem 7.1rem;
 }
 @media (max-width: 48em) {
   .entry-content blockquote {
-    background-position: 1em 0.7em;
+    background-position: 1em 1.1em;
     background-size: 5em 5em;
-    padding-left: 6.4em;
+    padding-left: 6.2em;
   }
 }
 .entry-content blockquote > p {
