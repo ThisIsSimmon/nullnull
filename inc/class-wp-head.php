@@ -41,6 +41,7 @@ GTAG;
 
 	public function link_tags() {
 		$theme_image_uri = THEME_IMAGE_URI;
+		$theme_uri       = THEME_URI;
 		$allowed_html    = array(
 			'link' => array(
 				'rel'  => array(),
@@ -53,6 +54,7 @@ GTAG;
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="icon" href="{$theme_image_uri}/common/favicon.svg" type="image/svg+xml">
+		<link rel="manifest" href="{$theme_uri}/manifest.json">
 		<link rel="icon alternate" href="{$theme_image_uri}/common/favicon.png" type="image/png">
 		<link rel="apple-touch-icon" href="{$theme_image_uri}/common/apple-touch-icon.png">
 EOT;
