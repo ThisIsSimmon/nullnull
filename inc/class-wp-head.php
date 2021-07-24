@@ -5,8 +5,8 @@ class WP_Head {
 	public function __construct() {
 		add_action( 'wp_head', array( $this, 'robots_tags' ), 1 );
 		add_action( 'wp_head', array( $this, 'google_analytics_tag' ), 2 );
-		add_action( 'wp_head', array( $this, 'link_tags' ), 3 );
-		add_action( 'wp_head', array( $this, 'og_tags' ), 4 );
+		add_action( 'wp_head', array( $this, 'meta_tags' ), 3 );
+		add_action( 'wp_head', array( $this, 'link_tags' ), 4 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_debug_mode_styles' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
@@ -61,7 +61,7 @@ EOT;
 		echo wp_kses( $output_link_tags, $allowed_html );
 	}
 
-	public function og_tags() {
+	public function meta_tags() {
 		$allowed_html = array(
 			'meta' => array(
 				'property' => array(),
@@ -116,6 +116,7 @@ EOT;
 
 		$output_og_tags = <<<EOT
 		<meta name="description" content="{$description}">
+		<meta name="theme-color" content="#E8EAF1">
 		<meta property="fb:app_id" content="789202198451880">
 		<meta property="og:site_name" content="{$site_name}">
 		<meta property="og:title" content="{$title}">
