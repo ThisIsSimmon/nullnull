@@ -1,0 +1,26 @@
+{
+	"name": "NullNull",
+	"short_name": "NullNull",
+	"description": "フリーランスWeb制作者Simmonの技術情報ブログ.",
+	"start_url": "/?source=pwa",
+	"display": "standalone",
+	"lang": "ja",
+	"dir": "auto",
+	"orientation": "any",
+	"theme_color": "#E8EAF1",
+	"background_color": "#E8EAF1",
+	"icons": [
+		{
+			"src": "/wp-content/themes/nullnull/assets/img/dist/common/pwa_192.png",
+			"type": "image/png",
+			"sizes": "192x192",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/wp-content/themes/nullnull/assets/img/dist/common/pwa_512.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		}
+	]
+}

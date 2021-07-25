@@ -5,8 +5,8 @@ class WP_Head {
 	public function __construct() {
 		add_action( 'wp_head', array( $this, 'robots_tags' ), 1 );
 		add_action( 'wp_head', array( $this, 'google_analytics_tag' ), 2 );
-		add_action( 'wp_head', array( $this, 'link_tags' ), 3 );
-		add_action( 'wp_head', array( $this, 'og_tags' ), 4 );
+		add_action( 'wp_head', array( $this, 'meta_tags' ), 3 );
+		add_action( 'wp_head', array( $this, 'link_tags' ), 4 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_debug_mode_styles' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
@@ -41,6 +41,7 @@ GTAG;
 
 	public function link_tags() {
 		$theme_image_uri = THEME_IMAGE_URI;
+		$theme_uri       = THEME_URI;
 		$allowed_html    = array(
 			'link' => array(
 				'rel'  => array(),
@@ -53,13 +54,14 @@ GTAG;
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="icon" href="{$theme_image_uri}/common/favicon.svg" type="image/svg+xml">
+		<link rel="manifest" href="{$theme_uri}/manifest.json">
 		<link rel="icon alternate" href="{$theme_image_uri}/common/favicon.png" type="image/png">
 		<link rel="apple-touch-icon" href="{$theme_image_uri}/common/apple-touch-icon.png">
 EOT;
 		echo wp_kses( $output_link_tags, $allowed_html );
 	}
 
-	public function og_tags() {
+	public function meta_tags() {
 		$allowed_html = array(
 			'meta' => array(
 				'property' => array(),
@@ -114,6 +116,10 @@ EOT;
 
 		$output_og_tags = <<<EOT
 		<meta name="description" content="{$description}">
+		<meta name="theme-color" content="#E8EAF1">
+		<meta name="apple-mobile-web-app-title" content="NullNull">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
 		<meta property="fb:app_id" content="789202198451880">
 		<meta property="og:site_name" content="{$site_name}">
 		<meta property="og:title" content="{$title}">
