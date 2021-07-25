@@ -3,7 +3,7 @@
 class Init {
 
 	public function __construct() {
-		if ( is_admin() || is_user_logged_in() ) {
+		if ( is_admin() || is_user_logged_in() && 'local' !== wp_get_environment_type() ) {
 			require_once ABSPATH . 'wp-admin/includes/file.php';
 			add_action( 'init', array( $this, 'check_sw_file' ), 1 );
 		}
@@ -35,7 +35,7 @@ class Init {
 			$theme_sw = THEME_PATH . '/assets/js/sw.js';
 
 			if ( ! $wp_filesystem->exists( $root_sw ) ) {
-				$theme_sw_js_content = $wp_filesystem->get_contents( $theme_sw );
+				$theme_sw_content = $wp_filesystem->get_contents( $theme_sw );
 				$wp_filesystem->put_contents(
 					$root_sw,
 					$theme_sw_content,
@@ -45,7 +45,7 @@ class Init {
 				$root_sw_filetime  = $wp_filesystem->mtime( $root_sw );
 				$theme_sw_filetime = $wp_filesystem->mtime( $theme_sw );
 				if ( $root_sw_filetime < $theme_sw_filetime ) {
-					$theme_sw_js_content = $wp_filesystem->get_contents( $theme_sw );
+					$theme_sw_content = $wp_filesystem->get_contents( $theme_sw );
 					$wp_filesystem->put_contents(
 						$root_sw,
 						$theme_sw_content,

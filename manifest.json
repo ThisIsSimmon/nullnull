@@ -13,12 +13,14 @@
 		{
 			"src": "/wp-content/themes/nullnull/assets/img/dist/common/pwa_192.png",
 			"type": "image/png",
-			"sizes": "192x192"
+			"sizes": "192x192",
+			"purpose": "any maskable"
 		},
 		{
 			"src": "/wp-content/themes/nullnull/assets/img/dist/common/pwa_512.png",
 			"type": "image/png",
-			"sizes": "512x512"
+			"sizes": "512x512",
+			"purpose": "any maskable"
 		}
 	]
 }

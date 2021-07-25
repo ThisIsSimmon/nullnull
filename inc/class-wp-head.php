@@ -117,6 +117,9 @@ EOT;
 		$output_og_tags = <<<EOT
 		<meta name="description" content="{$description}">
 		<meta name="theme-color" content="#E8EAF1">
+		<meta name="apple-mobile-web-app-title" content="NullNull">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
 		<meta property="fb:app_id" content="789202198451880">
 		<meta property="og:site_name" content="{$site_name}">
 		<meta property="og:title" content="{$title}">
