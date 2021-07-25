@@ -1,7 +1,7 @@
 const CACHE_NAME = 'nullnull-2021-07-25';
 const OFFLINE_URL = 'https://nullnull.dev/';
 const urlsToCache = ['https://nullnull.dev/'];
-const neverCacheUrls = `/\/wp-admin|\/wp-login|preview=true|\/cart|ajax|login/`;
+const neverCacheUrls = /\/wp-admin|\/wp-login|preview=true|\/cart|ajax|login/;
 
 self.addEventListener('install', (event) => {
 	event.waitUntil(
