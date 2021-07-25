@@ -1,17 +1,11 @@
 const CACHE_NAME = 'nullnull-2021-07-25';
 const OFFLINE_URL = 'https://nullnull.dev/';
 const urlsToCache = ['https://nullnull.dev/'];
-const neverCacheUrls = [/\/wp-admin/, /\/wp-login/, /preview=true/, /\/cart/, /ajax/, /login/];
-const checkNeverCacheList = (url) => {
-	if (this.match(url)) {
-		return false;
-	}
-	return true;
-};
+const neverCacheUrls = `/\/wp-admin|\/wp-login|preview=true|\/cart|ajax|login`;
 
-self.addEventListener('install', function (event) {
+self.addEventListener('install', (event) => {
 	event.waitUntil(
-		caches.open(CACHE_NAME).then(function (cache) {
+		caches.open(CACHE_NAME).then((cache) => {
 			return cache.addAll(urlsToCache);
 		})
 	);
@@ -36,7 +30,7 @@ self.addEventListener('activate', (event) => {
 	);
 });
 
-self.addEventListener('fetch', function (e) {
+self.addEventListener('fetch', (e) => {
 	if (!e.request.url.match(/^(http|https):\/\//i)) {
 		return;
 	}
@@ -45,10 +39,10 @@ self.addEventListener('fetch', function (e) {
 		return;
 	}
 
-	if (!neverCacheUrls.every(checkNeverCacheList, e.request.url)) {
+	if (neverCacheUrls.test(e.request.url)) {
 		return;
 	}
-	if (!neverCacheUrls.every(checkNeverCacheList, e.request.referrer)) {
+	if (neverCacheUrls.test(e.request.referrer)) {
 		return;
 	}
 
@@ -58,7 +52,7 @@ self.addEventListener('fetch', function (e) {
 
 	if (e.request.method !== 'GET') {
 		e.respondWith(
-			fetch(e.request).catch(function () {
+			fetch(e.request).catch(() => {
 				return caches.match(OFFLINE_URL);
 			})
 		);
@@ -67,8 +61,8 @@ self.addEventListener('fetch', function (e) {
 
 	if (e.request.mode === 'navigate' && navigator.onLine) {
 		e.respondWith(
-			fetch(e.request).then(function (response) {
-				return caches.open(CACHE_NAME).then(function (cache) {
+			fetch(e.request).then((response) => {
+				return caches.open(CACHE_NAME).then((cache) => {
 					cache.put(e.request, response.clone());
 					return response;
 				});
@@ -80,18 +74,18 @@ self.addEventListener('fetch', function (e) {
 	e.respondWith(
 		caches
 			.match(e.request)
-			.then(function (response) {
+			.then((response) => {
 				return (
 					response ||
-					fetch(e.request).then(function (response) {
-						return caches.open(CACHE_NAME).then(function (cache) {
+					fetch(e.request).then((response) => {
+						return caches.open(CACHE_NAME).then((cache) => {
 							cache.put(e.request, response.clone());
 							return response;
 						});
 					})
 				);
 			})
-			.catch(function () {
+			.catch(() => {
 				return caches.match(OFFLINE_URL);
 			})
 	);
