@@ -1782,8 +1782,12 @@ pre[class*=language-] {
 }
 .entry-content pre[class*=language-] {
   margin: 0;
-  max-height: min(50vh, 60rem);
   padding: 4rem 2rem 3rem;
+}
+@media (max-width: 48em) {
+  .entry-content pre[class*=language-] {
+    max-height: min(50vh, 60rem);
+  }
 }
 .entry-content .token.operator,
 .entry-content .token.entity,

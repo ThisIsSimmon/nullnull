@@ -251,8 +251,10 @@
 
 	pre[class*='language-'] {
 		margin: 0;
-		max-height: min(50vh, 60rem);
 		padding: 4rem 2rem 3rem;
+		@include mq(mobile) {
+			max-height: min(50vh, 60rem);
+		}
 	}
 
 	.token.operator,
