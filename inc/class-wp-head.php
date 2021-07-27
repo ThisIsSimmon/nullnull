@@ -11,6 +11,7 @@ class WP_Head {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
 		add_filter( 'script_loader_tag', array( $this, 'replace_script_tags' ), 10, 2 );
+		add_filter( 'document_title_separator', array( $this, 'change_document_title_separator' ), 10, 1 );
 		$this->remove_unnecessary_tags();
 	}
 
@@ -182,4 +183,8 @@ EOT;
 		remove_action( 'wp_head', 'wlwmanifest_link' );
 	}
 
+	public function change_document_title_separator( $sep ) {
+		$sep = '|';
+		return $sep;
+	}
 }
