@@ -18,6 +18,9 @@ new Login();
 require THEME_PATH . '/inc/class-wp-head.php';
 new WP_Head();
 
+require THEME_PATH . '/inc/class-wp-footer.php';
+new WP_footer();
+
 require THEME_PATH . '/inc/class-email.php';
 new Email();
 
