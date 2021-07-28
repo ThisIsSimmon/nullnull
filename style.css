@@ -1290,6 +1290,9 @@ pre[class*=language-] {
   flex-wrap: wrap;
   list-style-type: none;
 }
+.tag-list--blog-card > .tag-list__item:nth-of-type(n + 3) {
+  display: none;
+}
 .tag-list--entry {
   margin-top: 0.9rem;
 }

@@ -2,11 +2,18 @@
 @use 'sass:math';
 
 .tag-list {
+	$this: &;
 	display: flex;
 	flex-wrap: wrap;
 	list-style-type: none;
 	&--blog-card {
 		// margin-top: 1rem;
+
+		> #{$this}__item {
+			&:nth-of-type(n + 3) {
+				display: none;
+			}
+		}
 	}
 
 	&--entry {
