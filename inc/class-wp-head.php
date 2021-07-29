@@ -158,7 +158,8 @@ EOT;
 		wp_enqueue_script( 'gsap', THEME_URI . '/assets/js/gsap.min.js', array(), '3.7.0', false );
 		wp_enqueue_script( 'ScrollTrigger', THEME_URI . '/assets/js/ScrollTrigger.min.js', array( 'gsap' ), '3.7.0', false );
 		wp_enqueue_script( 'prism', THEME_URI . '/assets/js/prism.min.js', array(), '1.24.0', false );
-		wp_enqueue_script( 'app', THEME_URI . '/assets/js/app.js', array( 'micromodal', 'ScrollTrigger', 'prism' ), filemtime( THEME_PATH . '/assets/js/app.js' ), false );
+		wp_enqueue_script( 'medium-zoom', THEME_URI . '/assets/js/medium-zoom.min.js', array(), '1.0.6', false );
+		wp_enqueue_script( 'app', THEME_URI . '/assets/js/app.js', array( 'micromodal', 'ScrollTrigger', 'prism', 'medium-zoom' ), filemtime( THEME_PATH . '/assets/js/app.js' ), false );
 	}
 
 	public function replace_script_tags( $tag, $handle ) {
