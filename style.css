@@ -1967,6 +1967,7 @@ pre[class*=language-] {
 .entry-content .wp-block-table table td {
   font-size: 1.6rem;
   padding: 0.5em 1.5em;
+  white-space: nowrap;
 }
 @media (max-width: 48em) {
   .entry-content .wp-block-table table th,

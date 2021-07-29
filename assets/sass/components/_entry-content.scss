@@ -440,6 +440,7 @@
 			td {
 				font-size: 1.6rem;
 				padding: 0.5em 1.5em;
+				white-space: nowrap;
 				@include mq(mobile) {
 					font-size: 1.4rem;
 				}
