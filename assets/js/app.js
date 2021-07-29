@@ -36,3 +36,9 @@ if ('serviceWorker' in navigator && 'localhost' !== window.location.hostname) {
 		);
 	});
 }
+
+mediumZoom(document.querySelectorAll('.wp-block-image > img'), {
+	margin: 24,
+	background: '#292d3d',
+	scrollOffset: 0,
+});
