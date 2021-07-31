@@ -1,4 +1,8 @@
 import Validate from './class-validate.js';
+import URLAnimation from './class-url-animation.js';
+
+new Validate();
+new URLAnimation();
 
 MicroModal.init({
 	onShow: (modal) => {
@@ -21,8 +25,6 @@ if (scrollIndicator) {
 		scrollTrigger: { scrub: 0.3 },
 	});
 }
-
-new Validate();
 
 if ('serviceWorker' in navigator && 'localhost' !== window.location.hostname) {
 	window.addEventListener('load', function () {
