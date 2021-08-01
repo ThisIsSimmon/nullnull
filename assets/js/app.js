@@ -2,7 +2,9 @@ import Validate from './class-validate.js';
 import URLAnimation from './class-url-animation.js';
 
 new Validate();
-new URLAnimation();
+if (!document.body.classList.contains('logged-in')) {
+	new URLAnimation();
+}
 
 MicroModal.init({
 	onShow: (modal) => {
