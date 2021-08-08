@@ -6,32 +6,53 @@
 	row-gap: 4rem;
 
 	&__filed {
+		position: relative;
 	}
 
 	&__label {
 		@include quicksand-one-line;
 		font-size: 2rem;
 		letter-spacing: 0.2em;
-		width: 100%;
+		position: relative;
 	}
 
 	&__error {
+		bottom: 0;
 		color: map-get($colors, text-error);
 		display: block;
 		font-size: 1.2rem;
+		left: calc(100% + 0.75em);
 		letter-spacing: 0.1em;
 		line-height: 1;
 		margin-top: 0;
 		overflow: hidden;
-		transition: height 0.4s ease-out, margin-top 0.4s ease-out;
+		position: absolute;
+		width: max-content;
 
 		&[aria-hidden='true'] {
-			height: 0;
+			&::before {
+				transform: translateY(100%);
+			}
 		}
 
 		&[aria-hidden='false'] {
-			height: 1em;
-			margin-top: 0.9em;
+			&::before {
+				transform: translateY(0);
+			}
+		}
+
+		&::before {
+			content: attr(data-message);
+			display: block;
+			transition: transform 0.4s ease-out;
+		}
+
+		&--submit {
+			height: fit-content;
+			left: 0;
+			max-width: fit-content;
+			top: 0;
+			transform: translateY(-100%);
 		}
 	}
 
