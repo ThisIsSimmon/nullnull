@@ -44,7 +44,7 @@
 		&::before {
 			content: attr(data-message);
 			display: block;
-			transition: transform 0.4s ease-out;
+			transition: transform 0.3s ease-out;
 		}
 
 		&--submit {
