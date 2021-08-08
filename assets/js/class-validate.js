@@ -102,7 +102,7 @@ export default class Validate {
 	showFeedbacks = (errorObject) => {
 		for (const [property, status] of Object.entries(errorObject)) {
 			const errorElement = document.querySelector(`.contact-form__error--${property}`);
-			errorElement.textContent = this.feedbacks[property][status];
+			errorElement.dataset.message = this.feedbacks[property][status];
 			errorElement.setAttribute('aria-hidden', false);
 		}
 	};

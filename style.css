@@ -3093,29 +3093,46 @@ pre[class*=language-] {
   display: grid;
   row-gap: 4rem;
 }
+.contact-form__filed {
+  position: relative;
+}
 .contact-form__label {
   height: 0.775em;
   line-height: 0.775;
   font-size: 2rem;
   letter-spacing: 0.2em;
-  width: 100%;
+  position: relative;
 }
 .contact-form__error {
+  bottom: 0;
   color: #da2f82;
   display: block;
   font-size: 1.2rem;
+  left: calc(100% + 0.75em);
   letter-spacing: 0.1em;
   line-height: 1;
   margin-top: 0;
   overflow: hidden;
-  transition: height 0.4s ease-out, margin-top 0.4s ease-out;
+  position: absolute;
+  width: max-content;
 }
-.contact-form__error[aria-hidden=true] {
-  height: 0;
+.contact-form__error[aria-hidden=true]::before {
+  transform: translateY(100%);
 }
-.contact-form__error[aria-hidden=false] {
-  height: 1em;
-  margin-top: 0.9em;
+.contact-form__error[aria-hidden=false]::before {
+  transform: translateY(0);
+}
+.contact-form__error::before {
+  content: attr(data-message);
+  display: block;
+  transition: transform 0.4s ease-out;
+}
+.contact-form__error--submit {
+  height: fit-content;
+  left: 0;
+  max-width: fit-content;
+  top: 0;
+  transform: translateY(-100%);
 }
 .contact-form__input {
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 3px rgba(255, 255, 255, 0.69), inset 2px 2px 6px rgba(0, 0, 0, 0.12);

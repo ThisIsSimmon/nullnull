@@ -1,5 +1,9 @@
 export default class URLAnimation {
 	constructor() {
+		const mq = window.matchMedia('(max-width: 768px)');
+		if (mq.matches) {
+			return;
+		}
 		this.distance = '_';
 		this.distanceToTheLoveHotel = this.distance.repeat(23);
 		this.hotel = '🏩';
