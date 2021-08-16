@@ -1743,6 +1743,14 @@ pre[class*=language-] {
     font-size: 2.65rem;
   }
 }
+.entry-content h2::after {
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -1px -1px 2px rgba(255, 255, 255, 0.69), inset 1px 1px 2px rgba(0, 0, 0, 0.12);
+  background: #e9ebf1;
+  content: "";
+  display: block;
+  height: 2px;
+  margin-top: calc(1.2rem - ((1em * 1.5 - 1em) / 2));
+}
 .entry-content h3 {
   font-size: 2.5rem;
 }
@@ -1784,18 +1792,15 @@ pre[class*=language-] {
   font-weight: 700;
   margin-top: 1.75em;
 }
-.entry-content h1::after,
-.entry-content h2::after,
 .entry-content h3::after,
 .entry-content h4::after,
 .entry-content h5::after,
 .entry-content h6::after {
-  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -1px -1px 2px rgba(255, 255, 255, 0.69), inset 1px 1px 2px rgba(0, 0, 0, 0.12);
-  background: #e9ebf1;
   content: "";
   display: block;
-  height: 2px;
-  margin-top: calc(1.2rem - ((1em * 1.5 - 1em) / 2));
+  height: 0;
+  margin-bottom: calc((1 - 1.5) * 0.5em);
+  width: 0;
 }
 .entry-content > h2:nth-child(1) {
   margin-top: 0;
