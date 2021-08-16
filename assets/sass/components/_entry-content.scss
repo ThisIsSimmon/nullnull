@@ -14,6 +14,14 @@
 		@include mq(mobile) {
 			font-size: 2.65rem;
 		}
+		&::after {
+			@include shadow(hr);
+			background: map-get($colors, bg-base);
+			content: '';
+			display: block;
+			height: 2px;
+			margin-top: calc(1.2rem - ((1em * #{$heading-line-height} - 1em) / 2));
+		}
 	}
 
 	h3 {
@@ -52,14 +60,13 @@
 	h6 {
 		font-weight: 700;
 		margin-top: 1.75em;
-		&::after {
-			@include shadow(hr);
-			background: map-get($colors, bg-base);
-			content: '';
-			display: block;
-			height: 2px;
-			margin-top: calc(1.2rem - ((1em * #{$heading-line-height} - 1em) / 2));
-		}
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		@include line-height-crop($heading-line-height, 1, bottom);
 	}
 
 	> h2:nth-child(1) {
