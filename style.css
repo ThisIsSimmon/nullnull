@@ -1973,6 +1973,7 @@ pre[class*=language-] {
 .entry-content pre[class*=language-] {
   margin: 0;
   padding: 4rem 2rem 3rem;
+  z-index: 20;
 }
 @media (max-width: 48em) {
   .entry-content pre[class*=language-] {
@@ -1994,6 +1995,7 @@ pre[class*=language-] {
   opacity: 1;
   right: 0.6rem;
   top: 0.6rem;
+  z-index: 21;
 }
 .entry-content .code-toolbar > .toolbar > .toolbar-item:not(:last-of-type) {
   margin-right: 0.7em;
@@ -2058,8 +2060,9 @@ pre[class*=language-] {
 }
 .entry-content .line-highlight {
   background: none;
-  background: linear-gradient(to right, rgba(102, 113, 153, 0.2) 90%, rgba(102, 113, 153, 0));
+  background: linear-gradient(to right, rgba(102, 113, 153, 0.3) 90%, rgba(102, 113, 153, 0));
   margin-top: 1.4em;
+  z-index: -1;
 }
 .entry-content .line-highlight::before, .entry-content .line-highlight::after {
   display: none;
@@ -2168,6 +2171,14 @@ pre[class*=language-] {
 }
 .entry-content .wp-block-table table > tbody > tr:nth-of-type(even) {
   background-color: rgba(101, 106, 123, 0.1);
+}
+
+.medium-zoom--opened .medium-zoom-overlay {
+  z-index: 90;
+}
+
+.medium-zoom-image--opened {
+  z-index: 91;
 }
 
 @keyframes copied-show {
