@@ -252,6 +252,7 @@
 	pre[class*='language-'] {
 		margin: 0;
 		padding: 4rem 2rem 3rem;
+		z-index: map-get($layer, code);
 		@include mq(mobile) {
 			max-height: min(50vh, 60rem);
 		}
@@ -273,6 +274,7 @@
 			opacity: 1;
 			right: 0.6rem;
 			top: 0.6rem;
+			z-index: map-get($layer, code) + 1;
 			> .toolbar-item {
 				&:not(:last-of-type) {
 					margin-right: 0.7em;
@@ -346,8 +348,9 @@
 	.line-highlight {
 		background: none;
 		// background-color: rgba(lighten(map-get($colors, text-main), 30%), 0.2);
-		background: linear-gradient(to right, rgba(lighten(map-get($colors, text-main), 30%), 0.2) 90%, rgba(lighten(map-get($colors, text-main), 30%), 0));
+		background: linear-gradient(to right, rgba(lighten(map-get($colors, text-main), 30%), 0.3) 90%, rgba(lighten(map-get($colors, text-main), 30%), 0));
 		margin-top: 1.4em;
+		z-index: map-get($layer, default) - 2;
 		&::before,
 		&::after {
 			display: none;
@@ -460,6 +463,14 @@
 			}
 		}
 	}
+}
+
+.medium-zoom--opened .medium-zoom-overlay {
+	z-index: map-get($layer, medium-zoom);
+}
+
+.medium-zoom-image--opened {
+	z-index: map-get($layer, medium-zoom) + 1;
 }
 
 @keyframes copied-show {
