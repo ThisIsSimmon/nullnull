@@ -14,6 +14,7 @@ class Open_Graph {
 		$post_title          = wp_strip_all_tags( $post->post_title );
 		$nonce               = $_POST['og_image_nonce'] ?? null;
 		$regenerate_og_image = isset( $_POST['regenerate_og_image'] ) ? true : false;
+		$wrap_width          = isset( $_POST['wrap_width'] ) ? $_POST['wrap_width'] : 15;
 
 		if ( '' === $post_title || ! wp_verify_nonce( $nonce, 'save_og_image' ) ) {
 			return;
@@ -23,7 +24,7 @@ class Open_Graph {
 		$base_image    = THEME_PATH . '/assets/img/dist/common/og_blog_post.png';
 		$new_file_name = "{$post->post_type}_{$post_ID}.png";
 		$new_image     = imagecreatefrompng( $base_image );
-		$text          = $this->mb_wordwrap( $post_title, 15, PHP_EOL );
+		$text          = $this->mb_wordwrap( $post_title, $wrap_width, PHP_EOL );
 		$font_file     = THEME_PATH . '/assets/font/m-plus-rounded-1c-v10-latin_japanese-700.ttf';
 		$font_color    = imagecolorallocate( $new_image, 41, 45, 61 );
 		$font_size     = 50;
@@ -71,6 +72,7 @@ class Open_Graph {
 			$image_name = "{$post->post_type}_{$post->ID}.png";
 			if ( $wp_filesystem->exists( $og_dir . $image_name ) ) {
 				echo '<label for="regenerate-og-image" style="display:block; margin-top: 1rem;"><input type="checkbox" id="regenerate-og-image" name="regenerate_og_image">Regenerate</label>';
+				echo '<label for="wrap-width" style="display:block; margin-top: 1rem;">Wrap width <input type="number" id="wrap-width" name="wrap_width" value="15"></label>';
 				printf( '<img src="%s?ver=%s" style="image-rendering: -webkit-optimize-contrast; margin-top: 1rem;">', esc_url( $og_url . $image_name ), filemtime( $og_dir . $image_name ) );
 			}
 
