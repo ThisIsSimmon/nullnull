@@ -180,7 +180,8 @@
 		+ .code-toolbar,
 		+ .wp-block-table,
 		+ dl,
-		+ blockquote {
+		+ blockquote,
+		+ .internal-link-card {
 			margin: 1rem 0 0;
 			@include mq(mobile) {
 				margin: 0.8rem 0 0;
@@ -467,6 +468,55 @@
 						background-color: rgba(map-get($colors, text-sub), 0.1);
 					}
 				}
+			}
+		}
+	}
+
+	.internal-link-card {
+		@include shadow(card);
+		border-radius: 1rem;
+		margin-top: 3rem;
+		max-width: 100%;
+		overflow: hidden;
+		padding: 2.6rem 4rem 2.6rem 2.8rem;
+		position: relative;
+		width: fit-content;
+		&::after {
+			// Safariでsvgがぼやける対策
+			$mag: 10;
+			background-image: url('#{$image-dir}/archive/blog_card_blob.svg');
+			background-repeat: no-repeat;
+			background-size: 9.309em 8.68em;
+			bottom: -4.44em;
+			content: '';
+			font-size: #{$mag}rem;
+			height: 8.68em;
+			position: absolute;
+			right: -4.6em;
+			transform: scale(math.div(1, $mag));
+			width: 9.309em;
+		}
+		> a {
+			color: map-get($colors, text-main);
+			display: inline-block;
+			font-size: 1.6rem;
+			font-weight: 700;
+			padding-left: 1.75em;
+			text-indent: -1.75em;
+			transition: color ease 0.3s;
+			&::before {
+				background-image: url('#{$image-dir}/post/feather.svg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				content: '';
+				display: inline-block;
+				height: #{math.div(17, 16)}em;
+				margin-right: 0.7em;
+				width: #{math.div(17, 16)}em;
+			}
+			&:hover {
+				color: map-get($colors, text-link);
+				text-decoration: none;
 			}
 		}
 	}

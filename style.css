@@ -1904,7 +1904,8 @@ pre[class*=language-] {
 .entry-content p + .code-toolbar,
 .entry-content p + .wp-block-table,
 .entry-content p + dl,
-.entry-content p + blockquote {
+.entry-content p + blockquote,
+.entry-content p + .internal-link-card {
   margin: 1rem 0 0;
 }
 @media (max-width: 48em) {
@@ -1913,7 +1914,8 @@ pre[class*=language-] {
 .entry-content p + .code-toolbar,
 .entry-content p + .wp-block-table,
 .entry-content p + dl,
-.entry-content p + blockquote {
+.entry-content p + blockquote,
+.entry-content p + .internal-link-card {
     margin: 0.8rem 0 0;
   }
 }
@@ -2176,6 +2178,52 @@ pre[class*=language-] {
 }
 .entry-content .wp-block-table table > tbody > tr:nth-of-type(even) {
   background-color: rgba(101, 106, 123, 0.1);
+}
+.entry-content .internal-link-card {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), inset 4px 4px 8px rgba(255, 255, 255, 0.6), inset -4px -4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  margin-top: 3rem;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 2.6rem 4rem 2.6rem 2.8rem;
+  position: relative;
+  width: fit-content;
+}
+.entry-content .internal-link-card::after {
+  background-image: url("assets/img/dist/archive/blog_card_blob.svg");
+  background-repeat: no-repeat;
+  background-size: 9.309em 8.68em;
+  bottom: -4.44em;
+  content: "";
+  font-size: 10rem;
+  height: 8.68em;
+  position: absolute;
+  right: -4.6em;
+  transform: scale(0.1);
+  width: 9.309em;
+}
+.entry-content .internal-link-card > a {
+  color: #292d3d;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding-left: 1.75em;
+  text-indent: -1.75em;
+  transition: color ease 0.3s;
+}
+.entry-content .internal-link-card > a::before {
+  background-image: url("assets/img/dist/post/feather.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  display: inline-block;
+  height: 1.0625em;
+  margin-right: 0.7em;
+  width: 1.0625em;
+}
+.entry-content .internal-link-card > a:hover {
+  color: #8953a2;
+  text-decoration: none;
 }
 
 .medium-zoom--opened .medium-zoom-overlay {
