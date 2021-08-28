@@ -1,7 +1,10 @@
 export default class URLAnimation {
 	constructor() {
+		const session = window.sessionStorage;
+		const isUrlAnimationExecuted = session.getItem('isUrlAnimationExecuted');
+
 		const mq = window.matchMedia('(max-width: 768px)');
-		if (mq.matches) {
+		if (mq.matches || isUrlAnimationExecuted) {
 			return;
 		}
 		this.distance = '_';
@@ -11,6 +14,7 @@ export default class URLAnimation {
 		this.woman = '👩';
 		this.animation().then(() => {
 			this.clearHash();
+			session.setItem('isUrlAnimationExecuted', 'true');
 		});
 	}
 
