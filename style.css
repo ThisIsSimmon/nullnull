@@ -3072,7 +3072,7 @@ pre[class*=language-] {
   display: flex;
   justify-content: center;
   height: 3rem;
-  position: fixed;
+  position: absolute;
   right: 2rem;
   top: 3.35rem;
   width: 3rem;
