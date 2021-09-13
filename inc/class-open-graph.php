@@ -80,12 +80,40 @@ class Open_Graph {
 		}
 	}
 
-	private function mb_wordwrap( $str, $width = 35, $break = PHP_EOL ) {
-		$c   = mb_strlen( $str );
-		$arr = array();
-		for ( $i = 0; $i <= $c; $i += $width ) {
-			$arr[] = mb_substr( $str, $i, $width );
+	private function mb_wordwrap( $string, $width = 35, $break = PHP_EOL ) {
+		$one_char_array   = mb_str_split( $string );
+		$char_point_array = array_map(
+			function( $char ) {
+				$point = 1; // 全角
+				if ( strlen( $char ) === mb_strlen( $char ) ) { // 半角
+					if ( ctype_upper( $char ) ) { // アルファベット大文字
+						$point = 0.7; // 全角を基準とした大きさ
+					} else { // アルファベット小文字 or 記号
+						$point = 0.5; // 全角を基準とした大きさ
+					}
+				}
+
+				return $point;
+			},
+			$one_char_array
+		);
+
+		$words_array = array();
+		$point_sum   = 0;
+		$start       = 0;
+		foreach ( $char_point_array as $index => $point ) {
+			$point_sum += $point;
+			if ( $point_sum >= $width ) {
+				$words_array[] = mb_substr( $string, $start, $index - $start );
+				$start         = $index;
+				$point_sum     = 0;
+			}
+
+			if ( $index === array_key_last( $char_point_array ) ) {
+				$words_array[] = mb_substr( $string, $start, count( $one_char_array ) - $start );
+			}
 		}
-		return implode( $break, $arr );
+
+		return implode( $break, $words_array );
 	}
 }
