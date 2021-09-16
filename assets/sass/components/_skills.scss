@@ -115,6 +115,11 @@
 			background-size: 2.2em auto;
 		}
 
+		&--node-js {
+			background-image: url('#{$image-dir}/profile/skills/node-js.svg');
+			background-size: 2.2em auto;
+		}
+
 		&--php {
 			background-image: url('#{$image-dir}/profile/skills/php.svg');
 			background-size: 2.2em auto;

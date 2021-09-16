@@ -7,10 +7,11 @@
 		<div class="profile-header">
 			<div class="profile-header__inner">
 				<p class="profile-header__name">Simmon</p>
-				<p class="profile-header__desc">Freelance Web Developer</p>
+				<p class="profile-header__desc">Web Developer</p>
 			</div>
 			<div class="sns">
 				<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="sns__button sns__button--twitter" aria-label="Twitter"></a>
+				<a href="https://github.com/ThisIsSimmon" target="_blank" rel="noopener noreferrer" class="sns__button sns__button--github" aria-label="GitHub"></a>
 				<a href="/contact/" class="sns__button sns__button--email" aria-label="お問い合わせ"></a>
 			</div>
 		</div>
@@ -23,6 +24,7 @@
 				<li class="skills__list-item skills__list-item--sass" data-title="Sass"></li>
 				<li class="skills__list-item skills__list-item--js" data-title="JavaScript"></li>
 				<li class="skills__list-item skills__list-item--jquery" data-title="jQuery"></li>
+				<li class="skills__list-item skills__list-item--node-js" data-title="Node.js"></li>
 				<li class="skills__list-item skills__list-item--php" data-title="PHP"></li>
 				<li class="skills__list-item skills__list-item--tableplus" data-title="TablePlus"></li>
 				<li class="skills__list-item skills__list-item--sql" data-title="SQL"></li>

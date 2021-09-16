@@ -11,7 +11,7 @@
 		justify-content: center;
 		margin: 0 auto;
 		@include mq(mobile) {
-			column-gap: 4rem - ($font-size * 0.8 * $letter-spacing * 1.5) * 0.1rem;
+			column-gap: 3rem - ($font-size * 0.8 * $letter-spacing * 1.5) * 0.1rem;
 		}
 	}
 

@@ -28,6 +28,10 @@
 			background-image: url('#{$image-dir}/profile/sns/twitter_menu.svg');
 			background-size: 1.6rem 1.4rem;
 		}
+		&--github {
+			background-image: url('#{$image-dir}/profile/sns/github_menu.svg');
+			background-size: 2rem 2rem;
+		}
 	}
 }
 

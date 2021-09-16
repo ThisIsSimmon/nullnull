@@ -28,6 +28,11 @@
 			background-size: 1.6em 1.4em;
 		}
 
+		&--github {
+			background-image: url('#{$image-dir}/profile/skills/github.svg');
+			background-size: 2em 2em;
+		}
+
 		&--email {
 			background-image: url('#{$image-dir}/profile/sns/email.svg');
 			background-size: 2em 1.4em;
