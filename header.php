@@ -62,6 +62,7 @@
 
 				<div class="menu-sns">
 					<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer" class="menu-sns__button menu-sns__button--twitter"></a>
+					<a href="https://github.com/ThisIsSimmon" target="_blank" rel="noopener noreferrer" class="menu-sns__button menu-sns__button--github"></a>
 				</div>
 			</div>
 		</div>

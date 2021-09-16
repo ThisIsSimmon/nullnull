@@ -4,10 +4,11 @@
 .profile-header {
 	align-items: flex-end;
 	display: flex;
-	column-gap: 2rem;
+	column-gap: 4rem;
 	// grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
 	@include mq(mobile) {
 		column-gap: 3rem;
+		justify-content: space-between;
 		margin-top: 2rem;
 	}
 	&__inner {

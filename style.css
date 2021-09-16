@@ -1709,6 +1709,10 @@ pre[class*=language-] {
   background-image: url("assets/img/dist/profile/sns/twitter.svg");
   background-size: 1.6em 1.4em;
 }
+.sns__button--github {
+  background-image: url("assets/img/dist/profile/skills/github.svg");
+  background-size: 2em 2em;
+}
 .sns__button--email {
   background-image: url("assets/img/dist/profile/sns/email.svg");
   background-size: 2em 1.4em;
@@ -2446,11 +2450,12 @@ pre[class*=language-] {
 .profile-header {
   align-items: flex-end;
   display: flex;
-  column-gap: 2rem;
+  column-gap: 4rem;
 }
 @media (max-width: 48em) {
   .profile-header {
     column-gap: 3rem;
+    justify-content: space-between;
     margin-top: 2rem;
   }
 }
@@ -2582,6 +2587,10 @@ pre[class*=language-] {
 }
 .skills__list-item--jquery {
   background-image: url("assets/img/dist/profile/skills/jquery.svg");
+  background-size: 2.2em auto;
+}
+.skills__list-item--node-js {
+  background-image: url("assets/img/dist/profile/skills/node-js.svg");
   background-size: 2.2em auto;
 }
 .skills__list-item--php {
@@ -3043,7 +3052,7 @@ pre[class*=language-] {
 }
 @media (max-width: 48em) {
   .footer-nav__list {
-    column-gap: 3.52rem;
+    column-gap: 2.52rem;
   }
 }
 .footer-nav__link {
@@ -3306,6 +3315,9 @@ pre[class*=language-] {
 .menu[aria-hidden=false] .menu-nav__item:nth-of-type(3) > a {
   animation: menu-nav-text-show 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s backwards;
 }
+.menu[aria-hidden=false] .menu-nav__item:nth-of-type(4) > a {
+  animation: menu-nav-text-show 1.2s cubic-bezier(0.075, 0.82, 0.165, 1) 1.6s backwards;
+}
 
 @keyframes menu-nav-line-show {
   0% {
@@ -3366,6 +3378,10 @@ pre[class*=language-] {
 .menu-sns__button--twitter {
   background-image: url("assets/img/dist/profile/sns/twitter_menu.svg");
   background-size: 1.6rem 1.4rem;
+}
+.menu-sns__button--github {
+  background-image: url("assets/img/dist/profile/sns/github_menu.svg");
+  background-size: 2rem 2rem;
 }
 
 @keyframes menu-sns-show {
