@@ -18,6 +18,7 @@
 		<nav class="header-nav">
 			<ul class="header-nav__list">
 				<li class="header-nav__item"><a href="/blog/" class="header-nav__link">Blog</a></li>
+				<li class="header-nav__item"><a href="/works/" class="header-nav__link">Works</a></li>
 				<li class="header-nav__item"><a href="/contact/" class="header-nav__link">Contact</a></li>
 			</ul>
 		</nav>
@@ -53,6 +54,7 @@
 				<nav class="menu-nav">
 					<ul class="menu-nav__list">
 						<li class="menu-nav__item"><a href="/blog/" class="menu-nav__link">Blog</a></li>
+						<li class="menu-nav__item"><a href="/works/" class="menu-nav__link">Works</a></li>
 						<li class="menu-nav__item"><a href="/contact/" class="menu-nav__link">Contact</a></li>
 						<li class="menu-nav__item"><a href="/privacy/" class="menu-nav__link">Privacy</a></li>
 					</ul>
