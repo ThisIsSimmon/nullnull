@@ -84,6 +84,7 @@ EOT;
 				$url   = home_url();
 				$image = THEME_IMAGE_URI . '/common/og_home.png';
 				break;
+
 			case is_singular( 'post' ):
 				global $post;
 				$title       = get_the_title();
@@ -93,6 +94,16 @@ EOT;
 				$image       = wp_upload_dir()['baseurl'] . "/og/{$post_type}_{$post_ID}.png";
 				$type        = 'article';
 				$description = get_the_excerpt( $post_ID );
+				break;
+
+			case is_post_type_archive( 'works' ):
+				global $post;
+				$title       = 'Works';
+				$url         = get_post_type_archive_link( 'works' );
+				$post_type   = get_post_type( $post );
+				$image       = THEME_IMAGE_URI . '/common/og_works.png';
+				$type        = 'article';
+				$description = '作ったもの';
 				break;
 
 			case is_page():

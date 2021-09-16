@@ -12,6 +12,12 @@ require THEME_PATH . '/inc/debug.php';
 require THEME_PATH . '/inc/class-init.php';
 new Init();
 
+require THEME_PATH . '/inc/class-custom-post-types.php';
+new Custom_Post_Types();
+
+require THEME_PATH . '/inc/class-works-custom-field.php';
+new Works_Custom_Field();
+
 require THEME_PATH . '/inc/class-login.php';
 new Login();
 
