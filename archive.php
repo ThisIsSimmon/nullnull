@@ -3,10 +3,11 @@
 <div class="archive">
 	<header class="archive-header">
 		<h1 class="archive-header__title">
-			<?php echo esc_html( single_term_title() ); ?>
+			<?php post_type_archive_title(); ?>
 		</h1>
 	</header>
-	<?php get_template_part( 'template-parts/blog-post' ); ?>
+
+	<?php get_template_part( 'template-parts/' . get_post_type() . '-post' ); ?>
 
 	<?php get_template_part( 'template-parts/pagination' ); ?>
 
