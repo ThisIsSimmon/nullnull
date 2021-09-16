@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+.works-card-list {
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: repeat(auto-fill, minmax(44rem, 1fr));
+	grid-auto-rows: minmax(45.6rem, max-content);
+	margin: 12.5rem auto 0;
+	max-width: 100rem + (map-get($spacers, base-horizontal) * 2);
+	padding: 0 map-get($spacers, base-horizontal);
+	width: 100%;
+	@include mq(mobile) {
+		grid-template-columns: 1fr;
+		grid-auto-rows: minmax(36rem, max-content);
+		// grid-auto-rows: minmax(calc((100vw - #{map-get($spacers, base-horizontal)} * 2) * 0.625), max-content);
+		// grid-auto-rows: minmax(calc((100vw - #{map-get($spacers, base-horizontal)} * 2) * 0.58), max-content);
+	}
+}

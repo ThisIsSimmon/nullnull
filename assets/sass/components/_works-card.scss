@@ -1,0 +1,68 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.works-card {
+	@include shadow(card);
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+
+	&__image {
+		margin: 0;
+	}
+
+	&__meta {
+		display: flex;
+		color: map-get($colors, text-sub);
+		font-size: 1.4rem;
+		font-weight: 500;
+		line-height: 0.9;
+		letter-spacing: 0.1em;
+		margin-top: 1.8rem;
+		@include mq(mobile) {
+			font-size: 1.2rem;
+		}
+	}
+
+	&__date {
+	}
+
+	&__type {
+		border-left: 1px solid map-get($colors, text-sub);
+		margin-left: 1em;
+		padding-left: 1em;
+	}
+
+	&__title {
+		font-size: 2.4rem;
+		font-weight: 700;
+		margin: 0.8rem 0 2rem;
+		@include mq(mobile) {
+			font-size: 1.8rem;
+		}
+		& > a {
+			color: map-get($colors, text-main);
+			transition: color ease 0.3s;
+			&:hover {
+				color: map-get($colors, text-link);
+			}
+		}
+	}
+
+	&__learn-more {
+		@include center;
+		@include shadow(button-base);
+		border-radius: 0.6rem;
+		font-size: 1.2rem;
+		font-weight: 500;
+		height: 2.4em;
+		letter-spacing: 0.1em;
+		margin: auto 0 0 0;
+		padding: 0 1.243em;
+		width: fit-content;
+		@include mq(mobile) {
+			font-size: 1.1rem;
+		}
+	}
+}
