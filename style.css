@@ -1615,11 +1615,11 @@ pre[class*=language-] {
   font-size: 2.2rem;
   font-weight: 700;
 }
-.pagination > .page-numbers:not(.current) {
+.pagination > .page-numbers:not(.current):not(.dots) {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 1px 1px 2px transparent, inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.pagination > .page-numbers:not(.current):hover {
+.pagination > .page-numbers:not(.current):not(.dots):hover {
   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
 }
 .pagination > .page-numbers.current {
