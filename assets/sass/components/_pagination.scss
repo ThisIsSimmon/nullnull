@@ -20,7 +20,7 @@
 		font-size: #{math.div($font-size, 10)}rem;
 		font-weight: 700;
 
-		&:not(.current) {
+		&:not(.current):not(.dots) {
 			@include shadow(button-base);
 		}
 
@@ -35,12 +35,12 @@
 		}
 
 		&.prev {
-			background-image: url("#{$image-dir}/archive/pagination_prev.svg");
+			background-image: url('#{$image-dir}/archive/pagination_prev.svg');
 			background-position: left 0.7em center;
 		}
 
 		&.next {
-			background-image: url("#{$image-dir}/archive/pagination_next.svg");
+			background-image: url('#{$image-dir}/archive/pagination_next.svg');
 			background-position: right 0.7em center;
 		}
 	}
