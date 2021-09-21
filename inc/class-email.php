@@ -4,17 +4,12 @@ class Email {
 
 	public function __construct() {
 		add_action( 'phpmailer_init', array( $this, 'set_phpmailer' ), 10, 1 );
-
 		add_action( 'wp_ajax_send_email', array( $this, 'send_email' ) );
 		add_action( 'wp_ajax_nopriv_send_email', array( $this, 'send_email' ) );
 
 	}
 
-	public function set_phpmailer( $phpmailer ) {
-		if ( ! is_object( $phpmailer ) ) {
-			$phpmailer = (object) $phpmailer;
-		}
-
+	public function set_phpmailer( object $phpmailer ): void {
 		$phpmailer->isSMTP();
 		$phpmailer->Host       = SMTP_HOST;
 		$phpmailer->SMTPAuth   = SMTP_AUTH;
@@ -29,7 +24,7 @@ class Email {
 	}
 
 
-	public function send_email() {
+	public function send_email(): void {
 		$feedbacks = array();
 		try {
 			$nonce   = $_POST['contact_form_nonce'] ?? null;

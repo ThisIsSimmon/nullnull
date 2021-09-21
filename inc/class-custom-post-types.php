@@ -8,7 +8,7 @@ class Custom_Post_Types {
 		add_filter( 'works_rewrite_rules', '__return_empty_array' );
 	}
 
-	public function register_post_types() {
+	public function register_post_types(): void {
 		register_post_type(
 			'works',
 			array(
@@ -31,7 +31,7 @@ class Custom_Post_Types {
 		);
 	}
 
-	public function post_archive_count( $query ) {
+	public function post_archive_count( object $query ): void {
 		if ( is_admin() || ! $query->is_main_query() ) {
 			return;
 		}
