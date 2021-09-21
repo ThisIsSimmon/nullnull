@@ -7,12 +7,12 @@ class Login {
 		add_filter( 'login_headerurl', array( $this, 'change_login_header_url' ), 10, 1 );
 	}
 
-	public function change_login_header_url( $login_header_url ) {
+	public function change_login_header_url( string $login_header_url ): string {
 		$login_header_url = home_url();
 		return $login_header_url;
 	}
 
-	public function enqueue_login_style() {
+	public function enqueue_login_style(): void {
 		wp_enqueue_style( 'login-google-fonts', 'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Quicksand:wght@500;700&display=swap', array(), null, 'all' );
 		wp_enqueue_style( 'login-style', THEME_URI . '/assets/css/login.css', array( 'login-google-fonts', 'login' ), filemtime( THEME_PATH . '/assets/css/login.css' ) );
 	}

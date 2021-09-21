@@ -10,7 +10,8 @@ class Open_Graph {
 		}
 	}
 
-	public function generate_og_image( $post_ID, $post ) {
+	public function generate_og_image( int $post_ID, object $post ): void {
+
 		$post_title          = wp_strip_all_tags( $post->post_title );
 		$nonce               = $_POST['og_image_nonce'] ?? null;
 		$regenerate_og_image = isset( $_POST['regenerate_og_image'] ) ? true : false;
@@ -24,7 +25,7 @@ class Open_Graph {
 		$base_image    = THEME_PATH . '/assets/img/dist/common/og_blog_post.png';
 		$new_file_name = "{$post->post_type}_{$post_ID}.png";
 		$new_image     = imagecreatefrompng( $base_image );
-		$text          = $this->mb_wordwrap( $post_title, $wrap_width, PHP_EOL );
+		$text          = $this->mb_wordwrap( $post_title, $wrap_width );
 		$font_file     = THEME_PATH . '/assets/font/m-plus-rounded-1c-v10-latin_japanese-700.ttf';
 		$font_color    = imagecolorallocate( $new_image, 41, 45, 61 );
 		$font_size     = 50;
@@ -59,11 +60,11 @@ class Open_Graph {
 
 	}
 
-	public function register_og_image_meta_box() {
+	public function register_og_image_meta_box(): void {
 		add_meta_box( 'og-image', 'OG Image', array( $this, 'og_image_meta_box' ), 'post', 'side', 'low' );
 	}
 
-	public function og_image_meta_box() {
+	public function og_image_meta_box(): void {
 		$creds = request_filesystem_credentials( '', '', false, false, null );
 		if ( WP_Filesystem( $creds ) ) {
 			global $wp_filesystem, $post;
@@ -80,7 +81,7 @@ class Open_Graph {
 		}
 	}
 
-	private function mb_wordwrap( $string, $width = 35, $break = PHP_EOL ) {
+	private function mb_wordwrap( string $string, int $width = 35, $break = PHP_EOL ): string {
 		$one_char_array   = mb_str_split( $string );
 		$char_point_array = array_map(
 			function( $char ) {

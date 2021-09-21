@@ -19,37 +19,37 @@ class Works_Custom_Field {
 		add_action( 'save_post', array( $this, 'update_works' ), 10, 2 );
 	}
 
-	public function register_meta_box() {
+	public function register_meta_box(): void {
 		add_meta_box( 'works-meta', 'Meta', array( $this, 'works_meta' ), 'works', 'advanced', 'high' );
 	}
 
-	public function get_works_data() {
+	public function get_works_data(): void {
 		if ( ! $this->is_post_type_admin_works() ) {
 			return;
 		}
 
 		$this->current_post_id = isset( $_GET['post'] ) ? $_GET['post'] : 0;
-		$this->get_works_meta();
-		$this->get_notice_posts();
+		$this->works           = $this->get_works_meta();
+		$this->notice_posts    = $this->get_notice_posts();
 	}
 
-	public function get_works_meta() {
-		$works_meta  = get_post_meta( $this->current_post_id, 'works', true );
-		$this->works = wp_parse_args( $works_meta, $this->works );
+	public function get_works_meta(): array {
+		$works_meta = get_post_meta( $this->current_post_id, 'works', true );
+		return wp_parse_args( $works_meta, $this->works );
 	}
 
-	public function get_notice_posts() {
+	public function get_notice_posts(): array {
 
-		$args               = array(
+		$args = array(
 			'posts_per_page' => -1,
 			'post_type'      => 'post',
 			'post_status'    => 'any',
 			'tag_slug__and'  => array( 'notice' ),
 		);
-		$this->notice_posts = get_posts( $args );
+		return get_posts( $args );
 	}
 
-	private function is_post_type_admin_works() {
+	private function is_post_type_admin_works(): bool {
 		global $pagenow, $typenow;
 		if ( 'works' === $typenow && 'post.php' === $pagenow ) {
 			return true;
@@ -57,7 +57,7 @@ class Works_Custom_Field {
 		return false;
 	}
 
-	public function works_meta() { ?>
+	public function works_meta(): void { ?>
 
 <table class="form-table">
 	<tbody>
@@ -87,7 +87,7 @@ class Works_Custom_Field {
 <?php
 	}
 
-	public function update_works( $post_id ) {
+	public function update_works( $post_id ): void {
 		if ( isset( $_POST['works'] ) ) {
 			update_post_meta( $post_id, 'works', $_POST['works'] );
 		}

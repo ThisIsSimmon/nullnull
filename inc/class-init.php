@@ -11,7 +11,7 @@ class Init {
 		add_action( 'init', array( $this, 'enable_page_excerpt' ) );
 	}
 
-	public function convert_tags_from_flat_to_hierarchical() {
+	public function convert_tags_from_flat_to_hierarchical(): void {
 		$tag_slug_args               = get_taxonomy( 'post_tag' );
 		$tag_slug_args->hierarchical = true;
 		$tag_slug_args->meta_box_cb  = 'post_categories_meta_box';
@@ -23,11 +23,11 @@ class Init {
 		register_taxonomy( 'post_tag', 'post', (array) $tag_slug_args );
 	}
 
-	public function enable_page_excerpt() {
+	public function enable_page_excerpt(): void {
 		add_post_type_support( 'page', 'excerpt' );
 	}
 
-	public function check_sw_file() {
+	public function check_sw_file(): void {
 		$creds = request_filesystem_credentials( '', '', false, false, null );
 		if ( WP_Filesystem( $creds ) ) {
 			global $wp_filesystem;

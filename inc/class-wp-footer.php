@@ -6,7 +6,7 @@ class WP_footer {
 		add_action( 'wp_footer', array( $this, 'structured_data' ), 1 );
 	}
 
-	public function structured_data() {
+	public function structured_data(): void {
 
 		$site_name        = get_bloginfo( 'name' );
 		$site_description = 'フリーランスWeb制作者Simmonの技術情報ブログ';
@@ -90,7 +90,7 @@ class WP_footer {
 		$this->output_as_json( $schema_org );
 	}
 
-	private function output_as_json( $schema_org ) {
+	private function output_as_json( array $schema_org ): void {
 		foreach ( $schema_org as $data ) {
 			echo '<script type="application/ld+json" class="json-ld">';
 			echo json_encode( $data );

@@ -58,7 +58,7 @@ add_action(
 	}
 );
 
-function disable_generating_unnecessary_images( $sizes ) {
+function disable_generating_unnecessary_images( array $sizes ): array {
 	unset( $sizes['thumbnail'] );
 	unset( $sizes['medium_large'] );
 	unset( $sizes['1536x1536'] );
