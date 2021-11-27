@@ -42,6 +42,8 @@
 			color: map-get($colors, text-main);
 			max-height: ($heading-line-height * 3 - 0.15em);
 			transition: color ease 0.3s;
+			overflow-wrap: break-word;
+			word-break: keep-all;
 			&:hover {
 				color: map-get($colors, text-link);
 			}

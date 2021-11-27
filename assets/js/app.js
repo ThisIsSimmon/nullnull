@@ -49,7 +49,14 @@ mediumZoom('.wp-block-image > img', {
 });
 
 const parser = i();
-const str = document.querySelector('.entry-header__title--blog').textContent;
-const arr = parser.parse(str);
-const html = arr.join('<wbr />');
-document.querySelector('.entry-header__title--blog').innerHTML = html;
+const formatTitle = (titles) => {
+	if (!!titles) {
+		for (const title of titles) {
+			const str = title.textContent;
+			const arr = parser.parse(str);
+			const html = arr.join('<wbr />');
+			title.innerHTML = html;
+		}
+	}
+};
+formatTitle(document.querySelectorAll('.entry-header__title--blog, .blog-card__title > a'));
