@@ -19,6 +19,8 @@
 			font-size: 4rem;
 			font-weight: 700;
 			text-align: left;
+			overflow-wrap: break-word;
+			word-break: keep-all;
 			@include mq(mobile) {
 				font-size: 2.65rem;
 			}

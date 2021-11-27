@@ -1,5 +1,6 @@
 import Validate from './class-validate.js';
 import URLAnimation from './class-url-animation.js';
+import { l as i } from './budoux.js';
 
 new Validate();
 if (!document.body.classList.contains('logged-in')) {
@@ -46,3 +47,9 @@ mediumZoom('.wp-block-image > img', {
 	background: '#292d3d',
 	scrollOffset: 0,
 });
+
+const parser = i();
+const str = document.querySelector('.entry-header__title--blog').textContent;
+const arr = parser.parse(str);
+const html = arr.join('<wbr />');
+document.querySelector('.entry-header__title--blog').innerHTML = html;
