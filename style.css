@@ -1460,6 +1460,8 @@ pre[class*=language-] {
   color: #292d3d;
   max-height: 4.35em;
   transition: color ease 0.3s;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 .blog-card__title > a:hover {
   color: #8953a2;
