@@ -1,3 +1,4 @@
 assets/sass/style.scss
 assets/sass/abstracts/_mixins.scss
+assets/js/budoux.js
 *.min.*

@@ -1793,6 +1793,8 @@ pre[class*=language-] {
   font-size: 4rem;
   font-weight: 700;
   text-align: left;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 .entry-header__title--blog::after {
   content: "";
