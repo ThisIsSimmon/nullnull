@@ -52,10 +52,10 @@ const parser = i();
 const formatTitle = (titles) => {
 	if (!!titles) {
 		for (const title of titles) {
-			const str = title.textContent;
-			const arr = parser.parse(str);
-			const html = arr.join('<wbr />');
-			title.innerHTML = html;
+			const text = title.textContent;
+			const array = parser.parse(text);
+			const newTitle = array.join('<wbr />');
+			title.innerHTML = newTitle;
 		}
 	}
 };
