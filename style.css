@@ -2504,6 +2504,11 @@ pre[class*=language-] {
   margin-bottom: calc((1 - 1.75) * 0.5em);
   width: 0;
 }
+@media (max-width: 48em) {
+  .profile-header__message {
+    white-space: pre-line;
+  }
+}
 
 .skills {
   margin-top: 4rem;
