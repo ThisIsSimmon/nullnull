@@ -76,7 +76,7 @@ EOT;
 		$url         = '';
 		$image       = '';
 		$type        = 'website';
-		$description = 'フリーランスWeb制作者Simmonの技術情報ブログ';
+		$description = 'フルスタックWebエンジニアSimmonの技術情報ブログ';
 
 		switch ( true ) {
 			case is_home():

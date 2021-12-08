@@ -5,7 +5,16 @@
 	align-items: flex-end;
 	display: flex;
 	column-gap: 4rem;
-	// grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+	flex-wrap: wrap;
+	&::after {
+		@include shadow(hr);
+		border-radius: 1px;
+		content: '';
+		display: block;
+		height: 2px;
+		margin-top: 4rem;
+		width: 100%;
+	}
 	@include mq(mobile) {
 		column-gap: 3rem;
 		justify-content: space-between;
@@ -30,5 +39,11 @@
 		@include mq(mobile) {
 			font-size: 1.25rem;
 		}
+	}
+
+	&__message {
+		@include line-height-crop($text-line-height, 1, bottom);
+		color: map-get($colors, text-sub);
+		margin-top: 0.6em;
 	}
 }

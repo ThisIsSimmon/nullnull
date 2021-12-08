@@ -14,6 +14,7 @@
 				<a href="https://github.com/ThisIsSimmon" target="_blank" rel="noopener noreferrer" class="sns__button sns__button--github" aria-label="GitHub"></a>
 				<a href="/contact/" class="sns__button sns__button--email" aria-label="お問い合わせ"></a>
 			</div>
+			<p class="profile-header__message">お仕事の依頼は<a href="/contact/">Contact</a>、または<a href="https://twitter.com/thisissimmon" target="_blank" rel="noopener noreferrer">Twitter</a>からお願いいたします。</p>
 		</div>
 
 		<div class="skills">
