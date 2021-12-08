@@ -1,7 +1,7 @@
 {
 	"name": "NullNull",
 	"short_name": "NullNull",
-	"description": "フリーランスWeb制作者Simmonの技術情報ブログ.",
+	"description": "フルスタックWebエンジニアSimmonの技術情報ブログ",
 	"start_url": "/?source=pwa",
 	"display": "standalone",
 	"lang": "ja",

@@ -9,7 +9,7 @@ class WP_footer {
 	public function structured_data(): void {
 
 		$site_name        = get_bloginfo( 'name' );
-		$site_description = 'フリーランスWeb制作者Simmonの技術情報ブログ';
+		$site_description = 'フルスタックWebエンジニアSimmonの技術情報ブログ';
 		$site_icon        = THEME_IMAGE_URI . '/common/apple-touch-icon.png';
 		$home_url         = home_url( '/' );
 		$schema_org       = array();

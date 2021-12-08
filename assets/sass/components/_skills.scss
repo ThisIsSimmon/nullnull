@@ -2,7 +2,7 @@
 @use 'sass:math';
 
 .skills {
-	margin-top: 5rem;
+	margin-top: 4rem;
 	@include mq(mobile) {
 		margin-top: 4rem;
 	}

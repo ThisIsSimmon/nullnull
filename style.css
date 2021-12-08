@@ -2455,6 +2455,16 @@ pre[class*=language-] {
   align-items: flex-end;
   display: flex;
   column-gap: 4rem;
+  flex-wrap: wrap;
+}
+.profile-header::after {
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.69), -1px -1px 2px rgba(0, 0, 0, 0.1), inset -1px -1px 2px rgba(255, 255, 255, 0.69), inset 1px 1px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 1px;
+  content: "";
+  display: block;
+  height: 2px;
+  margin-top: 4rem;
+  width: 100%;
 }
 @media (max-width: 48em) {
   .profile-header {
@@ -2483,9 +2493,25 @@ pre[class*=language-] {
     font-size: 1.25rem;
   }
 }
+.profile-header__message {
+  color: #656a7b;
+  margin-top: 0.6em;
+}
+.profile-header__message::after {
+  content: "";
+  display: block;
+  height: 0;
+  margin-bottom: calc((1 - 1.75) * 0.5em);
+  width: 0;
+}
+@media (max-width: 48em) {
+  .profile-header__message {
+    white-space: pre-line;
+  }
+}
 
 .skills {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 @media (max-width: 48em) {
   .skills {
@@ -2852,6 +2878,11 @@ pre[class*=language-] {
   margin-top: 3.0714285714em;
 }
 
+.not-found-text {
+  margin-top: 2em;
+  padding: 0 4.6em;
+  text-align: center;
+}
 .header {
   align-items: center;
   display: flex;

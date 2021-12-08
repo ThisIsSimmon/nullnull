@@ -32,4 +32,6 @@ $have_posts = empty( $args ) ? have_posts() : $args['query']->have_posts();
 	</article>
 	<?php endwhile; ?>
 </section>
+<?php else : ?>
+<p class="not-found-text">がんばって探しましたが、お探しの記事は見つかりませんでした😢</p>
 <?php endif; ?>
