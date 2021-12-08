@@ -45,5 +45,8 @@
 		@include line-height-crop($text-line-height, 1, bottom);
 		color: map-get($colors, text-sub);
 		margin-top: 0.6em;
+		@include mq(mobile) {
+			white-space: pre-line;
+		}
 	}
 }
