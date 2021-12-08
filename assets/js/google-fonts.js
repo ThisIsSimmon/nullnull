@@ -2,9 +2,6 @@ WebFontConfig = {
 	google: {
 		families: ['M+PLUS+Rounded+1c:400,500,700', 'Quicksand:500,700'],
 	},
-	active: function () {
-		sessionStorage.fonts = true;
-	},
 };
 
 (function (d) {
