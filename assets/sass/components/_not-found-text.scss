@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.not-found-text {
+	margin-top: 2em;
+	padding: 0 4.6em;
+	text-align: center;
+	@include mq(mobile) {
+	}
+}
