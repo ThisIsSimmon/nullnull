@@ -4,7 +4,11 @@ import { l as i } from './budoux.js';
 
 new Validate();
 if (!document.body.classList.contains('logged-in')) {
-	new URLAnimation();
+	const urlAnimation = new URLAnimation();
+
+	document.querySelector('.stop-url-animation').addEventListener('click', () => {
+		urlAnimation.stop();
+	});
 }
 
 MicroModal.init({
