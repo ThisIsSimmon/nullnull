@@ -1,7 +1,8 @@
 export default class URLAnimation {
 	constructor() {
-		const session = window.sessionStorage;
-		const isUrlAnimationExecuted = session.getItem('isUrlAnimationExecuted');
+		this.isAnimatable = true;
+		this.session = window.sessionStorage;
+		const isUrlAnimationExecuted = this.session.getItem('isUrlAnimationExecuted');
 
 		const mq = window.matchMedia('(max-width: 768px)');
 		if (mq.matches || isUrlAnimationExecuted) {
@@ -13,14 +14,22 @@ export default class URLAnimation {
 		this.man = '👨';
 		this.woman = '👩';
 		this.animation().then(() => {
-			this.clearHash();
-			session.setItem('isUrlAnimationExecuted', 'true');
+			this.stop();
 		});
+	}
+
+	async stop() {
+		this.isAnimatable = false;
+		await this.sleep(1000);
+		this.clearHash();
+		this.session.setItem('isUrlAnimationExecuted', 'true');
 	}
 
 	afterDinner() {
 		return new Promise((resolve) => {
-			location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}${this.woman}`;
+			if (this.isAnimatable) {
+				location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}${this.woman}`;
+			}
 			resolve();
 		});
 	}
@@ -30,6 +39,9 @@ export default class URLAnimation {
 			const walkingDistanceCount = this.distanceToTheLoveHotel.length - 2;
 			let count = 1;
 			const animation = setInterval(() => {
+				if (!this.isAnimatable) {
+					clearInterval(animation);
+				}
 				this.distanceToTheLoveHotel = this.distanceToTheLoveHotel.slice(0, -1);
 				location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}${this.woman}`;
 				count++;
@@ -44,6 +56,9 @@ export default class URLAnimation {
 	goInside() {
 		return new Promise((resolve) => {
 			const animation = setInterval(() => {
+				if (!this.isAnimatable) {
+					clearInterval(animation);
+				}
 				if (this.distanceToTheLoveHotel.length === 0) {
 					location.hash = `${this.hotel}`;
 					clearInterval(animation);
@@ -61,6 +76,10 @@ export default class URLAnimation {
 			const love = [`${this.man}💕____💕${this.woman}`, `${this.man}_💕__💕_${this.woman}`, `${this.man}___💕___${this.woman}`];
 			let count = love.length;
 			const animation = setInterval(() => {
+				if (!this.isAnimatable) {
+					clearInterval(animation);
+				}
+
 				location.hash = `${this.hotel}${love[count % love.length]}`;
 				count++;
 				if (count === love.length * 10) {
@@ -77,6 +96,10 @@ export default class URLAnimation {
 			const sleep = ['🌙🛏💑', '🌙🛏💑💤', '🌙🛏💑💤💤', '🌙🛏💑💤💤💤'];
 			let count = sleep.length;
 			const animation = setInterval(() => {
+				if (!this.isAnimatable) {
+					clearInterval(animation);
+				}
+
 				location.hash = `${this.hotel}${sleep[count % sleep.length]}`;
 				count++;
 				if (count === sleep.length * 4) {
@@ -93,6 +116,10 @@ export default class URLAnimation {
 			const sun = ['☁', '🌥', '⛅', '🌤', '☀'];
 			let count = 0;
 			const animation = setInterval(() => {
+				if (!this.isAnimatable) {
+					clearInterval(animation);
+				}
+
 				location.hash = `${this.hotel}${sun[count]}`;
 				count++;
 				if (count === sun.length) {
@@ -108,6 +135,10 @@ export default class URLAnimation {
 			const couple = [`${this.woman}`, `💘${this.woman}`, `${this.man}💘${this.woman}`];
 			let count = 0;
 			const animation = setInterval(() => {
+				if (!this.isAnimatable) {
+					clearInterval(animation);
+				}
+
 				location.hash = `${this.hotel}${couple[count]}`;
 				count++;
 				if (count === couple.length) {
@@ -123,6 +154,10 @@ export default class URLAnimation {
 			const walkingDistanceCount = 21;
 			let count = 1;
 			const animation = setInterval(() => {
+				if (!this.isAnimatable) {
+					clearInterval(animation);
+				}
+
 				this.distanceToTheLoveHotel = this.distance.repeat(count);
 				location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}💘${this.woman}`;
 				count++;
@@ -136,7 +171,9 @@ export default class URLAnimation {
 
 	goodbye() {
 		return new Promise((resolve) => {
-			location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}👋${this.woman}`;
+			if (this.isAnimatable) {
+				location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}👋${this.woman}`;
+			}
 			resolve();
 		});
 	}
@@ -146,6 +183,10 @@ export default class URLAnimation {
 			const tracks = '__~';
 			let count = 1;
 			const animation = setInterval(() => {
+				if (!this.isAnimatable) {
+					clearInterval(animation);
+				}
+
 				location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}${tracks.repeat(count)}${this.woman}🚃`;
 				count++;
 				if (count > 20) {

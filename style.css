@@ -2883,6 +2883,31 @@ pre[class*=language-] {
   padding: 0 4.6em;
   text-align: center;
 }
+.stop-url-animation {
+  background-image: linear-gradient(to bottom right, #c7bce6 0%, #c8bce6 8.1%, #c9bbe5 15.5%, #cbbbe5 22.5%, #cebae3 29%, #d2b9e2 35.3%, #d5b8e0 41.2%, #d9b7de 47.1%, #ddb6dc 52.9%, #e0b5d9 58.8%, #e3b4d6 64.7%, #e6b3d4 71%, #e8b3d1 77.5%, #eab2d0 84.5%, #ebb2ce 91.9%, #ebb2ce 100%);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  box-shadow: 1px 1px 2px transparent, 4px 4px 4px rgba(0, 0, 0, 0.12), inset 2px 2px 4px rgba(255, 255, 255, 0.6), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.6em 1em;
+  border-radius: 1rem;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000000000;
+}
+.stop-url-animation:hover {
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), -2px -2px 4px rgba(0, 0, 0, 0.1), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 0, 0, 0.16);
+}
+.stop-url-animation:hover {
+  color: #fff;
+}
+
 .header {
   align-items: center;
   display: flex;

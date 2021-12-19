@@ -1,0 +1,21 @@
+@use '../abstracts/' as *;
+@use 'sass:math';
+
+.stop-url-animation {
+	@include bg-gradient;
+	@include center;
+	@include shadow(button-gradient);
+	border-radius: 1rem;
+	color: #fff;
+	font-size: 2rem;
+	padding: 0.6em 1em;
+	border-radius: 1rem;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000000000;
+	&:hover {
+		color: #fff;
+	}
+}

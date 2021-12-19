@@ -67,6 +67,7 @@
 			</div>
 		</div>
 
+		<!-- <button class="stop-url-animation">URLアニメーションを停止する</button> -->
 	</header>
 
 	<main id="main" data-barba="container" data-barba-namespace="home">
