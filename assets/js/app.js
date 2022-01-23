@@ -6,9 +6,9 @@ new Validate();
 if (!document.body.classList.contains('logged-in')) {
 	const urlAnimation = new URLAnimation();
 
-	document.querySelector('.stop-url-animation').addEventListener('click', () => {
-		urlAnimation.stop();
-	});
+	// document.querySelector('.stop-url-animation').addEventListener('click', () => {
+	// 	urlAnimation.stop();
+	// });
 }
 
 MicroModal.init({
