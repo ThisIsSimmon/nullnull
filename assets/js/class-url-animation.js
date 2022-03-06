@@ -32,7 +32,6 @@ export default class URLAnimation {
 	afterDinner() {
 		return new Promise((resolve) => {
 			if (this.isAnimatable) {
-				// location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}${this.woman}`;
 				this.updateHash(`${this.hotel}${this.distanceToTheLoveHotel}${this.man}${this.woman}`);
 			}
 			resolve();
@@ -48,7 +47,6 @@ export default class URLAnimation {
 					clearInterval(animation);
 				}
 				this.distanceToTheLoveHotel = this.distanceToTheLoveHotel.slice(0, -1);
-				// location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}${this.woman}`;
 				this.updateHash(`${this.hotel}${this.distanceToTheLoveHotel}${this.man}${this.woman}`);
 				count++;
 				if (count > walkingDistanceCount) {
@@ -66,13 +64,11 @@ export default class URLAnimation {
 					clearInterval(animation);
 				}
 				if (this.distanceToTheLoveHotel.length === 0) {
-					// location.hash = `${this.hotel}`;
 					this.updateHash(`${this.hotel}`);
 					clearInterval(animation);
 					resolve();
 				} else {
 					this.distanceToTheLoveHotel = this.distanceToTheLoveHotel.slice(0, -1);
-					// location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}${this.woman}`;
 					this.updateHash(`${this.hotel}${this.distanceToTheLoveHotel}${this.man}${this.woman}`);
 				}
 			}, 200);
@@ -88,11 +84,9 @@ export default class URLAnimation {
 					clearInterval(animation);
 				}
 
-				// location.hash = `${this.hotel}${love[count % love.length]}`;
 				this.updateHash(`${this.hotel}${love[count % love.length]}`);
 				count++;
 				if (count === love.length * 10) {
-					// location.hash = `${this.hotel}${this.man}_✨💖✨_${this.woman}`;
 					this.updateHash(`${this.hotel}${this.man}_✨💖✨_${this.woman}`);
 					clearInterval(animation);
 					resolve();
@@ -110,11 +104,9 @@ export default class URLAnimation {
 					clearInterval(animation);
 				}
 
-				// location.hash = `${this.hotel}${sleep[count % sleep.length]}`;
 				this.updateHash(`${this.hotel}${sleep[count % sleep.length]}`);
 				count++;
 				if (count === sleep.length * 4) {
-					// location.hash = `${this.hotel}🌙🛏💑💤💤💤`;
 					this.updateHash(`${this.hotel}🌙🛏💑💤💤💤`);
 					clearInterval(animation);
 					resolve();
@@ -132,7 +124,6 @@ export default class URLAnimation {
 					clearInterval(animation);
 				}
 
-				// location.hash = `${this.hotel}${sun[count]}`;
 				this.updateHash(`${this.hotel}${sun[count]}`);
 				count++;
 				if (count === sun.length) {
@@ -152,7 +143,6 @@ export default class URLAnimation {
 					clearInterval(animation);
 				}
 
-				// location.hash = `${this.hotel}${couple[count]}`;
 				this.updateHash(`${this.hotel}${couple[count]}`);
 				count++;
 				if (count === couple.length) {
@@ -173,7 +163,6 @@ export default class URLAnimation {
 				}
 
 				this.distanceToTheLoveHotel = this.distance.repeat(count);
-				// location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}💘${this.woman}`;
 				this.updateHash(`${this.hotel}${this.distanceToTheLoveHotel}${this.man}💘${this.woman}`);
 				count++;
 				if (count > walkingDistanceCount) {
@@ -187,7 +176,6 @@ export default class URLAnimation {
 	goodbye() {
 		return new Promise((resolve) => {
 			if (this.isAnimatable) {
-				// location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}👋${this.woman}`;
 				this.updateHash(`${this.hotel}${this.distanceToTheLoveHotel}${this.man}👋${this.woman}`);
 			}
 			resolve();
@@ -203,7 +191,6 @@ export default class URLAnimation {
 					clearInterval(animation);
 				}
 
-				// location.hash = `${this.hotel}${this.distanceToTheLoveHotel}${this.man}${tracks.repeat(count)}${this.woman}🚃`;
 				this.updateHash(`${this.hotel}${this.distanceToTheLoveHotel}${this.man}${tracks.repeat(count)}${this.woman}🚃`);
 				count++;
 				if (count > 20) {
