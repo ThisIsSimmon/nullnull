@@ -26,7 +26,7 @@ export default class URLAnimation {
 	}
 
 	updateHash(text) {
-		history.replaceState(null, null, `#${text}`);
+		window.location.replace(`#${text}`);
 	}
 
 	afterDinner() {
