@@ -1,5 +1,4 @@
 {
-	"phpcs.standard": "WordPress-Extra",
 	"phpsab.executablePathCS": "/Users/simmon/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs",
 	"phpsab.executablePathCBF": "/Users/simmon/.composer/vendor/squizlabs/php_codesniffer/bin/phpcbf",
 	"phpsab.standard": "WordPress-Extra",
