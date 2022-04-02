@@ -2320,6 +2320,9 @@ pre[class*=language-] {
   color: #8953a2;
   text-decoration: none;
 }
+.entry-content .cp_embed_wrapper {
+  margin: 3rem 0 0;
+}
 
 .medium-zoom--opened .medium-zoom-overlay {
   z-index: 90;
