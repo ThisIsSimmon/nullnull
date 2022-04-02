@@ -294,7 +294,7 @@ figure {
   margin: 0 0 1rem;
 }
 
-iframe,
+iframe:not(.cp_embed_iframe),
 img,
 input,
 select,
