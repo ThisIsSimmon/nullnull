@@ -36,13 +36,7 @@ class WP_Head {
 		   gtag('config', '%s');
 		 </script>
 GTAG;
-
-		$adsense = <<<ADSENSE
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7433511405743725"
-     crossorigin="anonymous"></script>
-ADSENSE;
 		printf( $gtag, GTAG_ID, GTAG_ID );
-		echo $adsense;
 	}
 
 
