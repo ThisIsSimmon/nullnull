@@ -15,5 +15,5 @@ module.exports = {
 	files: ['./style.pre.css', './**/*.js', './*.php', './**/*.php'],
 	proxy: 'localhost:8888',
 	port: 3000,
-	open: false,
+	open: false
 };
